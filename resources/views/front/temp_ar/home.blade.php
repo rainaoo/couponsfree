@@ -8,7 +8,7 @@
 				<div class="section deals-header-area ptb-30">
 					<div class="row row-tb-20">
 						<div class="col-xs-12 col-md-4 col-lg-3">
-							<aside>
+							<aside class="hidden-md-up">
 								<ul class="nav-coupon-category panel">
 									<li><a href="#"><i class="fa fa-cutlery"></i>الطعام و الشراب<span>40</span></a>
 									</li>

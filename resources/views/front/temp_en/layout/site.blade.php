@@ -35,7 +35,7 @@
     <!-- PAGE FAVICON                              -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="apple-touch-icon" href="{{asset('front/assets/images/favicon/apple-touch-icon.png')}}">
-    <link rel="icon" href="{{asset('front/assets/images/favicon/favicon.ico')}}">
+    <link rel="icon" href="{{asset('front/assets/images/favicon/couponicon.ico')}}">
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- GOOGLE FONTS                              -->
