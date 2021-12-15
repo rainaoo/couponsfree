@@ -6,32 +6,32 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.4 -->
-    <link rel="stylesheet" href="{{asset('backend/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons 2.0.0 -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('backend/dist/css/AdminLTE.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/dist/css/AdminLTE.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{{asset('backend/dist/css/skins/_all-skins.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/dist/css/skins/_all-skins.min.css')}}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/iCheck/flat/blue.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/plugins/iCheck/flat/blue.css')}}">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/morris/morris.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/plugins/morris/morris.css')}}">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}">
     <!-- Date Picker -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/datepicker/datepicker3.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/plugins/datepicker/datepicker3.css')}}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/daterangepicker/daterangepicker-bs3.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/plugins/daterangepicker/daterangepicker-bs3.css')}}">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
 
-    <link rel="stylesheet" href="{{asset('backend/dist/fonts/fonts-fa.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/dist/css/bootstrap-rtl.min.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/dist/css/rtl.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/dist/fonts/fonts-fa.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/dist/css/bootstrap-rtl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/backend/dist/css/rtl.css')}}">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -83,7 +83,7 @@
                       <li><!-- start message -->
                         <a href="#">
                           <div class="pull-right">
-                            <img src="{{asset('backend/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                            <img src="{{asset('public/backend/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Support Team
@@ -95,7 +95,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-right">
-                            <img src="{{asset('backend/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
+                            <img src="{{asset('public/backend/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             AdminLTE Design Team
@@ -107,7 +107,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-right">
-                            <img src="{{asset('backend/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
+                            <img src="{{asset('public/backend/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Developers
@@ -119,7 +119,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-right">
-                            <img src="{{asset('backend/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
+                            <img src="{{asset('public/backend/dist/img/user3-128x128.jpg')}}" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Sales Department
@@ -131,7 +131,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-right">
-                            <img src="{{asset('backend/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
+                            <img src="{{asset('public/backend/dist/img/user4-128x128.jpg')}}" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Reviewers
@@ -259,13 +259,13 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('backend/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                  <img src="{{asset('public/backend/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
                   <span class="hidden-xs">محمد شریفی</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="{{asset('backend/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+                    <img src="{{asset('public/backend/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                     <p>
                      محمد شریفی - توسعه دهنده سمت کاربر
                       <small>Member since Nov. 2012</small>
@@ -309,7 +309,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-right image">
-              <img src="{{asset('backend/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
+              <img src="{{asset('public/backend/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>محمد شریفی</p>
@@ -570,7 +570,7 @@
                 <div class="box-body chat" id="chat-box">
                   <!-- chat item -->
                   <div class="item">
-                    <img src="{{asset('backend/dist/img/user4-128x128.jpg')}}" alt="user image" class="online">
+                    <img src="{{asset('public/backend/dist/img/user4-128x128.jpg')}}" alt="user image" class="online">
                     <p class="message">
                       <a href="#" class="name">
                         <small class="text-muted pull-left"><i class="fa fa-clock-o"></i> 2:15</small>
@@ -592,7 +592,7 @@
                   </div><!-- /.item -->
                   <!-- chat item -->
                   <div class="item">
-                    <img src="{{asset('backend/dist/img/user3-128x128.jpg')}}" alt="user image" class="offline">
+                    <img src="{{asset('public/backend/dist/img/user3-128x128.jpg')}}" alt="user image" class="offline">
                     <p class="message">
                       <a href="#" class="name">
                         <small class="text-muted pull-left"><i class="fa fa-clock-o"></i> 5:15</small>
@@ -605,7 +605,7 @@
                   </div><!-- /.item -->
                   <!-- chat item -->
                   <div class="item">
-                    <img src="{{asset('backend/dist/img/user2-160x160.jpg')}}" alt="user image" class="offline">
+                    <img src="{{asset('public/backend/dist/img/user2-160x160.jpg')}}" alt="user image" class="offline">
                     <p class="message">
                       <a href="#" class="name">
                         <small class="text-muted pull-left"><i class="fa fa-clock-o"></i> 5:30</small>
@@ -1079,7 +1079,7 @@
     </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="{{asset('backend/plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -1087,33 +1087,33 @@
       $.widget.bridge('uibutton', $.ui.button);
     </script>
     <!-- Bootstrap 3.3.4 -->
-    <script src="{{asset('backend/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('public/backend/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- Morris.js')}} charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="{{asset('backend/plugins/morris/morris.min.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/morris/morris.min.js')}}"></script>
     <!-- Sparkline -->
-    <script src="{{asset('backend/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
     <!-- jvectormap -->
-    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
     <!-- jQuery Knob Chart -->
-    <script src="{{asset('backend/plugins/knob/jquery.knob.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/knob/jquery.knob.js')}}"></script>
     <!-- daterangepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="{{asset('backend/plugins/daterangepicker/daterangepicker.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/daterangepicker/daterangepicker.js')}}"></script>
     <!-- datepicker -->
-    <script src="{{asset('backend/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/datepicker/bootstrap-datepicker.js')}}"></script>
     <!-- Bootstrap WYSIHTML5 -->
-    <script src="{{asset('backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
     <!-- Slimscroll -->
-    <script src="{{asset('backend/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
     <!-- FastClick -->
-    <script src="{{asset('backend/plugins/fastclick/fastclick.min.js')}}"></script>
+    <script src="{{asset('public/backend/plugins/fastclick/fastclick.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="{{asset('backend/dist/js/app.min.js')}}"></script>
+    <script src="{{asset('public/backend/dist/js/app.min.js')}}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{asset('backend/dist/js/pages/dashboard.js')}}"></script>
+    <script src="{{asset('public/backend/dist/js/pages/dashboard.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('backend/dist/js/demo.js')}}"></script>
+    <script src="{{asset('public/backend/dist/js/demo.js')}}"></script>
   </body>
 </html>
