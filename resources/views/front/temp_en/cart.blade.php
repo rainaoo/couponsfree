@@ -25,7 +25,7 @@
                                         <td>
                                             <div class="media-left is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_01.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_01.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -50,7 +50,7 @@
                                         <td>
                                             <div class="media-left is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_02.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_02.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -75,7 +75,7 @@
                                         <td>
                                             <div class="media-left is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_03.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_03.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -100,7 +100,7 @@
                                         <td>
                                             <div class="media-left is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_04.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_04.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">

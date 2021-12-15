@@ -14,7 +14,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_01.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Amazon</h6>
@@ -24,7 +24,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_02.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Ashford</h6>
@@ -34,7 +34,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_03.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">DELL</h6>
@@ -44,7 +44,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_04.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Card Cash</h6>
@@ -54,7 +54,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_05.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Finish Line</h6>
@@ -64,7 +64,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_06.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">JC Penny</h6>
@@ -74,7 +74,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_07.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_07.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Callaway Golf</h6>
@@ -84,7 +84,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_08.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_08.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Car Toys</h6>
@@ -94,7 +94,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_09.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_09.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Carol's Daughter</h6>
@@ -104,7 +104,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_10.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_10.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Bank of America</h6>
@@ -114,7 +114,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_11.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_11.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Baseball Savings</h6>
@@ -124,7 +124,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_12.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_12.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Beauty Encounter</h6>
@@ -134,7 +134,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_01.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Amazon</h6>
@@ -144,7 +144,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_02.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Ashford</h6>
@@ -154,7 +154,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_03.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">DELL</h6>
@@ -164,7 +164,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_04.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Card Cash</h6>
@@ -174,7 +174,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_05.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Finish Line</h6>
@@ -184,7 +184,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_06.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">JC Penny</h6>
@@ -194,7 +194,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_07.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_07.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Callaway Golf</h6>
@@ -204,7 +204,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_08.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_08.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Car Toys</h6>
@@ -214,7 +214,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_09.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_09.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Carol's Daughter</h6>
@@ -224,7 +224,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_10.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_10.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Bank of America</h6>
@@ -234,7 +234,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_11.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_11.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Baseball Savings</h6>
@@ -244,7 +244,7 @@
                             <a href="{{route('stores_single')}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_12.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_12.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <h6 class="store-name ptb-10">Beauty Encounter</h6>

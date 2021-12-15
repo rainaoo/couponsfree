@@ -35,7 +35,7 @@
 
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_01.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_01.jpg')}}>
                                     <div class="label-discount left-20 top-15">-50%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -65,7 +65,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_01.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -99,7 +99,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_02.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_02.jpg')}}>
                                     <div class="label-discount left-20 top-15">-30%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -129,7 +129,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_02.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -163,7 +163,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_03.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_03.jpg')}}>
                                     <div class="label-discount left-20 top-15">-30%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -193,7 +193,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_03.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -227,7 +227,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_04.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_04.jpg')}}>
                                     <div class="label-discount left-20 top-15">-15%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -257,7 +257,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_04.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -291,7 +291,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_05.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_05.jpg')}}>
                                     <div class="label-discount left-20 top-15">-60%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -321,7 +321,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_05.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -355,7 +355,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_06.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_06.jpg')}}>
                                     <div class="label-discount left-20 top-15">-60%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -385,7 +385,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_06.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -419,7 +419,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_07.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_07.jpg')}}>
                                     <div class="label-discount left-20 top-15">-50%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -449,7 +449,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_01.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -483,7 +483,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_08.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_08.jpg')}}>
                                     <div class="label-discount left-20 top-15">-30%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -513,7 +513,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_02.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -547,7 +547,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_09.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_09.jpg')}}>
                                     <div class="label-discount left-20 top-15">-30%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -577,7 +577,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_03.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -611,7 +611,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_10.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_10.jpg')}}>
                                     <div class="label-discount left-20 top-15">-15%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -641,7 +641,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_04.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -675,7 +675,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_11.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_11.jpg')}}>
                                     <div class="label-discount left-20 top-15">-60%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -705,7 +705,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_05.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -739,7 +739,7 @@
                         </div>
                         <div class="col-sm-6 col-lg-4">
                             <div class="deal-single panel">
-                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('front/assets/images/deals/deal_12.jpg')}}>
+                                <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img={{asset('public/front/assets/images/deals/deal_12.jpg')}}>
                                     <div class="label-discount left-20 top-15">-60%</div>
                                     <ul class="deal-actions top-15 right-20">
                                         <li class="like-deal">
@@ -769,7 +769,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src={{asset('front/assets/images/brands/brand_06.jpg')}}" alt="">
+                                        <img src={{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">

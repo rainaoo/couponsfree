@@ -11,7 +11,7 @@
                     <div class="row row-rl-10">
                         <div class="col-sm-3 col-md-2 t-center">
                             <figure class="pt-20 pl-10">
-                                <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                             </figure>
                         </div>
                         <div class="col-sm-5 col-md-6">
@@ -51,16 +51,16 @@
                                 <div class="left-splitter-body prl-20 ptb-20">
                                     <div class="row row-rl-10 row-tb-10">
                                         <div class="col-md-6 col-sm-4 col-xs-6">
-                                            <img src="{{asset('front/assets/images/products/thumb_01.jpg')}}" alt="">
+                                            <img src="{{asset('public/front/assets/images/products/thumb_01.jpg')}}" alt="">
                                         </div>
                                         <div class="col-md-6 col-sm-4 col-xs-6">
-                                            <img src="{{asset('front/assets/images/products/thumb_02.jpg')}}" alt="">
+                                            <img src="{{asset('public/front/assets/images/products/thumb_02.jpg')}}" alt="">
                                         </div>
                                         <div class="col-md-6 col-sm-4 col-xs-6">
-                                            <img src="{{asset('front/assets/images/products/thumb_03.jpg')}}" alt="">
+                                            <img src="{{asset('public/front/assets/images/products/thumb_03.jpg')}}" alt="">
                                         </div>
                                         <div class="col-md-6 col-sm-4 col-xs-6">
-                                            <img src="{{asset('front/assets/images/products/thumb_04.jpg')}}" alt="">
+                                            <img src="{{asset('public/front/assets/images/products/thumb_04.jpg')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_01.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -172,7 +172,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_02.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -236,7 +236,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_03.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -300,7 +300,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_04.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -364,7 +364,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_05.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -428,7 +428,7 @@
                             </span>
                                     </div>
                                     <div class="deal-store-logo">
-                                        <img src="{{asset('front/assets/images/brands/brand_06.jpg')}}" alt="">
+                                        <img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
                                     </div>
                                 </figure>
                                 <div class="bg-white pt-20 pl-20 pr-15">
@@ -475,7 +475,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_01.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_01.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -511,7 +511,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>
@@ -564,7 +564,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_02.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_02.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -600,7 +600,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>
@@ -653,7 +653,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_03.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_03.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -689,7 +689,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>
@@ -742,7 +742,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_04.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_04.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -778,7 +778,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>
@@ -831,7 +831,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_07.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_07.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -867,7 +867,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>
@@ -920,7 +920,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_08.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_08.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -956,7 +956,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>
@@ -1009,7 +1009,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_09.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_09.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -1045,7 +1045,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>
@@ -1098,7 +1098,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('front/assets/images/coupons/coupon_10.jpg')}}" alt="">
+                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_10.jpg')}}" alt="">
                                         </div>
                                         <!-- end media -->
                                     </div>
@@ -1134,7 +1134,7 @@
                                             </button>
                                             <div class="row row-v-10">
                                                 <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                                     <h3 class="mb-20">Save 30% off New Domains Names</h3>
                                                     <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
                                                 </div>

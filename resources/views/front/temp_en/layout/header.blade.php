@@ -56,7 +56,7 @@
 						<!----- logo ---------->
 						<div class="brand col-md-3 t-xs-center t-md-left valign-middle ml-auto mr-auto">
 							<a href="#" class="logo">
-								<img src="{{asset('front/assets/images/logoco_light.png')}}" alt="" width="250">
+								<img src="{{asset('public/front/assets/images/logoco_light.png')}}" alt="" width="250">
 							</a>
 						</div>
 						<div class="header-search col-md-9">
@@ -474,7 +474,7 @@
 																				<li class="item col-md-3 mw-40 html" >
 																					<div class="menu-content">
 																						<div class="menu-banner-3 text-center">
-																							<a href="#"><img class="img-fluid" src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="mega-menu-3.jpg" /></a>
+																							<a href="#"><img class="img-fluid" src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="mega-menu-3.jpg" /></a>
 																						</div>
 																					</div>
 																				</li>

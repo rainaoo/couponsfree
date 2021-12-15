@@ -16,7 +16,7 @@
                                         <td class="col-sm-8 col-md-9">
                                             <div class="media-right is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_11.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_11.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -50,7 +50,7 @@
                                         <td class="col-sm-8 col-md-9">
                                             <div class="media-right is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_12.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_12.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -84,7 +84,7 @@
                                         <td class="col-sm-8 col-md-9">
                                             <div class="media-right is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_13.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_13.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -118,7 +118,7 @@
                                         <td class="col-sm-8 col-md-9">
                                             <div class="media-right is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_14.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_14.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -152,7 +152,7 @@
                                         <td class="col-sm-8 col-md-9">
                                             <div class="media-right is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_15.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_15.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">
@@ -186,7 +186,7 @@
                                         <td class="col-sm-8 col-md-9">
                                             <div class="media-right is-hidden-sm-down">
                                                 <figure class="product-thumb">
-                                                    <img src="{{asset('front/assets/images/cart/product_16.jpg')}}" alt="product">
+                                                    <img src="{{asset('public/front/assets/images/cart/product_16.jpg')}}" alt="product">
                                                 </figure>
                                             </div>
                                             <div class="media-body valign-middle">

@@ -14,7 +14,7 @@
                                 <!-- Blog Post -->
                                 <div class="blog-post col-xs-12">
                                     <article class="entry panel">
-                                        <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/blog_01.jpg')}}">
+                                        <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/blog_01.jpg')}}">
                                             <div class="entry-date">
                                                 <h4>13</h4>
                                                 <h6>يناير</h6>
@@ -40,13 +40,13 @@
                                                 <div class="gallery mb-20">
                                                     <div class="row row-rl-10">
                                                         <div class="col-sm-4">
-                                                            <img src="{{asset('front/assets/images/blog/post_01.jpg')}}" alt="">
+                                                            <img src="{{asset('public/front/assets/images/blog/post_01.jpg')}}" alt="">
                                                         </div>
                                                         <div class="col-sm-4">
-                                                            <img src="{{asset('front/assets/images/blog/post_02.jpg')}}" alt="">
+                                                            <img src="{{asset('public/front/assets/images/blog/post_02.jpg')}}" alt="">
                                                         </div>
                                                         <div class="col-sm-4">
-                                                            <img src="{{asset('front/assets/images/blog/post_03.jpg')}}" alt="">
+                                                            <img src="{{asset('public/front/assets/images/blog/post_03.jpg')}}" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -63,10 +63,10 @@
                                                 <div class="gallery mb-20">
                                                     <div class="row row-rl-10 row-tb-10">
                                                         <div class="col-sm-6">
-                                                            <img src="{{asset('front/assets/images/blog/post_04.jpg')}}" alt="">
+                                                            <img src="{{asset('public/front/assets/images/blog/post_04.jpg')}}" alt="">
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <img src="{{asset('front/assets/images/blog/post_05.jpg')}}" alt="">
+                                                            <img src="{{asset('public/front/assets/images/blog/post_05.jpg')}}" alt="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -119,7 +119,7 @@
                                 <div class="col-xs-12">
                                     <div class="post-author-area panel media p-20">
                                         <figure class="media-right">
-                                            <img class="media-object" src="{{asset('front/assets/images/avatars/blog_author.jpg')}}" alt="">
+                                            <img class="media-object" src="{{asset('public/front/assets/images/avatars/blog_author.jpg')}}" alt="">
                                         </figure>
                                         <div class="media-body">
                                             <h3>احمد ابو زيد</h3>
@@ -154,7 +154,7 @@
                                             <div class="col-sm-4">
                                                 <a href="#">
                                                     <figure class="mb-10">
-                                                        <img src="{{asset('front/assets/images/blog/post_10.jpg')}}" alt="">
+                                                        <img src="{{asset('public/front/assets/images/blog/post_10.jpg')}}" alt="">
                                                     </figure>
                                                     <p class="font-14"> لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف.</p>
                                                 </a>
@@ -162,7 +162,7 @@
                                             <div class="col-sm-4">
                                                 <a href="#">
                                                     <figure class="mb-10">
-                                                        <img src="{{asset('front/assets/images/blog/post_11.jpg')}}" alt="">
+                                                        <img src="{{asset('public/front/assets/images/blog/post_11.jpg')}}" alt="">
                                                     </figure>
                                                     <p class="font-14"> لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف.</p>
                                                 </a>
@@ -170,7 +170,7 @@
                                             <div class="col-sm-4">
                                                 <a href="#">
                                                     <figure class="mb-10">
-                                                        <img src="{{asset('front/assets/images/blog/post_01.jpg')}}" alt="">
+                                                        <img src="{{asset('public/front/assets/images/blog/post_01.jpg')}}" alt="">
                                                     </figure>
                                                     <p class="font-14"> لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف.</p>
                                                 </a>
@@ -189,7 +189,7 @@
                                                     <li class="comment comment-bypostauthor media">
                                                         <figure class="comment-author-thumb media-right">
                                                             <a href="#">
-                                                                <img class="media-object" src="{{asset('front/assets/images/avatars/avatar_07.jpg')}}" alt="" />
+                                                                <img class="media-object" src="{{asset('public/front/assets/images/avatars/avatar_07.jpg')}}" alt="" />
                                                             </a>
                                                         </figure>
                                                         <article class="comment-wrapper media-body">
@@ -210,7 +210,7 @@
                                                             <li class="comment media">
                                                                 <figure class="comment-author-thumb media-right">
                                                                     <a href="#">
-                                                                        <img class="media-object" src="{{asset('front/assets/images/avatars/avatar_08.jpg')}}" alt="" />
+                                                                        <img class="media-object" src="{{asset('public/front/assets/images/avatars/avatar_08.jpg')}}" alt="" />
                                                                     </a>
                                                                 </figure>
                                                                 <article class="comment-wrapper media-body">
@@ -230,7 +230,7 @@
                                                             <li class="comment media comment-bypostauthor">
                                                                 <figure class="comment-author-thumb media-right">
                                                                     <a href="#">
-                                                                        <img class="media-object" src="{{asset('front/assets/images/avatars/avatar_07.jpg')}}" alt="" />
+                                                                        <img class="media-object" src="{{asset('public/front/assets/images/avatars/avatar_07.jpg')}}" alt="" />
                                                                     </a>
                                                                 </figure>
                                                                 <article class="comment-wrapper media-body">
@@ -252,7 +252,7 @@
                                                     <li class="comment media">
                                                         <figure class="comment-author-thumb media-right">
                                                             <a href="#">
-                                                                <img class="media-object" src="{{asset('front/assets/images/avatars/avatar_03.jpg')}}" alt="" />
+                                                                <img class="media-object" src="{{asset('public/front/assets/images/avatars/avatar_03.jpg')}}" alt="" />
                                                             </a>
                                                         </figure>
                                                         <article class="comment-wrapper media-body">
@@ -273,7 +273,7 @@
                                                     <li class="comment media">
                                                         <figure class="comment-author-thumb media-right">
                                                             <a href="#">
-                                                                <img class="media-object" src="{{asset('front/assets/images/avatars/avatar_04.jpg')}}" alt="" />
+                                                                <img class="media-object" src="{{asset('public/front/assets/images/avatars/avatar_04.jpg')}}" alt="" />
                                                             </a>
                                                         </figure>
                                                         <article class="comment-wrapper media-body">
@@ -294,7 +294,7 @@
                                                             <li class="comment media">
                                                                 <figure class="comment-author-thumb media-right">
                                                                     <a href="#">
-                                                                        <img class="media-object" src="{{asset('front/assets/images/avatars/avatar_05.jpg')}}" alt="" />
+                                                                        <img class="media-object" src="{{asset('public/front/assets/images/avatars/avatar_05.jpg')}}" alt="" />
                                                                     </a>
                                                                 </figure>
                                                                 <article class="comment-wrapper media-body">
@@ -316,7 +316,7 @@
                                                     <li class="comment media">
                                                         <figure class="comment-author-thumb media-right">
                                                             <a href="#">
-                                                                <img class="media-object" src="{{asset('front/assets/images/avatars/avatar_04.jpg')}}" alt="" />
+                                                                <img class="media-object" src="{{asset('public/front/assets/images/avatars/avatar_04.jpg')}}" alt="" />
                                                             </a>
                                                         </figure>
                                                         <article class="comment-wrapper media-body">
@@ -418,7 +418,7 @@
                                             <div class="recent-post media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/blog/thumb_1.jpg')}}" alt="">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/blog/thumb_1.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -434,7 +434,7 @@
                                             <div class="recent-post media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/blog/thumb_2.jpg')}}" alt="">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/blog/thumb_2.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -450,7 +450,7 @@
                                             <div class="recent-post media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/blog/thumb_3.jpg')}}" alt="">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/blog/thumb_3.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -466,7 +466,7 @@
                                             <div class="recent-post media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/blog/thumb_4.jpg')}}" alt="">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/blog/thumb_4.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -482,7 +482,7 @@
                                             <div class="recent-post media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/blog/thumb_5.jpg')}}" alt="">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/blog/thumb_5.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -580,22 +580,22 @@
                                         <div class="widget-body ptb-30">
                                             <div class="row row-tb-5 row-rl-5">
                                                 <div class="instagram-widget__item col-xs-4">
-                                                    <img src="{{asset('front/assets/images/instagram/instagram_01.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/instagram/instagram_01.jpg')}}" alt="">
                                                 </div>
                                                 <div class="instagram-widget__item col-xs-4">
-                                                    <img src="{{asset('front/assets/images/instagram/instagram_02.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/instagram/instagram_02.jpg')}}" alt="">
                                                 </div>
                                                 <div class="instagram-widget__item col-xs-4">
-                                                    <img src="{{asset('front/assets/images/instagram/instagram_03.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/instagram/instagram_03.jpg')}}" alt="">
                                                 </div>
                                                 <div class="instagram-widget__item col-xs-4">
-                                                    <img src="{{asset('front/assets/images/instagram/instagram_04.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/instagram/instagram_04.jpg')}}" alt="">
                                                 </div>
                                                 <div class="instagram-widget__item col-xs-4">
-                                                    <img src="{{asset('front/assets/images/instagram/instagram_05.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/instagram/instagram_05.jpg')}}" alt="">
                                                 </div>
                                                 <div class="instagram-widget__item col-xs-4">
-                                                    <img src="{{asset('front/assets/images/instagram/instagram_06.jpg')}}" alt="">
+                                                    <img src="{{asset('public/front/assets/images/instagram/instagram_06.jpg')}}" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -678,7 +678,7 @@
                                             <div class="trend-store-item media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object pl-10" width="90" src="{{asset('front/assets/images/brands/brand_01.jpg')}}" alt="">
+                                                        <img class="media-object pl-10" width="90" src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -700,7 +700,7 @@
                                             <div class="trend-store-item media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object pl-10" width="90" src="{{asset('front/assets/images/brands/brand_02.jpg')}}" alt="">
+                                                        <img class="media-object pl-10" width="90" src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -722,7 +722,7 @@
                                             <div class="trend-store-item media">
                                                 <div class="post-thumb media-right">
                                                     <a href="#">
-                                                        <img class="media-object pl-10" width="90" src="{{asset('front/assets/images/brands/brand_03.jpg')}}" alt="">
+                                                        <img class="media-object pl-10" width="90" src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -754,7 +754,7 @@
                                             <div class="review media">
                                                 <div class="media-right pl-10">
                                                     <a href="#">
-                                                        <img class="media-object img-circle" src="{{asset('front/assets/images/avatars/avatar_01.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object img-circle" src="{{asset('public/front/assets/images/avatars/avatar_01.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -778,7 +778,7 @@
                                             <div class="review media">
                                                 <div class="media-right pl-10">
                                                     <a href="#">
-                                                        <img class="media-object img-circle" src="{{asset('front/assets/images/avatars/avatar_02.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object img-circle" src="{{asset('public/front/assets/images/avatars/avatar_02.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -802,7 +802,7 @@
                                             <div class="review media">
                                                 <div class="media-right pl-10">
                                                     <a href="#">
-                                                        <img class="media-object img-circle" src="{{asset('front/assets/images/avatars/avatar_03.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object img-circle" src="{{asset('public/front/assets/images/avatars/avatar_03.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -826,7 +826,7 @@
                                             <div class="review media">
                                                 <div class="media-right pl-10">
                                                     <a href="#">
-                                                        <img class="media-object img-circle" src="{{asset('front/assets/images/avatars/avatar_04.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object img-circle" src="{{asset('public/front/assets/images/avatars/avatar_04.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">

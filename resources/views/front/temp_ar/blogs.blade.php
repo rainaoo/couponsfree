@@ -12,7 +12,7 @@
                             <!-- Blog Post -->
                             <div class="blog-post col-xs-12 col-sm-6 col-md-4">
                                 <article class="entry panel">
-                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_01.jpg')}}">
+                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_01.jpg')}}">
                                         <div class="entry-date">
                                             <h4>13</h4>
                                             <h6>يناير</h6>
@@ -145,10 +145,10 @@
                                             <h6>يناير</h6>
                                         </div>
                                         <div class="owl-slider" data-loop="true" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="1000" data-nav-speed="false" data-nav="true" data-xxs-items="1" data-xxs-nav="true" data-xs-items="1" data-xs-nav="true" data-sm-items="1" data-sm-nav="true" data-md-items="1" data-md-nav="true" data-lg-items="1" data-lg-nav="true">
-                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_02.jpg')}}"></figure>
-                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_03.jpg')}}"></figure>
-                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_04.jpg')}}"></figure>
-                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_05.jpg')}}"></figure>
+                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_02.jpg')}}"></figure>
+                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_03.jpg')}}"></figure>
+                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_04.jpg')}}"></figure>
+                                            <figure class="post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_05.jpg')}}"></figure>
                                         </div>
                                     </figure>
                                     <div class="entry-wrapper pt-20 pb-10 prl-20">
@@ -176,7 +176,7 @@
                             <!-- Blog Post -->
                             <div class="blog-post col-xs-12 col-sm-6 col-md-4">
                                 <article class="entry panel">
-                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_03.jpg')}}">
+                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_03.jpg')}}">
                                         <div class="entry-date">
                                             <h4>13</h4>
                                             <h6>يناير</h6>
@@ -207,7 +207,7 @@
                             <!-- Blog Post -->
                             <div class="blog-post col-xs-12 col-sm-6 col-md-4">
                                 <article class="entry panel">
-                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_04.jpg')}}">
+                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_04.jpg')}}">
                                         <div class="entry-date">
                                             <h4>13</h4>
                                             <h6>يناير</h6>
@@ -238,7 +238,7 @@
                             <!-- Blog Post -->
                             <div class="blog-post col-xs-12 col-sm-6 col-md-4">
                                 <article class="entry panel">
-                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_05.jpg')}}">
+                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_05.jpg')}}">
                                         <div class="entry-date">
                                             <h4>13</h4>
                                             <h6>يناير</h6>
@@ -269,7 +269,7 @@
                             <!-- Blog Post -->
                             <div class="blog-post col-xs-12 col-sm-6 col-md-4">
                                 <article class="entry panel">
-                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('front/assets/images/blog/post_06.jpg')}}">
+                                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_06.jpg')}}">
                                         <div class="entry-date">
                                             <h4>13</h4>
                                             <h6>يناير</h6>

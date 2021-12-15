@@ -15,44 +15,44 @@
                                         <div id="product_slider" class="flexslider">
                                             <ul class="slides">
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/product_01.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/product_01.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/product_02.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/product_02.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/product_03.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/product_03.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/product_04.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/product_04.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/product_05.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/product_05.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/product_06.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/product_06.jpg')}}">
                                                 </li>
                                             </ul>
                                         </div>
                                         <div id="product_slider_nav" class="flexslider flexslider-nav">
                                             <ul class="slides">
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/thumb_01.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/thumb_01.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/thumb_02.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/thumb_02.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/thumb_03.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/thumb_03.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/thumb_04.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/thumb_04.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/thumb_05.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/thumb_05.jpg')}}">
                                                 </li>
                                                 <li>
-                                                    <img alt="" src="{{asset('front/assets/images/products/thumb_06.jpg')}}">
+                                                    <img alt="" src="{{asset('public/front/assets/images/products/thumb_06.jpg')}}">
                                                 </li>
                                             </ul>
                                         </div>
@@ -81,7 +81,7 @@
                                     <div class="review-single pt-30">
                                         <div class="media">
                                             <div class="media-left">
-                                                <img class="media-object mr-10 radius-4" src="{{asset('front/assets/images/avatars/avatar_01.jpg')}}" width="90" alt="">
+                                                <img class="media-object mr-10 radius-4" src="{{asset('public/front/assets/images/avatars/avatar_01.jpg')}}" width="90" alt="">
                                             </div>
                                             <div class="media-body">
                                                 <div class="review-wrapper clearfix">
@@ -110,7 +110,7 @@
                                     <div class="review-single pt-30">
                                         <div class="media">
                                             <div class="media-left">
-                                                <img class="media-object mr-10 radius-4" src="{{asset('front/assets/images/avatars/avatar_02.jpg')}}" width="90" alt="">
+                                                <img class="media-object mr-10 radius-4" src="{{asset('public/front/assets/images/avatars/avatar_02.jpg')}}" width="90" alt="">
                                             </div>
                                             <div class="media-body">
                                                 <div class="review-wrapper clearfix">
@@ -139,7 +139,7 @@
                                     <div class="review-single pt-30">
                                         <div class="media">
                                             <div class="media-left">
-                                                <img class="media-object mr-10 radius-4" src="{{asset('front/assets/images/avatars/avatar_03.jpg')}}" width="90" alt="">
+                                                <img class="media-object mr-10 radius-4" src="{{asset('public/front/assets/images/avatars/avatar_03.jpg')}}" width="90" alt="">
                                             </div>
                                             <div class="media-body">
                                                 <div class="review-wrapper clearfix">
@@ -168,7 +168,7 @@
                                     <div class="review-single pt-30">
                                         <div class="media">
                                             <div class="media-left">
-                                                <img class="media-object mr-10 radius-4" src="{{asset('front/assets/images/avatars/avatar_04.jpg')}}" width="90" alt="">
+                                                <img class="media-object mr-10 radius-4" src="{{asset('public/front/assets/images/avatars/avatar_04.jpg')}}" width="90" alt="">
                                             </div>
                                             <div class="media-body">
                                                 <div class="review-wrapper clearfix">
@@ -197,7 +197,7 @@
                                     <div class="review-single pt-30">
                                         <div class="media">
                                             <div class="media-left">
-                                                <img class="media-object mr-10 radius-4" src="{{asset('front/assets/images/avatars/avatar_05.jpg')}}" width="90" alt="">
+                                                <img class="media-object mr-10 radius-4" src="{{asset('public/front/assets/images/avatars/avatar_05.jpg')}}" width="90" alt="">
                                             </div>
                                             <div class="media-body">
                                                 <div class="review-wrapper clearfix">
@@ -351,7 +351,7 @@
                                         <h3 class="widget-title h-title">About Seller</h3>
                                         <div class="widget-body t-center">
                                             <figure class="mt-20 pb-10">
-                                                <img src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                                <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
                                             </figure>
                                             <div class="store-about mb-20">
                                                 <h3 class="mb-10">Amazon Store</h3>
@@ -586,7 +586,7 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/deals/thumb_01.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/deals/thumb_01.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -612,7 +612,7 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/deals/thumb_02.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/deals/thumb_02.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -638,7 +638,7 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/deals/thumb_03.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/deals/thumb_03.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">
@@ -664,7 +664,7 @@
                                             <div class="media">
                                                 <div class="media-left">
                                                     <a href="#">
-                                                        <img class="media-object" src="{{asset('front/assets/images/deals/thumb_04.jpg')}}" alt="Thumb" width="80">
+                                                        <img class="media-object" src="{{asset('public/front/assets/images/deals/thumb_04.jpg')}}" alt="Thumb" width="80">
                                                     </a>
                                                 </div>
                                                 <div class="media-body">

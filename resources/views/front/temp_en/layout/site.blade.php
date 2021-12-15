@@ -34,8 +34,8 @@
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- PAGE FAVICON                              -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="apple-touch-icon" href="{{asset('front/assets/images/favicon/apple-touch-icon.png')}}">
-    <link rel="icon" href="{{asset('front/assets/images/favicon/couponicon.ico')}}">
+    <link rel="apple-touch-icon" href="{{asset('public/front/assets/images/favicon/apple-touch-icon.png')}}">
+    <link rel="icon" href="{{asset('public/front/assets/images/favicon/couponicon.ico')}}">
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- GOOGLE FONTS                              -->
@@ -46,28 +46,28 @@
     <!-- Include CSS Filess                        -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- Template Stylesheet -->
-    <link href="{{asset('front/assets/css/theme-d20b1924.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/css/theme-d20b1924.css')}}" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="{{asset('front/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="{{asset('front/assets/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 
     <!-- Linearicons -->
-    <link href="{{asset('front/assets/vendors/linearicons/css/linearicons.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/vendors/linearicons/css/linearicons.css')}}" rel="stylesheet">
 
     <!-- Owl Carousel -->
-    <link href="{{asset('front/assets/vendors/owl-carousel/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('front/assets/vendors/owl-carousel/owl.theme.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/vendors/owl-carousel/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/vendors/owl-carousel/owl.theme.min.css')}}" rel="stylesheet">
 
     <!-- Flex Slider -->
-    <link href="{{asset('front/assets/vendors/flexslider/flexslider.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/vendors/flexslider/flexslider.css')}}" rel="stylesheet">
 
 	
     <!-- Template Stylesheet -->
-    <link href="{{asset('front/assets/css/base.css')}}" rel="stylesheet">
-    <link href="{{asset('front/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/css/base.css')}}" rel="stylesheet">
+    <link href="{{asset('public/front/assets/css/style.css')}}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
 <style type="text/css">
@@ -540,12 +540,12 @@
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- Initialize jQuery library                 -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <script src="{{asset('front/assets/js/jquery-1.12.3.min.js')}}"></script>
+    <script src="{{asset('public/front/assets/js/jquery-1.12.3.min.js')}}"></script>
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- Latest compiled and minified Bootstrap    -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <script type="text/javascript" src="{{asset('front/assets/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/js/bootstrap.min.js')}}"></script>
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- JavaScript Plugins                        -->
@@ -553,26 +553,26 @@
     <!-- (!) Include all compiled plugins (below), or include individual files as needed -->
 
     <!-- Modernizer JS -->
-    <script src="{{asset('front/assets/vendors/modernizr/modernizr-2.6.2.min.js')}}"></script>
+    <script src="{{asset('public/front/assets/vendors/modernizr/modernizr-2.6.2.min.js')}}"></script>
     
     <!-- Owl Carousel -->
-    <script type="text/javascript" src="{{asset('front/assets/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
 
     <!-- FlexSlider -->
-    <script type="text/javascript" src="{{asset('front/assets/vendors/flexslider/jquery.flexslider-min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/vendors/flexslider/jquery.flexslider-min.js')}}"></script>
 
     <!-- Coutdown -->
-    <script type="text/javascript" src="{{asset('front/assets/vendors/countdown/jquery.countdown.js')}}"></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/vendors/countdown/jquery.countdown.js')}}"></script>
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- Custom Template JavaScript                   -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <script type="text/javascript" src="{{asset('front/assets/js/main.js')}}"></script>
-	<script type="text/javascript" src="{{asset('front/assets/js/bottom-9a1a4723.js')}}" ></script>
-    <script type="text/javascript" src="{{asset('front/assets/js/bottom-3c96ed23.js')}}" ></script>
-    <script type="text/javascript" src="{{asset('front/assets/js/bottom-63e66e23.js')}}" ></script>
-    <script type="text/javascript" src="{{asset('front/assets/js/bottom-77e34323.js')}}" ></script>
-    <script type="text/javascript" src="{{asset('front/assets/js/bottom-515fa323.js')}}" ></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/js/main.js')}}"></script>
+	<script type="text/javascript" src="{{asset('public/front/assets/js/bottom-9a1a4723.js')}}" ></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/js/bottom-3c96ed23.js')}}" ></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/js/bottom-63e66e23.js')}}" ></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/js/bottom-77e34323.js')}}" ></script>
+    <script type="text/javascript" src="{{asset('public/front/assets/js/bottom-515fa323.js')}}" ></script>
     <script>
         $(document).ready(function(){
 
