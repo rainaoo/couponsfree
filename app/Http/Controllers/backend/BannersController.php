@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Session;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class BannersController extends Controller
 {
