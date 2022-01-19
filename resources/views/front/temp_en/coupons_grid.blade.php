@@ -56,8 +56,8 @@
                                             </ul>
                                             <h4 class="color-green mb-10 t-uppercase">10% OFF</h4>
                                             <h5 class="deal-title mb-10">
-                                    <a href="#">10% off select XPS & Alienware laptops</a>
-                                </h5>
+                                                <a href="#">10% off select XPS & Alienware laptops</a>
+                                            </h5>
                                             <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 01/01/2018</p>
                                             <div class="showcode">
                                                 <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_01">Get Coupon Code</button>
@@ -117,8 +117,8 @@
                                                 <div class="input-group">
                                                     <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
                                                     <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
+                                                    <button class="btn" type="submit">Sign Up</button>
+                                                    </span>
                                                 </div>
                                             </form>
                                         </div>

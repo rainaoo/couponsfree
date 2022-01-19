@@ -126,25 +126,7 @@
             
                             </div>
                         </div>
-                        <!---- cart section & wishlist -------------->
-                        <div class="col-sm-4 t-xs-center t-md-right">
-                            <!-- cart section ---->
-                            <div class="header-cart">
-                                <a href="{{route('cart-ar')}}">
-                                    <span class="icon lnr lnr-cart"></span>
-                                    <div><span class="cart-number">0</span>
-                                    </div>
-                                    <span class="title">Cart</span>
-                                </a>
-                            </div>
-                            <!----- wishlist section ------------>
-                            <div class="header-wishlist ml-20">
-                                <a href="{{route('wishlist-ar')}}">
-                                    <span class="icon lnr lnr-heart font-30"></span>
-                                    <span class="title">Wish List</span>
-                                </a>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -219,19 +201,6 @@
 										<li class="item  has-sub">
 											<a href="{{route('blogs-ar')}}">المقالات<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
 											<div class="dropdown-menu"style="width:270px" >
-											</div>	
-										</li>
-										<li class="item  has-sub dropdown-mega-menu">
-												<a href="{{route('checkout_method-ar')}}">الدفع<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-												<div class="dropdown-menu mega-menu"style="" >
-													<ul>
-														<li><a href="{{route('checkout_method-ar')}}">طريقة الدفع</a>
-														</li>
-														<li><a href="{{route('checkout_billing-ar')}}">معلومات الفاتورة</a>
-														</li>
-														<li><a href="{{route('checkout_payment-ar')}}">معلومات الدفع</a>
-														</li>
-													</ul>
 											</div>	
 										</li>
 									</ul>
@@ -507,19 +476,7 @@
 															<a href="{{route('blogs-ar')}}">المقالات</a>
 															
 												        </li>
-														<li class="item  has-sub">
-																<a href="{{route('checkout_method-ar')}}">الدفع<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-																<div class="dropdown-menu"style="width:270px" >
-																	<ul>
-																		<li><a href="{{route('checkout_method-ar')}}">طريقة الدفع</a>
-																		</li>
-																		<li><a href="{{route('checkout_billing-ar')}}">معلومات الفاتوره</a>
-																		</li>
-																		<li><a href="{{route('checkout_payment-ar')}}">معلومات الدفع</a>
-																		</li>
-																	</ul>
-															</div>	
-														</li>
+														
 												    </ul>
 											</div>
 										</nav>

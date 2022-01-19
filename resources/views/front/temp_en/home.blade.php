@@ -1,3 +1,11 @@
+<?php
+use App\Models\Banner;
+//use App\Models\Category;
+use App\Models\Deal;
+use App\Models\Store;
+use App\Models\Coupon;
+?>
+
 
 @extends('front.temp_en.layout.site')
 @section('content')
@@ -11,8 +19,15 @@
 						<div class="col-xs-12 col-md-4 col-lg-3 ">
 							<aside class="hidden-md-up">
 								<ul class="nav-coupon-category panel">
-									<li><a href="#"><i class="fa fa-cutlery"></i>Food &amp; Drink<span>40</span></a>
+									<?php
+									use App\Models\Category;
+									$getCategories=Category::getCategories();
+								   // echo "<pre>";print_r($getCategories);die;
+									 ?>
+									 @foreach($getCategories as $key => $category)
+									<li><a href="#"><i class="fa fa-cutlery"></i>{{$category['name']}}<span>40</span></a>
 									</li>
+									@endforeach
 									<li><a href="#"><i class="fa fa-calendar"></i>Events<span>42</span></a>
 									</li>
 									<li><a href="#"><i class="fa fa-female"></i>Beauty<span>48</span></a>
@@ -35,147 +50,32 @@
 								</ul>
 							</aside>
 						</div>
+						<?php
+						   //use App\Models\Banner;
+						   $getBanners=Banner::getBanners();
+						  // echo "<pre>";print_r($getBanners);die;
+							?>
 						<div class="col-xs-12 col-md-8 col-lg-9">
 							<div class="header-deals-slider flexslider" id="header-deals-slider">
 								<ul class="slides">
+									@foreach($getBanners as $key => $banner)
 									<li>
 										<div class="deal-single panel item">
 											<figure class="deal-thumbnail embed-responsive embed-responsive-16by9"
-											        data-bg-img="{{asset('public/front/assets/images/deals/deal_01.jpg')}}">
-												<div class="label-discount top-10 right-10">-50%</div>
-												<ul class="deal-actions top-10 left-10">
-													<li class="like-deal">
-														<span>
-															<i class="fa fa-heart"></i>
-														</span>
-													</li>
-													<li class="share-btn">
-														<div class="share-tooltip fade">
-															<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-														</div>
-														<span><i class="fa fa-share-alt"></i></span>
-													</li>
-													<li>
-														<span>
-															<i class="fa fa-camera"></i>
-														</span>
-													</li>
-												</ul>
+											        data-bg-img="{{asset('public/backend/dist/img/banner_images/'.$banner['image'])}}">
+												<div class="label-discount top-10 right-10">{{$banner['discount']}}</div>
+											
 												<div class="deal-about p-20 pos-a bottom-0 left-0">
-													<div class="rating mb-10">
-														<span class="rating-stars" data-rating="5">
-															<i class="fa fa-star-o star-active"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</span>
-														<span class="rating-reviews color-light">
-															( <span class="rating-count">241</span> Reviews )
-														</span>
-													</div>
+													
 													<h3 class="deal-title mb-10 ">
-														<a href="deal_single.html" class="color-light color-h-lighter">The Crash Bad Instant Folding Twin Bed</a>
+														<a href="" class="color-light color-h-lighter">{{$banner['title']}}</a>
 													</h3>
 												</div>
 											</figure>
 										</div>
 									</li>
-									<li>
-										<div class="deal-single panel item">
-											<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" 
-											    data-bg-img="{{asset('public/front/assets/images/deals/deal_01.jpg')}}">
-												<div class="label-discount top-10 right-10">-30%</div>
-												<ul class="deal-actions top-10 left-10">
-													<li class="like-deal">
-														<span>
-															<i class="fa fa-heart"></i>
-														</span>
-													</li>
-													<li class="share-btn">
-														<div class="share-tooltip fade">
-															<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-														</div>
-														<span><i class="fa fa-share-alt"></i></span>
-													</li>
-													<li>
-														<span>
-															<i class="fa fa-camera"></i>
-														</span>
-													</li>
-												</ul>
-												<div class="deal-about p-20 pos-a bottom-0 left-0">
-													<div class="rating mb-10">
-														<span class="rating-stars" data-rating="5">
-															<i class="fa fa-star-o star-active"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</span>
-														<span class="rating-reviews color-light">
-														( <span class="rating-count">132</span> Reviews )
-														</span>
-													</div>
-													<h3 class="deal-title mb-10 ">
-														<a href="deal_single.html" class="color-light color-h-lighter">Western Digital USB 3.0 Hard Drives</a>
-													</h3>
-												</div>
-											</figure>
-										</div>
-									</li>
-									<li>
-										<div class="deal-single panel item">
-											<figure class="deal-thumbnail embed-responsive embed-responsive-16by9"  
-											        data-bg-img="{{asset('public/front/assets/images/deals/deal_03.jpg')}}">
-												<div class="label-discount top-10 right-10">-30%</div>
-												<ul class="deal-actions top-10 left-10">
-													<li class="like-deal">
-														<span>
-															<i class="fa fa-heart"></i>
-														</span>
-													</li>
-													<li class="share-btn">
-														<div class="share-tooltip fade">
-															<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-															<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-														</div>
-														<span><i class="fa fa-share-alt"></i></span>
-													</li>
-													<li>
-														<span>
-															<i class="fa fa-camera"></i>
-														</span>
-													</li>
-												</ul>
-												<div class="deal-about p-20 pos-a bottom-0 left-0">
-													<div class="rating mb-10">
-														<span class="rating-stars" data-rating="5">
-															<i class="fa fa-star-o star-active"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</span>
-														<span class="rating-reviews color-light">
-														( <span class="rating-count">160</span> Reviews )
-														</span>
-													</div>
-													<h3 class="deal-title mb-10 ">
-														<a href="deal_single.html" class="color-light color-h-lighter">Hampton Bay LED Light Ceiling Exhaust Fan</a>
-													</h3>
-												</div>
-											</figure>
-										</div>
-									</li>
+									
+									@endforeach
 								</ul>
 							</div>
 						</div>
@@ -224,427 +124,90 @@
 						</div>
 					</div>
 				</div>
-
+                       <!-- section for deals -->
 				<section class="section latest-deals-area ptb-30">
 					<header class=" pos-r line">
 						<h3 class="section-title ">Latest Deals</h3>
-						<span class="btns collapsed" data-toggle="collapse" data-target="#demo"></span>
 					  
 					</header>
-
+					<?php
+					 $getDeals=Deal::getDeals();
+					// echo "<pre>";print_r($getDeals);die;
+						//$store=Deal::store();
+						$deals=Deal::with(['store'=>function($query){
+								$query->select('id','name','image');
+							}])->orderBy('id','Desc')->where('status',1)->limit(3)->get();
+							//echo "<pre>";print_r($deals);die;
+							//$indexdeal=Deal::indexdeal();
+					?>
+				
 					<div class="row row-masnory row-tb-20">
-					
+						@foreach($deals as $key => $deal)
 						<div class="col-sm-6 col-lg-4">
 							<div class="deal-single panel">
 								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9"
-								           data-bg-img="{{asset('public/front/assets/images/deals/deal_04.jpg')}}">
-									<div class="label-discount left-20 top-15">-15%</div>
-									<ul class="deal-actions top-15 right-20">
-										<li class="like-deal">
-											<span>
-												<i class="fa fa-heart"></i>
-											</span>
-										</li>
-										<li class="share-btn">
-											<div class="share-tooltip fade">
-												<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-											</div>
-											<span><i class="fa fa-share-alt"></i></span>
-										</li>
-										<li>
-											<span>
-												<i class="fa fa-camera"></i>
-											</span>
-										</li>
-									</ul>
+								           data-bg-img="{{asset('public/backend/dist/img/deal_images/'.$deal['main_image'])}}">
+									<div class="label-discount right-20 top-15">{{$deal['discount']}} %</div>
+									
 									<div class="time-left bottom-15 right-20 font-md-14">
 										<span>
 											<i class="ico fa fa-clock-o mr-10"></i>
-											<span class="t-uppercase" data-countdown="2018/01/02 10:35:23"></span>
+											<span class="t-uppercase" data-countdown="">{{$deal['expires']}}</span>
 										</span>
 									</div>
 									<div class="deal-store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
+										
+										<img src="{{asset('public/backend/dist/img/store_images/'.$deal->store['image'])}}" width="60px" height="60px"alt="">
 									</div>
 								</figure>
 								<div class="bg-white pt-20 pl-20 pr-15">
 									<div class="pr-md-10">
-										<div class="rating mb-10">
-											<span class="rating-stars rate-allow" data-rating="2">
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-											</span>
-											<span class="rating-reviews">
-												( <span class="rating-count">100</span> rates )
-											</span>
-										</div>
+										
 										<h3 class="deal-title mb-10">
-											<a href="deal_single.html">Timberland Men's Thorton Waterproof Boots</a>
+											<a href="deal_single.html">{{$deal['title']}} </a>
 										</h3>
 										<ul class="deal-meta list-inline mb-10 color-mid">
 											<li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
 											<li><i class="ico fa fa-shopping-basket mr-10"></i>10 Bought</li>
 										</ul>
-										<p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
+										<p class="text-muted mb-20">{{$deal['description']}} </p>
 									</div>
 									<div class="deal-price pos-r mb-15">
-										<h3 class="price ptb-5 text-right"><span class="price-sale">$380.00</span>$340.00</h3>
+										<h3 class="price ptb-5 text-right"><span class="price-sale">$ {{$deal['price_old']}}</span>$ {{$deal['price_new']}}</h3>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-lg-4">
-							<div class="deal-single panel">
-								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" 
-								        data-bg-img="{{asset('public/front/assets/images/deals/deal_05.jpg')}}">
-									<div class="label-discount left-20 top-15">-60%</div>
-									<ul class="deal-actions top-15 right-20">
-										<li class="like-deal">
-											<span>
-												<i class="fa fa-heart"></i>
-											</span>
-										</li>
-										<li class="share-btn">
-											<div class="share-tooltip fade">
-												<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-											</div>
-											<span><i class="fa fa-share-alt"></i></span>
-										</li>
-										<li>
-											<span>
-												<i class="fa fa-camera"></i>
-											</span>
-										</li>
-									</ul>
-									<div class="time-left bottom-15 right-20 font-md-14">
-										<span>
-											<i class="ico fa fa-clock-o mr-10"></i>
-											<span class="t-uppercase" data-countdown="2021/12/03 03:15:00"></span>
-										</span>
-									</div>
-									<div class="deal-store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-									</div>
-								</figure>
-								<div class="bg-white pt-20 pl-20 pr-15">
-									<div class="pr-md-10">
-										<div class="rating mb-10">
-											<span class="rating-stars rate-allow" data-rating="3">
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-											</span>
-											<span class="rating-reviews">
-							                    ( <span class="rating-count">32</span> rates )
-											</span>
-										</div>
-										<h3 class="deal-title mb-10">
-											<a href="deal_single.html">New and Refurbished Lenovo Laptops</a>
-										</h3>
-										<ul class="deal-meta list-inline mb-10 color-mid">
-											<li><i class="ico fa fa-map-marker mr-10"></i>United State</li>
-											<li><i class="ico fa fa-shopping-basket mr-10"></i>65 Bought</li>
-										</ul>
-										<p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-									</div>
-									<div class="deal-price pos-r mb-15">
-										<h3 class="price ptb-5 text-right"><span class="price-sale">$700.00</span>$576.00</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-lg-4">
-							<div class="deal-single panel">
-								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" 
-								        data-bg-img="{{asset('public/front/assets/images/deals/deal_06.jpg')}}">
-									<div class="label-discount left-20 top-15">-60%</div>
-									<ul class="deal-actions top-15 right-20">
-										<li class="like-deal">
-											<span>
-												<i class="fa fa-heart"></i>
-											</span>
-										</li>
-										<li class="share-btn">
-											<div class="share-tooltip fade">
-												<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-											</div>
-											<span><i class="fa fa-share-alt"></i></span>
-										</li>
-										<li>
-											<span>
-												<i class="fa fa-camera"></i>
-											</span>
-										</li>
-									</ul>
-									<div class="time-left bottom-15 right-20 font-md-14">
-										<span>
-											<i class="ico fa fa-clock-o mr-10"></i>
-											<span class="t-uppercase" data-countdown="2019/10/10 12:00:00"></span>
-										</span>
-									</div>
-									<div class="deal-store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-									</div>
-								</figure>
-								<div class="bg-white pt-20 pl-20 pr-15">
-									<div class="pr-md-10">
-										<div class="rating mb-10">
-											<span class="rating-stars rate-allow" data-rating="5">
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-											</span>
-											<span class="rating-reviews">
-						                  	( <span class="rating-count">29</span> rates )
-											</span>
-										</div>
-										<h3 class="deal-title mb-10">
-											<a href="deal_single.html">Buying a TV Is Easy When You Know These Terms</a>
-										</h3>
-										<ul class="deal-meta list-inline mb-10 color-mid">
-											<li><i class="ico fa fa-map-marker mr-10"></i>United Kingdom</li>
-											<li><i class="ico fa fa-shopping-basket mr-10"></i>134 Bought</li>
-										</ul>
-										<p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-									</div>
-									<div class="deal-price pos-r mb-15">
-										<h3 class="price ptb-5 text-right"><span class="price-sale">$300.00</span>$250.00</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div id="demo" class="collapse">
-							<div class="col-sm-6 col-lg-4">
-								<div class="deal-single panel">
-									<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" 
-									        data-bg-img="{{asset('public/front/assets/images/deals/deal_04.jpg')}}">
-										<div class="label-discount left-20 top-15">-15%</div>
-										<ul class="deal-actions top-15 right-20">
-											<li class="like-deal">
-												<span>
-													<i class="fa fa-heart"></i>
-												</span>
-											</li>
-											<li class="share-btn">
-												<div class="share-tooltip fade">
-													<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-												</div>
-												<span><i class="fa fa-share-alt"></i></span>
-											</li>
-											<li>
-												<span>
-													<i class="fa fa-camera"></i>
-												</span>
-											</li>
-										</ul>
-										<div class="time-left bottom-15 right-20 font-md-14">
-											<span>
-												<i class="ico fa fa-clock-o mr-10"></i>
-												<span class="t-uppercase" data-countdown="2018/01/02 10:35:23"></span>
-											</span>
-										</div>
-										<div class="deal-store-logo">
-											<img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-										</div>
-									</figure>
-									<div class="bg-white pt-20 pl-20 pr-15">
-										<div class="pr-md-10">
-											<div class="rating mb-10">
-												<span class="rating-stars rate-allow" data-rating="2">
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-												<span class="rating-reviews">
-													( <span class="rating-count">100</span> rates )
-												</span>
-											</div>
-											<h3 class="deal-title mb-10">
-												<a href="deal_single.html">Timberland Men's Thorton Waterproof Boots</a>
-											</h3>
-											<ul class="deal-meta list-inline mb-10 color-mid">
-												<li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
-												<li><i class="ico fa fa-shopping-basket mr-10"></i>10 Bought</li>
-											</ul>
-											<p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-										</div>
-										<div class="deal-price pos-r mb-15">
-											<h3 class="price ptb-5 text-right"><span class="price-sale">$380.00</span>$340.00</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-4">
-								<div class="deal-single panel">
-									<figure class="deal-thumbnail embed-responsive embed-responsive-16by9"
-									       data-bg-img="{{asset('public/front/assets/images/deals/deal_05.jpg')}}">
-										<div class="label-discount left-20 top-15">-60%</div>
-										<ul class="deal-actions top-15 right-20">
-											<li class="like-deal">
-												<span>
-													<i class="fa fa-heart"></i>
-												</span>
-											</li>
-											<li class="share-btn">
-												<div class="share-tooltip fade">
-													<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-												</div>
-												<span><i class="fa fa-share-alt"></i></span>
-											</li>
-											<li>
-												<span>
-													<i class="fa fa-camera"></i>
-												</span>
-											</li>
-										</ul>
-										<div class="time-left bottom-15 right-20 font-md-14">
-											<span>
-												<i class="ico fa fa-clock-o mr-10"></i>
-												<span class="t-uppercase" data-countdown="2021/12/03 03:15:00"></span>
-											</span>
-										</div>
-										<div class="deal-store-logo">
-											<img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-										</div>
-									</figure>
-									<div class="bg-white pt-20 pl-20 pr-15">
-										<div class="pr-md-10">
-											<div class="rating mb-10">
-												<span class="rating-stars rate-allow" data-rating="3">
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-												<span class="rating-reviews">
-													( <span class="rating-count">32</span> rates )
-												</span>
-											</div>
-											<h3 class="deal-title mb-10">
-												<a href="deal_single.html">New and Refurbished Lenovo Laptops</a>
-											</h3>
-											<ul class="deal-meta list-inline mb-10 color-mid">
-												<li><i class="ico fa fa-map-marker mr-10"></i>United State</li>
-												<li><i class="ico fa fa-shopping-basket mr-10"></i>65 Bought</li>
-											</ul>
-											<p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-										</div>
-										<div class="deal-price pos-r mb-15">
-											<h3 class="price ptb-5 text-right"><span class="price-sale">$700.00</span>$576.00</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-4">
-								<div class="deal-single panel">
-									<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" 
-									        data-bg-img="{{asset('public/front/assets/images/deals/deal_06.jpg')}}">
-										<div class="label-discount left-20 top-15">-60%</div>
-										<ul class="deal-actions top-15 right-20">
-											<li class="like-deal">
-												<span>
-													<i class="fa fa-heart"></i>
-												</span>
-											</li>
-											<li class="share-btn">
-												<div class="share-tooltip fade">
-													<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-												</div>
-												<span><i class="fa fa-share-alt"></i></span>
-											</li>
-											<li>
-												<span>
-													<i class="fa fa-camera"></i>
-												</span>
-											</li>
-										</ul>
-										<div class="time-left bottom-15 right-20 font-md-14">
-											<span>
-												<i class="ico fa fa-clock-o mr-10"></i>
-												<span class="t-uppercase" data-countdown="2019/10/10 12:00:00"></span>
-											</span>
-										</div>
-										<div class="deal-store-logo">
-											<img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-										</div>
-									</figure>
-									<div class="bg-white pt-20 pl-20 pr-15">
-										<div class="pr-md-10">
-											<div class="rating mb-10">
-												<span class="rating-stars rate-allow" data-rating="5">
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-												<span class="rating-reviews">
-												  ( <span class="rating-count">29</span> rates )
-												</span>
-											</div>
-											<h3 class="deal-title mb-10">
-												<a href="deal_single.html">Buying a TV Is Easy When You Know These Terms</a>
-											</h3>
-											<ul class="deal-meta list-inline mb-10 color-mid">
-												<li><i class="ico fa fa-map-marker mr-10"></i>United Kingdom</li>
-												<li><i class="ico fa fa-shopping-basket mr-10"></i>134 Bought</li>
-											</ul>
-											<p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-										</div>
-										<div class="deal-price pos-r mb-15">
-											<h3 class="price ptb-5 text-right"><span class="price-sale">$300.00</span>$250.00</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-						  </div>
+						@endforeach
+					
+						
 					</div>
+				
 				</section>
-
+                       <!-- section for coupons -->
 				<section class="section latest-coupons-area ptb-30">
 					<header class=" pos-r line">
-						<h3 class="section-title font-18">Latest Deals</h3>
+						<h3 class="section-title font-18">Latest Coupons</h3>
 						<a class="btn btn-o btn-xs pos-a right-10 pos-tb-center">View All</a>
 					</header>
 
 					<div class="latest-coupons-slider owl-slider" data-autoplay-hover-pause="true" data-loop="true" data-autoplay="true" data-smart-speed="1000" data-autoplay-timeout="10000" data-margin="30" data-nav-speed="false" data-items="1" data-xxs-items="1" data-xs-items="2" data-sm-items="2" data-md-items="3" data-lg-items="4">
+						<?php
+						//use App\Models\Coupon;
+						$getCoupons=Coupon::getCoupons();
+						// echo "<pre>";print_r($getCategories);die;
+					   ?>
+					   @foreach($getCoupons as $key => $coupon)
 						<div class="coupon-item">
 							<div class="coupon-single panel t-center">
-								<div class="ribbon-wrapper is-hidden-xs-down">
+								<!--<div class="ribbon-wrapper is-hidden-xs-down">
 									<div class="ribbon">Featured</div>
-								</div>
+								</div>-->
+								<a  class="m-d" name="id" id="id" style="color:blue!important">{{$coupon['id']}}</a>
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_01.jpg')}}" alt="">
+											<img class="store-logo" src="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}" alt="">
 										</div>
 										<!-- end media -->
 									</div>
@@ -652,18 +215,20 @@
 
 									<div class="col-xs-12">
 										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
+											<!--<ul class="deal-meta list-inline mb-10">
 												<li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
 												<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>125 Used</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">10% OFF</h4>
+											</ul>-->
+											<h4 class="color-green mb-10 t-uppercase">{{$coupon['coupon_discount']}}%  OFF</h4>
 											<h5 class="deal-title mb-10">
-							<a href="#">10% off select XPS & Alienware laptops</a>
-						</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 01/01/2018</p>
+												<a href="#">{{$coupon['title']}}</a>
+											</h5>
+												<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On {{$coupon['expires']}}</p>
 											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_01">Get Coupon Code</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
+												<button class="show-code btn btn-sm btn-block coupon" data-toggle="modal"
+												 data-id="{{$coupon['id']}}" data-id="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}"
+												   data-target="#coupon">Get Coupon Code</button>
+												<div class="coupon-hide">{{$coupon['coupon_code']}}</div>
 											</div>
 										</div>
 									</div>
@@ -672,266 +237,186 @@
 								<!-- end row -->
 							</div>
 						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_02.jpg')}}" alt="">
+						@endforeach
+					</div>
+					<div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon">
+						<div class="modal-dialog">
+							<div class="modal-content panel">
+								<div class="modal-body">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+									</button>
+									<a   name="id" id="id" style="color:blue!important"></a>
+									<div class="row row-v-10">
+										<div class="col-md-10 col-md-offset-1">
+											<img id="store" src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
+											<h3 class="mb-20">Save 30% off New Domains Names</h3>
+											<p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
 										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
+										
+										<div class="col-md-10 col-md-offset-1 copy-div " id="copy-div">
+											<h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
+											<input type="text" id="copy-text" class="coupon-code" value="X455-17GT-OL58">
+											<button id="btncopy">
+											<i id="fa" class="fa fa-clone"></i>
+											</button>
+										</div>
+										<div class="col-md-10 col-md-offset-1">
+											<a href="#" class="btn btn-link">Visit Our Store</a>
+										</div>
+										<style>
+											.copy-div button{
+												padding:10px;
+												background:#5784f5;
+												color:#fff;
+												font-size:18px;
+												border:none;
+												outline:none;
+												border-radius:10px;
+												cursor:pointer;
+											}
+											
+											.copy-div button:active{
+												background: #809ce2;
+											}
+											.copy-div button:before{
+                                             content:"copied";
+											 position: absolute;
+											 top:-15px;
+											 right:-12px;
+											 background: #5c81dc;
+											 padding:8px 10px;
+											 border-radius:20px;
+											 font-size:15px;
+											 display:none;
+											
+											}
+											.copy-div button:after{
+											content:"";
+											 position: absolute;
+											 top:20px;
+											 right:25px;
+											 width:10px;
+											 height:10px;
+											 background: #5c81dc;
+											 transform: rotate(45deg);
+											 display:none;
+											
+											}
+											.copy-div .active{
+												<--background: rgb(194, 14, 14);-->
+											}
+											.copy-div .active~button:before,
+											.copy-div .active~button:after{
+												display:block;
+											}
 
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-muted"><i class="ico fa fa-map-marker mr-5"></i>California</li>
-												<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>13 Used</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">15% OFF</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">15% off 2 select Amazon Fire cases</a>
-						</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 05/02/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_02">Show Code</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
+										</style>
+										<script type="text/javascript">
+											     const copydiv=document.getElementById("copy-div");
+												 const copytext=document.getElementById("copy-text");
+												 const btncopy=document.getElementById("btncopy");
+												 const facopy=document.getElementById("fa");
+												  
+												 btncopy.onclick=function(){
+													copytext.select();
+													document.execCommand("Copy");
+													copytext.classList.add("active");
+													//window.getSelection().removeAllRanges();
+													 setTimeout(function(){
+														 copytext.classList.remove("active");
+													 },2500);
+
+													}
+													$('#coupon').on('show.bs.modal', function (event) {
+														console.log('true');
+														var button = $(event.relatedTarget) // Button that triggered the modal
+														//var recipient = button.data('whatever') // Extract info from data-* attributes
+														// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+														// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+														var modal = $(this)
+														//modal.find('.modal-title').text('New message to ' + recipient)
+														//modal.find('.modal-body input').val(recipient)
+														});
+													 $(document).on('click','.coupon',function(){
+														 var _this=$(this).parent('div');
+
+														 $('#m-id').val(_this.find('.m-id').text());
+													 });
+
+
+
+												/* $(#coupon).on('show.bs.model',function(event){
+														 console.log('true');
+
+														 var button=$(event.relatedTarget);
+														 var id=button.data('id');
+														 var stotre=button.data('store');
+
+
+														 var model=$(this)
+														 model.find('.model-body #id').val(id);
+														 model.find('.model-body #store').val(id);
+
+													 }); */
+
+													
+											
+										</script>
+										<div class="col-md-10 col-md-offset-1">
+											<div class="like-report mb-10">
+												<span>Share this coupon :</span>
+												<ul class="list-inline social-icons social-icons--colored mt-10">
+													<li class="social-icons__item">
+														<a href="#"><i class="fa fa-facebook"></i></a>
+													</li>
+													<li class="social-icons__item">
+														<a href="#"><i class="fa fa-twitter"></i></a>
+													</li>
+													<li class="social-icons__item">
+														<a href="#"><i class="fa fa-google-plus"></i></a>
+													</li>
+													<li class="social-icons__item">
+														<a href="#"><i class="fa fa-linkedin"></i></a>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</div>
-									<!-- end col -->
 								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_03.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-muted"><i class="ico fa fa-tag mr-5"></i>Coupon</li>
-												<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>425 Used</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">20% OFF</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">Flat 40% off hotel bookings in 10 cities</a>
-						</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 15/01/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_03">See Sale</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_04.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-												<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>230 Used</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">30% OFF</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">There is no place like home 25% off</a>
-						</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 02/03/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_04">Print Code</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="ribbon-wrapper is-hidden-xs-down">
-									<div class="ribbon">Featured</div>
-								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_05.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-muted"><i class="ico fa fa-tag mr-5"></i>Coupon</li>
-												<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>86 Used</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">10% OFF</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">10% off $399+ refurbished laptops</a>
-						</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 20/02/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_05">Show Code</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_06.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-												<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>24 Used</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">25% OFF</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">There is no place like home 25% off</a>
-						</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 14/01/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_06">Show Coupon</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
+								
 							</div>
 						</div>
 					</div>
 				</section>
+
+				  <!-- section for stores --->
 				<section class="section stores-area stores-area-v1 ptb-30">
+					<?php
+						  // use App\Models\Store;
+						   $getStores=Store::getstores();
+						  // echo "<pre>";print_r($getStores);die;
+							?>
 					<header class=" pos-r line">
 						<h3 class="section-title font-18">Popular Stores</h3>
-						<a href="stores_01.html" class="btn btn-o btn-xs pos-a right-10 pos-tb-center">All Stores</a>
+						<a href="{{route('stores_search')}}" class="btn btn-o btn-xs pos-a right-10 pos-tb-center">All Stores</a>
 					</header>
 					<div class="popular-stores-slider owl-slider" data-loop="true" data-autoplay="true" data-smart-speed="1000" data-autoplay-timeout="10000" data-margin="20" data-items="2" data-xxs-items="2" data-xs-items="2" data-sm-items="3" data-md-items="5" data-lg-items="6">
+						@foreach($getStores as $key => $store)
 						<div class="store-item t-center">
 							<a href="store_single_01.html" class="panel is-block">
 								<div class="embed-responsive embed-responsive-4by3">
 									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
+										<img src="{{asset('public/backend/dist/img/store_images/'.$store['image'])}}" alt="">
 									</div>
 								</div>
-								<h6 class="store-name ptb-10">Amazon</h6>
+								<h6 class="store-name ptb-10">{{$store['name']}}</h6>
 							</a>
 						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Ashford</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">DELL</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Card Cash</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Finish Line</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">JC Penny</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_07.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Callaway Golf</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_08.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Car Toys</h6>
-							</a>
-						</div>
+					@endforeach
 					</div>
 				</section>
 
-
+                      <!-- section post ---->
 				<section class="section latest-news-area blog-area blog-grid blog-3-col ptb-30">
 					<header class=" pos-r  line">
 						<h3 class="section-title font-18">Latest News</h3>
@@ -939,11 +424,17 @@
 					</header>
 
 					<div class="row row-tb-20">
-
+						<?php
+							use App\Models\Blog;
+							$getBlog=Blog::getBlog();
+							$newPosts=Blog::newPosts();
+						// echo "<pre>";print_r($getCategories);die;
+					    ?>
+					     @foreach($newPosts as $key => $blog)
 						<!-- Blog Post -->
 						<div class="blog-post col-xs-12 col-sm-6 col-md-4">
 							<article class="entry panel">
-								<figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_01.jpg')}}">
+								<figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/backend/dist/img/blog_images/'.$blog['main_image'])}}">
 									<div class="entry-date">
 										<h4>13</h4>
 										<h6>JUN</h6>
@@ -952,8 +443,8 @@
 								<div class="entry-wrapper pt-20 pb-10 prl-20">
 									<header class="entry-header">
 										<h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
-						<a href="blog_single_standard.html">Restaurant Employer Read Clients Orders On His iPad</a>
-					</h4>
+											<a href="blog_single_standard.html">{{$blog['title']}}</a>
+										</h4>
 										<div class="entry-meta mb-10">
 											<ul class="tag-info list-inline">
 												<li><i class="icon fa fa-user"></i> By : John Doe</li>
@@ -962,81 +453,17 @@
 										</div>
 									</header>
 									<div class="entry-content">
-										<p class="entry-summary">Vivamus sem massa, cursus at mollis eu, euismod id risus. Vestibulum nunc ante, sagittis ut nisl at, porta porttitor justo. Nam imperdiet im...</p>
+										<p class="entry-summary">{{$blog['description']}}</p>
 									</div>
 									<footer class="entry-footer text-right">
-										<a href="blog_single_standard.html" class="more-link btn btn-link">Continue reading <i class="icon fa fa-long-arrow-right"></i></a>
+										<a href="{{route('blog_single')}}" class="more-link btn btn-link">Continue reading <i class="icon fa fa-long-arrow-right"></i></a>
 									</footer>
 								</div>
 							</article>
 						</div>
 						<!-- End Blog Post -->
-
-						<!-- Blog Post -->
-						<div class="blog-post col-xs-12 col-sm-6 col-md-4">
-							<article class="entry panel">
-								<figure class="entry-media embed-responsive embed-responsive-16by9">
-									<iframe src="https://player.vimeo.com/video/28786762?portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-									<div class="entry-date">
-										<h4>13</h4>
-										<h6>JUN</h6>
-									</div>
-								</figure>
-								<div class="entry-wrapper pt-20 pb-10 prl-20">
-									<header class="entry-header">
-										<h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
-											<a href="blog_single_vimeo.html">Amazing Classic Interior Design With Perfect Lighting</a>
-										</h4>
-										<div class="entry-meta mb-10">
-											<ul class="tag-info list-inline">
-												<li><i class="icon fa fa-user"></i> By : John Doe</li>
-												<li><i class="icon fa fa-comments"></i> 14 Comments </li>
-											</ul>
-										</div>
-									</header>
-									<div class="entry-content">
-										<p class="entry-summary">Vivamus sem massa, cursus at mollis eu, euismod id risus. Vestibulum nunc ante, sagittis ut nisl at, porta porttitor justo. Nam imperdiet im...</p>
-									</div>
-									<footer class="entry-footer text-right">
-										<a href="blog_single_vimeo.html" class="more-link btn btn-link">Continue reading <i class="icon fa fa-long-arrow-right"></i></a>
-									</footer>
-								</div>
-							</article>
-						</div>
-						<!-- End Blog Post -->
-
-						<!-- Blog Post -->
-						<div class="blog-post col-xs-12 col-sm-6 col-md-4">
-							<article class="entry panel">
-								<figure class="entry-media embed-responsive embed-responsive-16by9">
-									<iframe src="https://www.youtube.com/embed/mcixldqDIEQ?v=mcixldqDIEQ" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-									<div class="entry-date">
-										<h4>13</h4>
-										<h6>JUN</h6>
-									</div>
-								</figure>
-								<div class="entry-wrapper pt-20 pb-10 prl-20">
-									<header class="entry-header">
-										<h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
-						<a href="blog_single_youtube.html">English Breakfast Tea With Tasty Donut Desserts</a>
-					</h4>
-										<div class="entry-meta mb-10">
-											<ul class="tag-info list-inline">
-												<li><i class="icon fa fa-user"></i> By : John Doe</li>
-												<li><i class="icon fa fa-comments"></i> 14 Comments </li>
-											</ul>
-										</div>
-									</header>
-									<div class="entry-content">
-										<p class="entry-summary">Vivamus sem massa, cursus at mollis eu, euismod id risus. Vestibulum nunc ante, sagittis ut nisl at, porta porttitor justo. Nam imperdiet im...</p>
-									</div>
-									<footer class="entry-footer text-right">
-										<a href="blog_single_youtube.html" class="more-link btn btn-link">Continue reading <i class="icon fa fa-long-arrow-right"></i></a>
-									</footer>
-								</div>
-							</article>
-						</div>
-						<!-- End Blog Post -->
+                        @endforeach
+					
 
 					</div>
 				</section>

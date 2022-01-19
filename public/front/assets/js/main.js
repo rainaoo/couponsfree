@@ -458,7 +458,7 @@
     
 })(jQuery);
 
-$(document).ready(function(){
+/*$(document).ready(function(){
 
     $(".verticalmenu-main").click(function(){
     $(".toggle-nav").toggleClass("act");
@@ -478,4 +478,4 @@ $(document).ready(function(){
         } else {
         $("#header-sticky").removeClass("sticky-menu-active");
         }
-});
+});*/

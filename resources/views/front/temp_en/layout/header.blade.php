@@ -1,3 +1,8 @@
+<?php
+use App\Models\Category;
+use App\Models\Store;
+  ?>
+
 <!-- WRAPPER                                   -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <div id="pageWrapper" class="page-wrapper">
@@ -90,24 +95,18 @@
 														 <!--start category search ------------>
 														<ul class="dropdown-menu list-unstyled">
 															<li class="dropdown-item " data-value="0"><span>All Categories</span></li>
+															
 																 <ul class="list-unstyled pl-5">
+																	<?php	
+																	//use App\Models\Category;
+																	$getCategories=Category::getCategories();
+																	// echo "<pre>";print_r($getCategories);die;
+																	?>
+																		@foreach($getCategories as $key => $category)
 																	<li class="dropdown-item" data-value="3" >
-																		<span>Food & drink</span>
+																		<span>{{$category['name']}}</span>
 																	</li>
-																	<li class="dropdown-item" data-value="10" >
-														                 <span>Event</span>
-																		<ul class="list-unstyled">
-																			<li class="dropdown-item" data-value="11" >
-														                        <span>Fitnes</span>
-																	       </li>
-														                	<li class="dropdown-item" data-value="12" >
-														                       <span></span>
-																	       </li>
-															               <li class="dropdown-item" data-value="13" >
-														                       <span></span>
-																          </li>
-																	   </ul>
-																	</li>
+																	@endforeach
 																 </ul>
 														</ul>
 														 <!--endcategory search ------------>
@@ -122,25 +121,7 @@
 					
 									</div>
 								</div>
-								<!---- cart section & wishlist -------------->
-								<div class="col-sm-4 t-xs-center t-md-right">
-									<!-- cart section ---->
-									<div class="header-cart">
-										<a href="{{route('cart')}}">
-											<span class="icon lnr lnr-cart"></span>
-											<div><span class="cart-number">0</span>
-											</div>
-											<span class="title">Cart</span>
-										</a>
-									</div>
-									<!----- wishlist section ------------>
-									<div class="header-wishlist ml-20">
-										<a href="{{route('wishlist')}}">
-											<span class="icon lnr lnr-heart font-30"></span>
-											<span class="title">Wish List</span>
-										</a>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -148,12 +129,12 @@
 			</div>
 			<!-- End Header middle Header 2 -->
 
-			<!-- Header Menu 3 -->
+			<!-- Header Menu 3 for  -->
 			<div id="header"  class="header-3 sticky-menu">
-				<!--start header for mobile style -------->
+				<!--start header for mobile style mobil screen -------->
 				<div class="header-mobile hidden-md-up">
 					<!--- style menu in mobil -------->
-					<div class="hidden-md-up text-xs-center mobile d-flex align-items-center justify-content-end">
+					<div class="hidden-md-up text-xs-center mobile align-items-center justify-content-end">
 						<div id="_mobile_mainmenu" class="item-mobile-top">
 							<div class="nav-header">
 								<span class="nav-toggle" data-toggle=".header-navbar">
@@ -170,21 +151,14 @@
 											<span class=""></span><a href="{{route('home')}}" title="Home">Home</a>
 										</li>
 										<li class="item  has-sub dropdown-mega-menu" >
-											<a href="{{route('deal_grid_sidebar')}}" title="Deals">Deals <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-											<div class="dropdown-menu mega-menu" style="">
-												<ul class="">
-													<li><a href="{{route('deal_single')}}">deals 1</a>
-													</li>
-													<li><a href="{{route('deal_single')}}">deals 2</a>
-													</li>
-													<li><a href="{{route('deals_grid')}}">all deals</a>
-													</li>
-											</ul>
-											</div>
+											<a href="{{route('deals_grid')}}" title="Deals">Deals <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+											<!--<div class="dropdown-menu mega-menu" style="">
+									
+											</div>-->
 										</li>
 										<li class="item has-sub dropdown-mega-menu" >
 											<a href="{{route('coupons_grid')}}" title="Coupons">Coupons <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-												<div class="dropdown-menu mega-menu" >
+												<!--<div class="dropdown-menu mega-menu" >
 													<ul class="">
 										                 <span class="menu-title">Copouns Style</span>
 															<li><a href="{{route('coupons_grid')}}">Grid View</a>
@@ -195,7 +169,7 @@
 															</li>
 															
 													</ul>
-												 </div>
+												 </div>-->
 										 </li>
 										<li class="item  has-sub dropdown-mega-menu" >
 											<a href="{{route('stores_search')}}">Stores <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
@@ -214,35 +188,23 @@
 											<a href="{{route('contact')}}">Contact Us<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
 										</li>
 										<li class="item  has-sub">
-											<a href="{{route('blogs')}}">Blog<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+											<a href="{{route('blog')}}">Blog<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
 											<div class="dropdown-menu"style="width:270px" >
 											</div>	
 										</li>
-										<li class="item  has-sub dropdown-mega-menu">
-												<a href="{{route('checkout_method')}}">Checkout<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-												<div class="dropdown-menu mega-menu"style="" >
-													<ul>
-														<li><a href="{{route('checkout_method')}}">Checkout method</a>
-														</li>
-														<li><a href="{{route('checkout_billing')}}">Billing Information</a>
-														</li>
-														<li><a href="{{route('checkout_payment')}}">Payment Information</a>
-														</li>
-													</ul>
-											</div>	
-										</li>
+									
 									</ul>
 							    </div>
 						</div>
 					</div>
 
 				</div>
-               <!--end header for mobile style -------->
+               <!--end header for mobile style  -------->
 			
 			   <!--start header for full screen style -------->
 				<div class="header-bottom hidden-sm-down">
 					<div class="container">
-					   <div class="row d-flex align-items-center">
+					    <div class="row d-flex align-items-center">
 						 <!------------start category ------------------------------>
 							<div class="contentsticky_verticalmenu verticalmenu-main col-lg-3 col-md-1 d-flex" data-textshowmore="Show More" data-textless="Hide" data-desktop_item="4">
 								<div class="toggle-nav d-flex align-items-center justify-content-start allcategory ">
@@ -255,9 +217,15 @@
 										<div class="box-content block_content">
 											<div id="verticalmenu" class="verticalmenu" role="navigation">
 												<ul class="menu level1  categorys">
+											<?php	
+												//use App\Models\Category;
+												$getCategories=Category::getCategories();
+											    // echo "<pre>";print_r($getCategories);die;
+												?>
+									                @foreach($getCategories as $key => $category)
 													<li class="item  parent">
 														<a href="#" title="Food &amp; Drink">
-															<i class="fa fa-cutlery" style=""></i>Food &amp; Drink  <span class="">40</span></a>
+															<i class="fa fa-cutlery" style=""></i>{{$category['name']}} <span class="">40</span></a>
 															<div class="dropdown-menu" style="width:222px">
 																<ul>
 																	<li class="item ">
@@ -280,7 +248,8 @@
 																</ul>
 															</div>
 													</li>
-													<li class="item  parent group">
+													 @endforeach
+												<!--	<li class="item  parent group">
 														<a href="#" title="Events">
 															<i class="fa fa-calendar" style=""></i>Events <span class="">44</span></a>
 															<div class="dropdown-menu" style="width: 922px; top: -73px;">
@@ -410,7 +379,7 @@
 														<span class="menu-sub-title">Sony BRAVIA, SamSung, TV 4K ...</span>
 													</li>
 													<li class="more extra">Show More
-													</li>
+													</li>0-->
 												</ul>
 											</div>
 									   </div>
@@ -420,8 +389,8 @@
 							<!--- end  category ---------------------->
 							<!--------------------------------------------------------------------------------------------->
 							<!--------------------- start menue ----------------------------->
-							<div class="col-lg-9 col-md-11 header-menu d-flex align-items-center justify-content-start">
-								<div class="header-menu-search d-flex justify-content-between w-100 align-items-center">
+							<div class="col-lg-9 col-md-11 header-menu align-items-center justify-content-start">
+								<div class="header-menu-search justify-content-between w-100 align-items-center">
 									<div id="_desktop_top_menu">
 										<nav id="nov-megamenu" class="clearfix">
 											<div class="nav-header">
@@ -452,7 +421,7 @@
 														</li>
 														<li class="item menu-page group" >
 															<a href="{{route('coupons_grid')}}" title="Coupons">Coupons <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-																<div class="dropdown-menu" >
+																<!--<div class="dropdown-menu" >
 																	<ul class=""><li class="item container group" >
 																		<div class="dropdown-menu" >
 																			<ul class="">
@@ -482,7 +451,7 @@
 																		</div>
 																	</li>
 																</ul>
-															</div>
+															</div>-->
 														</li>
 														<li class="item  has-sub " >
 															<a href="{{route('stores_search')}}">Stores <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
@@ -504,19 +473,7 @@
 															<a href="{{route('blogs')}}">Blog</a>
 															
 												        </li>
-														<li class="item  has-sub">
-																<a href="checkout_method.html">Checkout<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-																<div class="dropdown-menu"style="width:270px" >
-																	<ul>
-																		<li><a href="{{route('checkout_method')}}">Checkout method</a>
-																		</li>
-																		<li><a href="{{route('checkout_billing')}}">Billing Information</a>
-																		</li>
-																		<li><a href="{{route('checkout_payment')}}">Payment Information</a>
-																		</li>
-																	</ul>
-															</div>	
-														</li>
+													
 												    </ul>
 											</div>
 										</nav>

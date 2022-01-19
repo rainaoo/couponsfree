@@ -362,14 +362,67 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
-                <span>Charts</span>
+                <span>banners</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                <li><a href="{{route('banners')}}"><i class="fa fa-circle-o"></i> show banners</a></li>
+             
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>stores</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{route('stores')}}"><i class="fa fa-circle-o"></i> show stores</a></li>
+             
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Category</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{route('Categories')}}"><i class="fa fa-circle-o"></i> show Categories</a></li>
+             
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>coupons</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{route('coupons')}}"><i class="fa fa-circle-o"></i> show coupons</a></li>
+             
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>deal</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{route('deals')}}"><i class="fa fa-circle-o"></i> show deals</a></li>
+             
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>blog</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{route('blog')}}"><i class="fa fa-circle-o"></i> show blogs</a></li>
+             
               </ul>
             </li>
             <li class="treeview">
@@ -684,13 +737,11 @@
           "autoWidth": false
         });
       });
-
-
-    
     </script>
+ 
 <!-- custom admin js for delete-->
-<script src="{{ url('backend/dist/js/admin_script.js') }}"></script>
+<script src="{{ url('public/backend/dist/js/admin_script.js') }}"></script>
     <!-- swwet script for confirm-->
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </body>
 </html>

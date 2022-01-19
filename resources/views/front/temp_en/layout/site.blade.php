@@ -413,11 +413,18 @@
 
        .modal-content .btn.btn-link, .btn.btn-o {
             color: #ff0043!important;
+            font-weight: 700;
             background-color: transparent!important;
         }
         .modal-content .btn.btn-link, .btn.btn-o:hover {
             color: #ff0043!important;
             background-color: transparent!important;
+        }
+        .modal.in .modal-dialog {
+            margin: 30px auto !important;
+           max-width:600px!important;
+            width:600px!important;
+             margin-top:10vh!important; 
         }
        / * ––––––––––––––––––––––––––––––––––––––––––––– */
     /* ––––––––––––>>> Coupons Header  <<<–––––––––– */
@@ -488,6 +495,7 @@
     contact-form h3 {
         color: #000!important;
     }
+   
 </style>
         
         

@@ -6,6 +6,12 @@ use App\Http\Controllers\Rtlcontroller;
 use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\backend\Pagecontroller;
 use App\Http\Controllers\backend\Postcontroller;
+use App\Http\Controllers\backend\BannersController;
+use App\Http\Controllers\backend\StoreController;
+use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\CouponController;
+use App\Http\Controllers\backend\DealController;
+use App\Http\Controllers\backend\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +28,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 /****************** template english languges ************************* */
+  /*** banners******* */
+
 Route::get('/',[Basecontroller::class,'home'])->name('home');
 Route::get('/guide',[Basecontroller::class,'guide'])->name('guide');
 Route::get('/faq',[Basecontroller::class,'faq'])->name('faq');
@@ -88,12 +96,54 @@ Route::get('/ar/deal_list',[Rtlcontroller::class,'deal_list'])->name('deal_list-
  Route::get('/ar/checkout_billing',[Rtlcontroller::class,'checkout_billing'])->name('checkout_billing-ar');
  Route::get('/ar/checkout_payment',[Rtlcontroller::class,'checkout_payment'])->name('checkout_payment-ar');
 
+
 Route::get('/admin',[Admincontroller::class,'index'])->name('login');
 Route::post('/admin',[Admincontroller::class,'makeLogin'])->name('makelogin');
 
 Route::group(['middleware'=>'auth:admin'],function(){
     Route::get('/dashboard',[Admincontroller::class,'dashboard'])->name('dashboard_en');
     Route::get('/dashboard_ar',[Admincontroller::class,'dashboard_ar'])->name('dashboard_ar');
+
+    //banners
+    Route::get('/banners',[BannersController::class,'banners'])->name('banners');
+    Route::match(['get','post'],'/add_edit_banner/{id?}',[BannersController::class,'addEditBanners'])->name('addeditebanner');
+    Route::post('update-banner-status',[BannersController::class,'updateBannerStatus']);
+    Route::get('delete-banner/{id}',[BannersController::class,'deletBanner']);
+   
+    //stores  brands
+    Route::get('/store',[StoreController::class,'stores'])->name('stores');
+    Route::post('update-store-status',[StoreController::class,'updateStoreStatus']);
+    Route::match(['get','post'],'add_edit_store/{id?}',[StoreController::class,'addEditStore'])->name('addeditestore');
+     Route::get('delete-store/{id}',[StoreController::class,'deletStore']);
+
+
+     //category
+    Route::get('/category',[CategoryController::class,'Categories'])->name('Categories');
+    Route::post('update-category-status',[CategoryController::class,'updateCategoryStatus']);
+    Route::match(['get','post'],'add_edit_category/{id?}',[CategoryController::class,'addEditCategories'])->name('addeditecategory');
+     Route::get('delete-category/{id}',[CategoryController::class,'deletCategory']);
+
+     //coupons
+     Route::get('coupons',[CouponController::class,'coupons'])->name('coupons');;
+     Route::match(['get','post'],'add_edit_coupon/{id?}',[CouponController::class,'addEditCoupon'])->name('addeditecoupon');
+     Route::post('update-coupon-status',[CouponController::class,'updateCouponStatus']);
+     Route::get('delete-coupon/{id}',[CouponController::class,'deletCoupon']);
+     Route::get('add_edit_coupon/delete-coupon-image/{id}',[CouponController::class,'deletCouponImage']);
+   
+
+     //deals
+     Route::get('deals',[DealController::class,'deals'])->name('deals');;
+     Route::match(['get','post'],'add_edit_deal/{id?}',[DealController::class,'addEditDeal'])->name('addeditedeal');
+     Route::post('update-deal-status',[DealController::class,'updateDealStatus']);
+     Route::get('delete-deal/{id}',[DealController::class,'deletDeal']);
+     Route::get('add_edit_deal/delete-deal-image/{id}',[DealController::class,'deletDealImage']);
+
+      //blogs
+      Route::get('blog',[BlogController::class,'blogs'])->name('blog');;
+      Route::match(['get','post'],'add_edit_blog/{id?}',[BlogController::class,'addEditBlog'])->name('addediteblog');
+      Route::post('update-blog-status',[BlogController::class,'updateBlogStatus']);
+      Route::get('delete-blog/{id}',[BlogController::class,'deletBlog']);
+      Route::get('add_edit_blog/delete-blog-image/{id}',[BlogController::class,'deletBlogImage']);
 
     //page
     Route::get('/add-page',[Pagecontroller::class,'addpage'])->name('addpage');
