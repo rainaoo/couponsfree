@@ -40,7 +40,7 @@ Route::get('/result',[Basecontroller::class,'result'])->name('result');
 Route::get('/cart',[Basecontroller::class,'cart'])->name('cart');
 Route::get('/wishlist',[Basecontroller::class,'wishlist'])->name('wishlist');
  /************* deals pages **************************************** */
-Route::get('/deal_single',[Basecontroller::class,'deal_single'])->name('deal_single');
+Route::get('/deal_single/{id?}',[DealController::class,'deal_single'])->name('deal_single');
 Route::get('/deals_grid',[Basecontroller::class,'deals_grid'])->name('deals_grid');
 Route::get('/deal_grid_sidebar',[Basecontroller::class,'deal_grid_sidebar'])->name('deal_grid_sidebar');
 Route::get('/deal_list',[Basecontroller::class,'deal_list'])->name('deal_list');
@@ -51,7 +51,7 @@ Route::get('/deal_list',[Basecontroller::class,'deal_list'])->name('deal_list');
  /************* stores pages **************************************** */
  Route::get('/stores_search',[Basecontroller::class,'stores_search'])->name('stores_search');
  Route::get('/stores_categores',[Basecontroller::class,'stores_categores'])->name('stores_categores');
- Route::get('/stores_single',[Basecontroller::class,'stores_single'])->name('stores_single');
+ Route::get('/stores_single/{id?}',[StoreController::class,'stores_single'])->name('stores_single');
  /************* contact page **************************************** */
  Route::get('/contact',[Basecontroller::class,'contact'])->name('contact');
  /************* blogs page **************************************** */
@@ -145,18 +145,7 @@ Route::group(['middleware'=>'auth:admin'],function(){
       Route::get('delete-blog/{id}',[BlogController::class,'deletBlog']);
       Route::get('add_edit_blog/delete-blog-image/{id}',[BlogController::class,'deletBlogImage']);
 
-    //page
-    Route::get('/add-page',[Pagecontroller::class,'addpage'])->name('addpage');
-    Route::post('/create-page',[Pagecontroller::class,'createpage'])->name('create-page');
-    Route::get('/company-page-add',[Pagecontroller::class,'ourcompany'])->name('company.page.add');
-
-
-    //post
-    Route::get('/show-post',[Postcontroller::class,'show'])->name('show-post');
-    Route::get('/add-post',[Postcontroller::class,'create'])->name('addpost');
-    Route::get('/post-edit/{post_id?}',[Postcontroller::class,'create'])->name('post-edit');
-    Route::post('/add-post/{post_id?}',[Postcontroller::class,'store'])->name('post-store');
-    Route::get('/post-delete/{post_id?}',[Postcontroller::class,'delete'])->name('post-delete');
+    
 
 });
 

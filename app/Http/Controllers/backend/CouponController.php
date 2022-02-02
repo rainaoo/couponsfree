@@ -26,7 +26,7 @@ class CouponController extends Controller
         if($id==""){
             $title="Add coupon";
             $coupon= new Coupon;
-            $coupondate=array();
+            $coupondata=array();
             $message="coupon added successfully";
         }else{
             $title="Edit coupon";

@@ -152,7 +152,7 @@ use App\Models\Coupon;
 									<div class="time-left bottom-15 right-20 font-md-14">
 										<span>
 											<i class="ico fa fa-clock-o mr-10"></i>
-											<span class="t-uppercase" data-countdown="">{{$deal['expires']}}</span>
+											<span class="t-uppercase" >{{$deal['expires']}}</span>
 										</span>
 									</div>
 									<div class="deal-store-logo">
@@ -164,7 +164,7 @@ use App\Models\Coupon;
 									<div class="pr-md-10">
 										
 										<h3 class="deal-title mb-10">
-											<a href="deal_single.html">{{$deal['title']}} </a>
+											<a href="{{ url('deal_single',$deal->id)}}">{{$deal['title']}} </a>
 										</h3>
 										<ul class="deal-meta list-inline mb-10 color-mid">
 											<li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
@@ -203,11 +203,11 @@ use App\Models\Coupon;
 								<!--<div class="ribbon-wrapper is-hidden-xs-down">
 									<div class="ribbon">Featured</div>
 								</div>-->
-								<a  class="m-d" name="id" id="id" style="color:blue!important">{{$coupon['id']}}</a>
+								<a  class="id" name="id" id="id" style="color:blue!important">{{$coupon['id']}}</a>
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}" alt="">
+											<img class="store-logo" id="image" src="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}" alt="">
 										</div>
 										<!-- end media -->
 									</div>
@@ -219,13 +219,13 @@ use App\Models\Coupon;
 												<li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
 												<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>125 Used</li>
 											</ul>-->
-											<h4 class="color-green mb-10 t-uppercase">{{$coupon['coupon_discount']}}%  OFF</h4>
+											<h4 class="color-green mb-10 t-uppercase" id="dicount">{{$coupon['coupon_discount']}}%  OFF</h4>
 											<h5 class="deal-title mb-10">
-												<a href="#">{{$coupon['title']}}</a>
+												<a href="#" id="title">{{$coupon['title']}}</a>
 											</h5>
 												<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On {{$coupon['expires']}}</p>
 											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block coupon" data-toggle="modal"
+												<button class="show-code btn btn-sm btn-block coupon" id="btncoupon" data-toggle="modal"
 												 data-id="{{$coupon['id']}}" data-id="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}"
 												   data-target="#coupon">Get Coupon Code</button>
 												<div class="coupon-hide">{{$coupon['coupon_code']}}</div>
@@ -245,11 +245,11 @@ use App\Models\Coupon;
 								<div class="modal-body">
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
 									</button>
-									<a   name="id" id="id" style="color:blue!important"></a>
+									<a   name="m-id" id="m-id" style="color:blue!important"></a>
 									<div class="row row-v-10">
 										<div class="col-md-10 col-md-offset-1">
 											<img id="store" src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-											<h3 class="mb-20">Save 30% off New Domains Names</h3>
+											<h3 class="mb-20" id="m-title"></h3>
 											<p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
 										</div>
 										
@@ -326,24 +326,42 @@ use App\Models\Coupon;
 														 copytext.classList.remove("active");
 													 },2500);
 
-													}
-													$('#coupon').on('show.bs.modal', function (event) {
+													};
+													
+													var btncoupon=document.getElementById("btncoupon");
+													var id=document.getElementById('id');
+													var m_id=document.getElementById('m-id');
+													var title=document.getElementById('title');
+													var m_title=document.getElementById('m-title');
+                                                    
+													btncoupon.onclick=function(){
 														console.log('true');
-														var button = $(event.relatedTarget) // Button that triggered the modal
+													     console.log(id);
+														console.log(m_id);
+														 console.log(id.text);
+														//console.log(title);
+														//console.log(m_title);
+														//console.log(title.text);
+
+														
+													     m_id.text=id.text;
+														m_title.text=title.text;
+														//var id=$('#id').val().trim();
+														//var m_id=$('#m-id').html(id);
+														//console.log(m_id);
+														//console.log(m_title.text);
+													};
+													/*$('#coupon').on('show.bs.modal', function (event) {
+														console.log('true');
+														//var button = $(event.relatedTarget) // Button that triggered the modal
 														//var recipient = button.data('whatever') // Extract info from data-* attributes
 														// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
 														// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-														var modal = $(this)
+														//var modal = $(this)
 														//modal.find('.modal-title').text('New message to ' + recipient)
 														//modal.find('.modal-body input').val(recipient)
-														});
-													 $(document).on('click','.coupon',function(){
-														 var _this=$(this).parent('div');
-
-														 $('#m-id').val(_this.find('.m-id').text());
-													 });
-
-
+														});*/
+									
 
 												/* $(#coupon).on('show.bs.model',function(event){
 														 console.log('true');
@@ -351,7 +369,6 @@ use App\Models\Coupon;
 														 var button=$(event.relatedTarget);
 														 var id=button.data('id');
 														 var stotre=button.data('store');
-
 
 														 var model=$(this)
 														 model.find('.model-body #id').val(id);
@@ -403,7 +420,7 @@ use App\Models\Coupon;
 					<div class="popular-stores-slider owl-slider" data-loop="true" data-autoplay="true" data-smart-speed="1000" data-autoplay-timeout="10000" data-margin="20" data-items="2" data-xxs-items="2" data-xs-items="2" data-sm-items="3" data-md-items="5" data-lg-items="6">
 						@foreach($getStores as $key => $store)
 						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
+							<a href="{{ url('stores_single',$store['id'])}}" class="panel is-block">
 								<div class="embed-responsive embed-responsive-4by3">
 									<div class="store-logo">
 										<img src="{{asset('public/backend/dist/img/store_images/'.$store['image'])}}" alt="">

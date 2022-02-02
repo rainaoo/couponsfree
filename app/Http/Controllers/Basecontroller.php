@@ -49,9 +49,7 @@ class Basecontroller extends Controller
     public function deal_list(){
         return view('front.temp_en.deal_list'); 
     }
-    public function deal_single(){
-        return view('front.temp_en.deal_single'); 
-    }
+   
     /************* coupons pages **************************************** */
     public function coupons_grid_sidebar(){
         return view('front.temp_en.coupons_grid_sidebar'); 
@@ -69,9 +67,7 @@ class Basecontroller extends Controller
     public function stores_categores(){
         return view('front.temp_en.stores_categores'); 
     }
-    public function stores_single(){
-        return view('front.temp_en.stores_single'); 
-    }
+   
       /************* contact us page**************************************** */
       public function contact(){
         return view('front.temp_en.contact'); 

@@ -15,7 +15,9 @@ class StoreController extends Controller
         $stores=Store::get();
         return view('admin.stores.store')->with(compact('stores'));
     }
-
+    public function stores_single(Store $id){
+        return view('front.temp_en.stores_single')->with('store',$id); 
+    }
     public function addEditStore($id=null,Request $request){
 
         if($id==""){

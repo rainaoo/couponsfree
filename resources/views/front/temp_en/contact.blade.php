@@ -9,13 +9,7 @@
 
                 <!-- Contact Us Area -->
                 <div class="contact-area contact-area-v1 panel">
-                    <div class="row row-tb-20">
-                        <div class="col-xs-12">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="http://maps.google.com/maps?q=56.7638955,-120.0681474&amp;z=4&amp;output=embed"></iframe>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="ptb-30 prl-30">
                         <div class="row row-tb-20">
                             <div class="col-xs-12 col-md-6">

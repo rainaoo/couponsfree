@@ -11,26 +11,14 @@
                     <div class="row row-rl-10">
                         <div class="col-sm-3 col-md-2 t-center">
                             <figure class="pt-20 pl-10">
-                                <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
+                                <img src="{{asset('public/backend/dist/img/store_images/'.$store['image'])}}" alt="">
                             </figure>
                         </div>
                         <div class="col-sm-5 col-md-6">
                             <div class="store-about ptb-30">
-                                <h3 class="mb-10">Amazon Store</h3>
-                                <div class="rating mb-10">
-                                    <span class="rating-stars rate-allow" data-rating="3">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o star-active"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </span>
-                                    <span class="rating-reviews">
-                            ( <span class="rating-count">205</span> rates )
-                                    </span>
-                                </div>
-                                <p class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio officiis at accusantium ducimus excepturi cumque ad commodi libero nihil rem voluptatibus veniam ipsa ullam esse quia quae fuga, quidem iusto.</p>
-                                <p class="mb-20">Sunt ea hic nam dicta odit quam obcaecati et accusamus exercitationem fuga earum incidunt tempore iure aperiam?</p>
+                                <h3 class="mb-10">{{$store['name']}}</h3>
+                                <p class="mb-15">{{$store['description']}}</p>
+                               
                                 <button class="btn btn-info">FOLLOW</button>
                             </div>
                         </div>
@@ -39,7 +27,7 @@
                                 <div class="left-splitter-header prl-10 ptb-20 bg-lighter">
                                     <div class="row">
                                         <div class="col-xs-6 t-center">
-                                            <h2>282</h2>
+                                            <h2>4566</h2>
                                             <p>Deals</p>
                                         </div>
                                         <div class="col-xs-6 t-center">

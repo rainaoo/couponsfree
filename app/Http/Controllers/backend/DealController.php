@@ -22,7 +22,9 @@ class DealController extends Controller
        // dd($banners);die;
         return view('admin.deals.deal')->with(compact('deals'));
     }
-
+    public function deal_single(Deal $id){
+        return view('front.temp_en.deal_single')->with('deal',$id); 
+    }
     public function addEditDeal(Request $request,$id=null){
         if($id==""){
             $title="Add deal";
@@ -93,7 +95,7 @@ class DealController extends Controller
      $stores=json_decode(json_encode($stores),true);
      //  echo "<pre>"; print_r($brands);die;
      $deal=Deal::with('store')->get()->find($id);
-     $store=$deal->store;
+   //  $store=$deal->store;
     // return $store->name;
         return view('admin.deals.add_edit_deal')->with(compact('title','categories',
       'dealdata','stores','deal','store'));
