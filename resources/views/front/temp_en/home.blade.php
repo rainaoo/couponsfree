@@ -134,7 +134,7 @@ use App\Models\Coupon;
 					 $getDeals=Deal::getDeals();
 					// echo "<pre>";print_r($getDeals);die;
 						//$store=Deal::store();
-						$deals=Deal::with(['store'=>function($query){
+						$Deals=Deal::with(['store'=>function($query){
 								$query->select('id','name','image');
 							}])->orderBy('id','Desc')->where('status',1)->limit(3)->get();
 							//echo "<pre>";print_r($deals);die;
@@ -142,7 +142,7 @@ use App\Models\Coupon;
 					?>
 				
 					<div class="row row-masnory row-tb-20">
-						@foreach($deals as $key => $deal)
+						@foreach($Deals as $key => $deal)
 						<div class="col-sm-6 col-lg-4">
 							<div class="deal-single panel">
 								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9"
@@ -166,10 +166,10 @@ use App\Models\Coupon;
 										<h3 class="deal-title mb-10">
 											<a href="{{ url('deal_single',$deal->id)}}">{{$deal['title']}} </a>
 										</h3>
-										<ul class="deal-meta list-inline mb-10 color-mid">
+										<!--<ul class="deal-meta list-inline mb-10 color-mid">
 											<li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
 											<li><i class="ico fa fa-shopping-basket mr-10"></i>10 Bought</li>
-										</ul>
+										</ul>-->
 										<p class="text-muted mb-20">{{$deal['description']}} </p>
 									</div>
 									<div class="deal-price pos-r mb-15">
@@ -196,8 +196,11 @@ use App\Models\Coupon;
 						//use App\Models\Coupon;
 						$getCoupons=Coupon::getCoupons();
 						// echo "<pre>";print_r($getCategories);die;
+							$coupons=Coupon::with(['store'=>function($query){
+								$query->select('id','name','image','description');
+							}])->orderBy('id','Desc')->where('status',1)->limit(5)->get();
 					   ?>
-					   @foreach($getCoupons as $key => $coupon)
+					   @foreach($coupons as $key => $coupon)
 						<div class="coupon-item">
 							<div class="coupon-single panel t-center">
 								<!--<div class="ribbon-wrapper is-hidden-xs-down">
@@ -225,8 +228,8 @@ use App\Models\Coupon;
 											</h5>
 												<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On {{$coupon['expires']}}</p>
 											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block coupon" id="btncoupon" data-toggle="modal"
-												 data-id="{{$coupon['id']}}" data-id="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}"
+												<button class="show-code btn btn-sm btn-block" id="btncoupon" data-toggle="modal"
+												 data-id="{{$coupon->store['id']}}"  data-title="{{$coupon->store['title']}}" data-image="{{asset('public/backend/dist/img/store_images/'.$coupon->store['image'])}}"
 												   data-target="#coupon">Get Coupon Code</button>
 												<div class="coupon-hide">{{$coupon['coupon_code']}}</div>
 											</div>
@@ -248,162 +251,128 @@ use App\Models\Coupon;
 									<a   name="m-id" id="m-id" style="color:blue!important"></a>
 									<div class="row row-v-10">
 										<div class="col-md-10 col-md-offset-1">
-											<img id="store" src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-											<h3 class="mb-20" id="m-title"></h3>
-											<p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
+											<img id="store" src="{{asset('public/backend/dist/img/store_images/'.$coupon->store['image'])}}" alt="">
+											<h3 class="mb-20" id="m-title">{{$coupon['title']}}</h3>
+											<p class="color-mid">{{$coupon['description']}}</p>
 										</div>
 										
 										<div class="col-md-10 col-md-offset-1 copy-div " id="copy-div">
 											<h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-											<input type="text" id="copy-text" class="coupon-code" value="X455-17GT-OL58">
+											<input type="text" id="copy-text" class="coupon-code" value="{{$coupon['coupon_code']}}">
 											<button id="btncopy">
 											<i id="fa" class="fa fa-clone"></i>
 											</button>
-										</div>
-										<div class="col-md-10 col-md-offset-1">
-											<a href="#" class="btn btn-link">Visit Our Store</a>
-										</div>
-										<style>
-											.copy-div button{
-												padding:10px;
-												background:#5784f5;
-												color:#fff;
-												font-size:18px;
-												border:none;
-												outline:none;
-												border-radius:10px;
-												cursor:pointer;
-											}
-											
-											.copy-div button:active{
-												background: #809ce2;
-											}
-											.copy-div button:before{
-                                             content:"copied";
-											 position: absolute;
-											 top:-15px;
-											 right:-12px;
-											 background: #5c81dc;
-											 padding:8px 10px;
-											 border-radius:20px;
-											 font-size:15px;
-											 display:none;
-											
-											}
-											.copy-div button:after{
-											content:"";
-											 position: absolute;
-											 top:20px;
-											 right:25px;
-											 width:10px;
-											 height:10px;
-											 background: #5c81dc;
-											 transform: rotate(45deg);
-											 display:none;
-											
-											}
-											.copy-div .active{
-												<--background: rgb(194, 14, 14);-->
-											}
-											.copy-div .active~button:before,
-											.copy-div .active~button:after{
-												display:block;
-											}
+											</div>
+											<div class="col-md-10 col-md-offset-1">
+												<a href="#" class="btn btn-link">Visit Our Store</a>
+											</div>
+											<style>
+												.copy-div button{
+													padding:10px;
+													background:#5784f5;
+													color:#fff;
+													font-size:18px;
+													border:none;
+													outline:none;
+													border-radius:10px;
+													cursor:pointer;
+												}
+												
+												.copy-div button:active{
+													background: #809ce2;
+												}
+												.copy-div button:before{
+												content:"copied";
+												position: absolute;
+												top:-15px;
+												right:-12px;
+												background: #5c81dc;
+												padding:8px 10px;
+												border-radius:20px;
+												font-size:15px;
+												display:none;
+												
+												}
+												.copy-div button:after{
+												content:"";
+												position: absolute;
+												top:20px;
+												right:25px;
+												width:10px;
+												height:10px;
+												background: #5c81dc;
+												transform: rotate(45deg);
+												display:none;
+												
+												}
+												.copy-div .active{
+													<--background: rgb(194, 14, 14);-->
+												}
+												.copy-div .active~button:before,
+												.copy-div .active~button:after{
+													display:block;
+												}
 
-										</style>
-										<script type="text/javascript">
-											     const copydiv=document.getElementById("copy-div");
-												 const copytext=document.getElementById("copy-text");
-												 const btncopy=document.getElementById("btncopy");
-												 const facopy=document.getElementById("fa");
-												  
-												 btncopy.onclick=function(){
-													copytext.select();
-													document.execCommand("Copy");
-													copytext.classList.add("active");
-													//window.getSelection().removeAllRanges();
-													 setTimeout(function(){
-														 copytext.classList.remove("active");
-													 },2500);
-
-													};
+											</style>
+											<script type="text/javascript">
+													const copydiv=document.getElementById("copy-div");
+													const copytext=document.getElementById("copy-text");
+													const btncopy=document.getElementById("btncopy");
+													const facopy=document.getElementById("fa");
 													
-													var btncoupon=document.getElementById("btncoupon");
-													var id=document.getElementById('id');
-													var m_id=document.getElementById('m-id');
-													var title=document.getElementById('title');
-													var m_title=document.getElementById('m-title');
-                                                    
-													btncoupon.onclick=function(){
-														console.log('true');
-													     console.log(id);
-														console.log(m_id);
-														 console.log(id.text);
-														//console.log(title);
-														//console.log(m_title);
-														//console.log(title.text);
+													btncopy.onclick=function(){
+														copytext.select();
+														document.execCommand("Copy");
+														copytext.classList.add("active");
+														//window.getSelection().removeAllRanges();
+														setTimeout(function(){
+															copytext.classList.remove("active");
+														},2500);
+
+														}
+														$(document).ready(function(){
+
+															$(document).on("click",".show-code",function(){
+															var couponId = $(this).data('id');
+															$(".modal-body #m-id").val( couponId );
+
+															var couponTitle = $(this).data('title');
+															$(".modal-body #m-title").val( couponTitle );
+															// As pointed out in comments, 
+															// it is unnecessary to have to manually call the modal.
+															// $('#addBookDialog').modal('show');
+															});
+														});
 
 														
-													     m_id.text=id.text;
-														m_title.text=title.text;
-														//var id=$('#id').val().trim();
-														//var m_id=$('#m-id').html(id);
-														//console.log(m_id);
-														//console.log(m_title.text);
-													};
-													/*$('#coupon').on('show.bs.modal', function (event) {
-														console.log('true');
-														//var button = $(event.relatedTarget) // Button that triggered the modal
-														//var recipient = button.data('whatever') // Extract info from data-* attributes
-														// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-														// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-														//var modal = $(this)
-														//modal.find('.modal-title').text('New message to ' + recipient)
-														//modal.find('.modal-body input').val(recipient)
-														});*/
-									
-
-												/* $(#coupon).on('show.bs.model',function(event){
-														 console.log('true');
-
-														 var button=$(event.relatedTarget);
-														 var id=button.data('id');
-														 var stotre=button.data('store');
-
-														 var model=$(this)
-														 model.find('.model-body #id').val(id);
-														 model.find('.model-body #store').val(id);
-
-													 }); */
-
-													
-											
-										</script>
-										<div class="col-md-10 col-md-offset-1">
-											<div class="like-report mb-10">
-												<span>Share this coupon :</span>
-												<ul class="list-inline social-icons social-icons--colored mt-10">
-													<li class="social-icons__item">
-														<a href="#"><i class="fa fa-facebook"></i></a>
-													</li>
-													<li class="social-icons__item">
-														<a href="#"><i class="fa fa-twitter"></i></a>
-													</li>
-													<li class="social-icons__item">
-														<a href="#"><i class="fa fa-google-plus"></i></a>
-													</li>
-													<li class="social-icons__item">
-														<a href="#"><i class="fa fa-linkedin"></i></a>
-													</li>
-												</ul>
+												
+											</script>
+											<div class="col-md-10 col-md-offset-1">
+												<div class="like-report mb-10">
+													<span>Share this coupon :</span>
+													<ul class="list-inline social-icons social-icons--colored mt-10">
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-facebook"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-twitter"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-google-plus"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-linkedin"></i></a>
+														</li>
+													</ul>
+												</div>
 											</div>
-										</div>
-									</div>
-								</div>
+									    </div>
+								   </div>
 								
-							</div>
-						</div>
-					</div>
+							    </div>
+						    </div>
+					    </div>
+				    
 				</section>
 
 				  <!-- section for stores --->
@@ -412,7 +381,7 @@ use App\Models\Coupon;
 						  // use App\Models\Store;
 						   $getStores=Store::getstores();
 						  // echo "<pre>";print_r($getStores);die;
-							?>
+						?>
 					<header class=" pos-r line">
 						<h3 class="section-title font-18">Popular Stores</h3>
 						<a href="{{route('stores_search')}}" class="btn btn-o btn-xs pos-a right-10 pos-tb-center">All Stores</a>
@@ -437,7 +406,7 @@ use App\Models\Coupon;
 				<section class="section latest-news-area blog-area blog-grid blog-3-col ptb-30">
 					<header class=" pos-r  line">
 						<h3 class="section-title font-18">Latest News</h3>
-						<a href="blog_classic_right_sidebar.html" class="btn btn-o btn-xs pos-a right-10 pos-tb-center">Visit Blog</a>
+						<a href="{{route('blogs')}}" class="btn btn-o btn-xs pos-a right-10 pos-tb-center">Visit Blog</a>
 					</header>
 
 					<div class="row row-tb-20">
@@ -452,10 +421,10 @@ use App\Models\Coupon;
 						<div class="blog-post col-xs-12 col-sm-6 col-md-4">
 							<article class="entry panel">
 								<figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/backend/dist/img/blog_images/'.$blog['main_image'])}}">
-									<div class="entry-date">
+									<!--<div class="entry-date">
 										<h4>13</h4>
 										<h6>JUN</h6>
-									</div>
+									</div>-->
 								</figure>
 								<div class="entry-wrapper pt-20 pb-10 prl-20">
 									<header class="entry-header">
@@ -473,7 +442,7 @@ use App\Models\Coupon;
 										<p class="entry-summary">{{$blog['description']}}</p>
 									</div>
 									<footer class="entry-footer text-right">
-										<a href="{{route('blog_single')}}" class="more-link btn btn-link">Continue reading <i class="icon fa fa-long-arrow-right"></i></a>
+										<a href="{{url('blog_single',$blog['id'])}}" class="more-link btn btn-link">Continue reading <i class="icon fa fa-long-arrow-right"></i></a>
 									</footer>
 								</div>
 							</article>

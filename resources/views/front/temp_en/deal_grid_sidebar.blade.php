@@ -38,32 +38,12 @@
                                     <div class="deal-single panel">
                                         <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_01.jpg')}}">
                                             <div class="label-discount left-20 top-15">-50%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
+                                            
                                             <div class="time-left bottom-15 right-20 font-md-14">
                                                 <span>
                                         <i class="ico fa fa-clock-o mr-10"></i>
                                         <span class="t-uppercase" data-countdown="2019/09/01 01:30:00"></span>
-                                    </span>
+                                        </span>
                                             </div>
                                             <div class="deal-store-logo">
                                                 <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
@@ -98,710 +78,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_02.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-30%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2020/10/10 12:25:10"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="3">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">132</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Western Digital USB 3.0 Hard Drives</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>United Kingdom</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>42 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$150.00</span>$100.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="assets/images/deals/deal_03.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-30%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2020/10/10 12:25:10"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="4">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">160</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Hampton Bay LED Light Ceiling Exhaust Fan</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>Australia</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>75 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$300.00</span>$150.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="assets/images/deals/deal_04.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-15%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2018/01/02 10:35:23"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="2">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">100</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Timberland Men's Thorton Waterproof Boots</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>10 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$380.00</span>$340.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_05.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-60%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2021/12/03 03:15:00"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="3">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">32</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">New and Refurbished Lenovo Laptops</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>United State</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>65 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$700.00</span>$576.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_06.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-60%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2019/10/10 12:00:00"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="5">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">29</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Buying a TV Is Easy When You Know These Terms</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>United Kingdom</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>134 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$300.00</span>$250.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_07.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-50%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2019/09/01 01:30:00"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="5">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">241</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">The Crash Bad Instant Folding Twin Bed</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>United State</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>120 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$300.00</span>$150.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_08.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-30%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2020/10/10 12:25:10"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="3">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">132</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Western Digital USB 3.0 Hard Drives</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>United Kingdom</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>42 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$150.00</span>$100.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_09.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-30%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2020/10/10 12:25:10"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="4">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">160</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Hampton Bay LED Light Ceiling Exhaust Fan</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>Australia</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>75 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$300.00</span>$150.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_10.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-15%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2018/01/02 10:35:23"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="2">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">100</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Timberland Men's Thorton Waterproof Boots</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>10 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$380.00</span>$340.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_11.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-60%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2021/12/03 03:15:00"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="3">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">32</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">New and Refurbished Lenovo Laptops</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>United State</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>65 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$700.00</span>$576.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="deal-single panel">
-                                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_12.jpg')}}">
-                                            <div class="label-discount left-20 top-15">-60%</div>
-                                            <ul class="deal-actions top-15 right-20">
-                                                <li class="like-deal">
-                                                    <span>
-                                            <i class="fa fa-heart"></i>
-                                        </span>
-                                                </li>
-                                                <li class="share-btn">
-                                                    <div class="share-tooltip fade">
-                                                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                                                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                                    </div>
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                </li>
-                                                <li>
-                                                    <span>
-                                            <i class="fa fa-camera"></i>
-                                        </span>
-                                                </li>
-                                            </ul>
-                                            <div class="time-left bottom-15 right-20 font-md-14">
-                                                <span>
-                                        <i class="ico fa fa-clock-o mr-10"></i>
-                                        <span class="t-uppercase" data-countdown="2019/10/10 12:00:00"></span>
-                                    </span>
-                                            </div>
-                                            <div class="deal-store-logo">
-                                                <img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-                                            </div>
-                                        </figure>
-                                        <div class="bg-white pt-20 pl-20 pr-15">
-                                            <div class="pr-md-10">
-                                                <div class="rating mb-10">
-                                                    <span class="rating-stars rate-allow" data-rating="5">
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                            <i class="fa fa-star-o"></i>
-                                        </span>
-                                                    <span class="rating-reviews">
-                                            ( <span class="rating-count">29</span> rates )
-                                                    </span>
-                                                </div>
-                                                <h3 class="deal-title mb-10">
-                                        <a href="deal_single.html">Buying a TV Is Easy When You Know These Terms</a>
-                                    </h3>
-                                                <ul class="deal-meta list-inline mb-10 color-mid">
-                                                    <li><i class="ico fa fa-map-marker mr-10"></i>United Kingdom</li>
-                                                    <li><i class="ico fa fa-shopping-basket mr-10"></i>134 Bought</li>
-                                                </ul>
-                                                <p class="text-muted mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam numquam nostrum.</p>
-                                            </div>
-                                            <div class="deal-price pos-r mb-15">
-                                                <h3 class="price ptb-5 text-right"><span class="price-sale">$300.00</span>$250.00</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                              
+                               
                             </div>
 
                             <!-- Page Pagination -->
@@ -850,8 +128,8 @@
                                                         <ul class="deal-actions top-10 left-10">
                                                             <li class="like-deal">
                                                                 <span>
-                            <i class="fa fa-heart"></i>
-                        </span>
+                                                                    <i class="fa fa-heart"></i>
+                                                                </span>
                                                             </li>
                                                             <li class="share-btn">
                                                                 <div class="share-tooltip fade">
@@ -864,26 +142,26 @@
                                                             </li>
                                                             <li>
                                                                 <span>
-                            <i class="fa fa-camera"></i>
-                        </span>
+                                                                    <i class="fa fa-camera"></i>
+                                                                </span>
                                                             </li>
                                                         </ul>
                                                         <div class="deal-about p-10 pos-a bottom-0 left-0">
                                                             <div class="rating mb-10">
                                                                 <span class="rating-stars rate-allow" data-rating="4">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </span>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    </span>
                                                                 <span class="rating-reviews color-lighter">
-                            (<span class="rating-count">160</span> Reviews)
+                                                                  (<span class="rating-count">160</span> Reviews)
                                                                 </span>
                                                             </div>
                                                             <h5 class="deal-title mb-10">
-                        <a href="deal_single.html" class="color-lighter">Hampton Bay LED Light Ceiling Exhaust Fan</a>
-                    </h5>
+                                                                <a href="deal_single.html" class="color-lighter">Hampton Bay LED Light Ceiling Exhaust Fan</a>
+                                                            </h5>
                                                         </div>
                                                     </figure>
                                                 </div>
@@ -893,8 +171,8 @@
                                                         <ul class="deal-actions top-10 left-10">
                                                             <li class="like-deal">
                                                                 <span>
-                            <i class="fa fa-heart"></i>
-                        </span>
+                                                                <i class="fa fa-heart"></i>
+                                                                </span>
                                                             </li>
                                                             <li class="share-btn">
                                                                 <div class="share-tooltip fade">
@@ -907,26 +185,26 @@
                                                             </li>
                                                             <li>
                                                                 <span>
-                            <i class="fa fa-camera"></i>
-                        </span>
+                                                                    <i class="fa fa-camera"></i>
+                                                                </span>
                                                             </li>
                                                         </ul>
                                                         <div class="deal-about p-10 pos-a bottom-0 left-0">
                                                             <div class="rating mb-10">
-                                                                <span class="rating-stars rate-allow" data-rating="2">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </span>
+                                                                 <span class="rating-stars rate-allow" data-rating="2">
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                </span>
                                                                 <span class="rating-reviews color-lighter">
-                            (<span class="rating-count">100</span> Reviews)
+                                                                  (<span class="rating-count">100</span> Reviews)
                                                                 </span>
                                                             </div>
                                                             <h5 class="deal-title mb-10">
-                        <a href="deal_single.html" class="color-lighter">Timberland Men's Thorton Waterproof Boots</a>
-                    </h5>
+                                                                <a href="deal_single.html" class="color-lighter">Timberland Men's Thorton Waterproof Boots</a>
+                                                            </h5>
                                                         </div>
                                                     </figure>
                                                 </div>
@@ -936,8 +214,8 @@
                                                         <ul class="deal-actions top-10 left-10">
                                                             <li class="like-deal">
                                                                 <span>
-                            <i class="fa fa-heart"></i>
-                        </span>
+                                                                    <i class="fa fa-heart"></i>
+                                                                </span>
                                                             </li>
                                                             <li class="share-btn">
                                                                 <div class="share-tooltip fade">
@@ -950,26 +228,26 @@
                                                             </li>
                                                             <li>
                                                                 <span>
-                            <i class="fa fa-camera"></i>
-                        </span>
+                                                                    <i class="fa fa-camera"></i>
+                                                                </span>
                                                             </li>
                                                         </ul>
                                                         <div class="deal-about p-10 pos-a bottom-0 left-0">
                                                             <div class="rating mb-10">
                                                                 <span class="rating-stars rate-allow" data-rating="3">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </span>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                </span>
                                                                 <span class="rating-reviews color-lighter">
-                            (<span class="rating-count">32</span> Reviews)
+                                                                     (<span class="rating-count">32</span> Reviews)
                                                                 </span>
                                                             </div>
                                                             <h5 class="deal-title mb-10">
-                        <a href="deal_single.html" class="color-lighter">New and Refurbished Lenovo Laptops</a>
-                    </h5>
+                                                                <a href="deal_single.html" class="color-lighter">New and Refurbished Lenovo Laptops</a>
+                                                            </h5>
                                                         </div>
                                                     </figure>
                                                 </div>
@@ -979,8 +257,8 @@
                                                         <ul class="deal-actions top-10 left-10">
                                                             <li class="like-deal">
                                                                 <span>
-                            <i class="fa fa-heart"></i>
-                        </span>
+                                                                    <i class="fa fa-heart"></i>
+                                                                </span>
                                                             </li>
                                                             <li class="share-btn">
                                                                 <div class="share-tooltip fade">
@@ -993,26 +271,26 @@
                                                             </li>
                                                             <li>
                                                                 <span>
-                            <i class="fa fa-camera"></i>
-                        </span>
+                                                                    <i class="fa fa-camera"></i>
+                                                                </span>
                                                             </li>
                                                         </ul>
                                                         <div class="deal-about p-10 pos-a bottom-0 left-0">
                                                             <div class="rating mb-10">
                                                                 <span class="rating-stars rate-allow" data-rating="5">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                        </span>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
+                                                                </span>
                                                                 <span class="rating-reviews color-lighter">
-                            (<span class="rating-count">29</span> Reviews)
+                                                                  (<span class="rating-count">29</span> Reviews)
                                                                 </span>
                                                             </div>
                                                             <h5 class="deal-title mb-10">
-                        <a href="deal_single.html" class="color-lighter">Buying a TV Is Easy When You Know These Terms</a>
-                    </h5>
+                                                                <a href="deal_single.html" class="color-lighter">Buying a TV Is Easy When You Know These Terms</a>
+                                                            </h5>
                                                         </div>
                                                     </figure>
                                                 </div>
@@ -1036,17 +314,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h6 class="mb-5">
-                <a href="#">Aenean ut orci vel massa</a>
-            </h6>
+                                                        <a href="#">Aenean ut orci vel massa</a>
+                                                    </h6>
                                                     <div class="mb-5">
                                                         <span class="rating">
-                    <span class="rating-stars" data-rating="4">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
+                                                            <span class="rating-stars" data-rating="4">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
                                                         </span>
                                                     </div>
                                                     <h4 class="price font-16">$60.00 <span class="price-sale color-muted">$200.00</span></h4>
@@ -1062,17 +340,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h6 class="mb-5">
-                <a href="#">Aenean ut orci vel massa</a>
-            </h6>
+                                                            <a href="#">Aenean ut orci vel massa</a>
+                                                        </h6>
                                                     <div class="mb-5">
                                                         <span class="rating">
-                    <span class="rating-stars" data-rating="4">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
+                                                            <span class="rating-stars" data-rating="4">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
                                                         </span>
                                                     </div>
                                                     <h4 class="price font-16">$60.00 <span class="price-sale color-muted">$200.00</span></h4>
@@ -1088,17 +366,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h6 class="mb-5">
-                <a href="#">Aenean ut orci vel massa</a>
-            </h6>
+                                                        <a href="#">Aenean ut orci vel massa</a>
+                                                    </h6>
                                                     <div class="mb-5">
-                                                        <span class="rating">
-                    <span class="rating-stars" data-rating="4">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
+                                                       <span class="rating">
+                                                        <span class="rating-stars" data-rating="4">
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
                                                         </span>
                                                     </div>
                                                     <h4 class="price font-16">$60.00 <span class="price-sale color-muted">$200.00</span></h4>
@@ -1114,17 +392,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h6 class="mb-5">
-                <a href="#">Aenean ut orci vel massa</a>
-            </h6>
+                                                        <a href="#">Aenean ut orci vel massa</a>
+                                                    </h6>
                                                     <div class="mb-5">
-                                                        <span class="rating">
-                    <span class="rating-stars" data-rating="4">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
+                                                       <span class="rating">
+                                                        <span class="rating-stars" data-rating="4">
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
                                                         </span>
                                                     </div>
                                                     <h4 class="price font-16">$60.00 <span class="price-sale color-muted">$200.00</span></h4>
@@ -1147,8 +425,8 @@
                                                 <div class="input-group">
                                                     <input type="email" class="form-control" placeholder="Your Email Address" required="required">
                                                     <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
+                                                        <button class="btn" type="submit">Sign Up</button>
+                                                    </span>
                                                 </div>
                                             </form>
 
@@ -1171,17 +449,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-5">
-                <a href="store_single_01.html">Amazon</a>
-                <span class="rating">
-                    <span class="rating-stars" data-rating="4">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
-                </span>
-            </h5>
+                                                        <a href="store_single_01.html">Amazon</a>
+                                                        <span class="rating">
+                                                            <span class="rating-stars" data-rating="4">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
+                                                        </span>
+                                                    </h5>
                                                     <p class="color-mid">Upto 70% Rewards Lorem ipsum dolor sit amet.</p>
                                                 </div>
                                             </div>
@@ -1195,17 +473,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-5">
-                <a href="store_single_01.html">Ashford</a>
-                <span class="rating">
-                    <span class="rating-stars" data-rating="4">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
-                </span>
-            </h5>
+                                                        <a href="store_single_01.html">Ashford</a>
+                                                        <span class="rating">
+                                                            <span class="rating-stars" data-rating="4">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
+                                                        </span>
+                                                    </h5>
                                                     <p class="color-mid">Upto 70% Rewards Lorem ipsum dolor sit amet.</p>
                                                 </div>
                                             </div>
@@ -1219,17 +497,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-5">
-                <a href="store_single_01.html">DELL</a>
-                <span class="rating">
-                    <span class="rating-stars" data-rating="4">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
-                </span>
-            </h5>
+                                                        <a href="store_single_01.html">DELL</a>
+                                                        <span class="rating">
+                                                            <span class="rating-stars" data-rating="4">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
+                                                        </span>
+                                                    </h5>
                                                     <p class="color-mid">Upto 70% Rewards Lorem ipsum dolor sit amet.</p>
                                                 </div>
                                             </div>
@@ -1339,17 +617,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-5">
-                <a href="#">John Doe</a>
-                <span class="rating">
-                    <span class="rating-stars" data-rating="3">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
-                </span>
-            </h5>
+                                                        <a href="#">John Doe</a>
+                                                        <span class="rating">
+                                                            <span class="rating-stars" data-rating="3">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
+                                                        </span>
+                                                    </h5>
                                                     <p class="color-mid">Vivamus sem massa, cursus at mollis eu, euismod id risus. Ve...</p>
                                                 </div>
                                             </div>
@@ -1363,17 +641,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-5">
-                <a href="#">John Doe</a>
-                <span class="rating">
-                    <span class="rating-stars" data-rating="3">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
-                </span>
-            </h5>
+                                                    <a href="#">John Doe</a>
+                                                    <span class="rating">
+                                                        <span class="rating-stars" data-rating="3">
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </span>
+                                                    </span>
+                                                </h5>
                                                     <p class="color-mid">Nullam porttitor porta augue vel iaculis. Pellentesque a pre...</p>
                                                 </div>
                                             </div>
@@ -1387,17 +665,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-5">
-                <a href="#">John Doe</a>
-                <span class="rating">
-                    <span class="rating-stars" data-rating="3">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
-                </span>
-            </h5>
+                                                        <a href="#">John Doe</a>
+                                                        <span class="rating">
+                                                            <span class="rating-stars" data-rating="3">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
+                                                        </span>
+                                                    </h5>
                                                     <p class="color-mid">Ut consequat eget nulla eu ultrices. Curabitur ac pellentesq...</p>
                                                 </div>
                                             </div>
@@ -1411,17 +689,17 @@
                                                 </div>
                                                 <div class="media-body">
                                                     <h5 class="mb-5">
-                <a href="#">John Doe</a>
-                <span class="rating">
-                    <span class="rating-stars" data-rating="3">
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                    </span>
-                </span>
-            </h5>
+                                                        <a href="#">John Doe</a>
+                                                        <span class="rating">
+                                                            <span class="rating-stars" data-rating="3">
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </span>
+                                                        </span>
+                                                    </h5>
                                                     <p class="color-mid">Duis eu lectus dictum, placerat quam sed, ornare urna....</p>
                                                 </div>
                                             </div>

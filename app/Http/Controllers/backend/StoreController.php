@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Session;
 use Image;
+use App\Models\Deal;
 
 class StoreController extends Controller
 {
@@ -15,8 +16,13 @@ class StoreController extends Controller
         $stores=Store::get();
         return view('admin.stores.store')->with(compact('stores'));
     }
-    public function stores_single(Store $id){
-        return view('front.temp_en.stores_single')->with('store',$id); 
+    public function stores_single(Store $store){
+       // dd($store);
+        $deals=Deal::with(['store'=>function($query){
+            $query->select('id','name','image');
+        }])->orderBy('id','Desc')->where('store_id',$store->id)->where('status',1)->get();
+     // dd($deals);
+        return view('front.temp_en.stores_single')->with('store',$store,$deals); 
     }
     public function addEditStore($id=null,Request $request){
 

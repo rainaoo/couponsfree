@@ -1,4 +1,11 @@
+<?php
+use App\Models\Store;
 
+
+$stors=Store::orderBy('id','Desc')->where('status',1)->get();
+		//echo "<pre>";print_r($blogs);die;					
+			
+?>
 @extends('front.temp_en.layout.site')
 @section('content')
 
@@ -10,246 +17,18 @@
                 <section class="stores-area stores-area-v1">
                     <h3 class="mb-40 t-uppercase">View deals by stores</h3>
                     <div class="row row-rl-15 row-tb-15 t-center">
+                        @foreach ($stors as $key => $store)
                         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
+                            <a href="{{url('stores_single',$store['id'])}}" class="panel is-block">
                                 <div class="embed-responsive embed-responsive-4by3">
                                     <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
+                                        <img src="{{asset('public/backend/dist/img/store_images/'.$store['image'])}}" alt="">
                                     </div>
                                 </div>
-                                <h6 class="store-name ptb-10">Amazon</h6>
+                                <h6 class="store-name ptb-10">{{$store['name']}}</h6>
                             </a>
                         </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Ashford</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">DELL</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Card Cash</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Finish Line</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">JC Penny</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_07.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Callaway Golf</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_08.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Car Toys</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_09.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Carol's Daughter</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_10.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Bank of America</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_11.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Baseball Savings</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_12.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Beauty Encounter</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Amazon</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Ashford</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">DELL</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Card Cash</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Finish Line</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">JC Penny</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_07.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Callaway Golf</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_08.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Car Toys</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_09.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Carol's Daughter</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_10.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Bank of America</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_11.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Baseball Savings</h6>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <a href="{{route('stores_single')}}" class="panel is-block">
-                                <div class="embed-responsive embed-responsive-4by3">
-                                    <div class="store-logo">
-                                        <img src="{{asset('public/front/assets/images/brands/brand_12.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <h6 class="store-name ptb-10">Beauty Encounter</h6>
-                            </a>
-                        </div>
+                       @endforeach
                     </div>
                     <div class="page-pagination text-center mt-30 p-10 panel">
                         <nav>

@@ -26,7 +26,7 @@ use App\Models\Store;
 								<li>
 									<a href="#"><i class="fa fa-flag-usa"></i>English <i class="fa fa-caret-down"></i></a>
 									<ul>
-										<li><a href="{{route('home-ar')}}"><i class="fa fa-flag"></i>Arabic</a>
+										<li><a href="{{route('home-ar')}}"><i class="fa fa-flag-fra"></i>Arabic</a>
 										</li>
 									</ul>
 								</li>
@@ -178,8 +178,6 @@ use App\Models\Store;
 																	<li><a href="{{route('stores_search')}}">Stores Search</a>
 																	</li>
 																	<li><a href="{{route('stores_categores')}}">Stores Categories</a>
-																	</li>
-																	<li><a href="{{route('stores_single')}}">Store Single </a>
 																	</li>
 																</ul>
 												</div>				
@@ -407,20 +405,13 @@ use App\Models\Store;
 															<span class=""></span><a href="{{route('home')}}" title="Home">Home</a>
 														</li>
 														<li class="item  has-sub" >
-															<a href="{{route('deal_grid_sidebar')}}" title="Deals">Deals <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<a href="{{route('deals_grid')}}" title="Deals">Deals </a>
 															<div class="dropdown-menu" style="width:270px">
-																<ul class="">
-																	<li><a href="{{route('deal_single')}}">deals 1</a>
-																	</li>
-																	<li><a href="{{route('deal_single')}}">deals 2</a>
-																	</li>
-																	<li><a href="{{route('deals_grid')}}">all deals</a>
-																	</li>
-															</ul>
+																
 															</div>
 														</li>
 														<li class="item menu-page group" >
-															<a href="{{route('coupons_grid')}}" title="Coupons">Coupons <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<a href="{{route('coupons_grid')}}" title="Coupons">Coupons </i></span></a>
 																<!--<div class="dropdown-menu" >
 																	<ul class=""><li class="item container group" >
 																		<div class="dropdown-menu" >
@@ -461,8 +452,7 @@ use App\Models\Store;
 																					</li>
 																					<li><a href="{{route('stores_categores')}}">Stores Categories</a>
 																					</li>
-																					<li><a href="{{route('stores_single')}}">Store Single </a>
-																					</li>
+																					
 																				</ul>
 																</div>				
 														</li>

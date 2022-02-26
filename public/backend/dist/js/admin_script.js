@@ -19,7 +19,20 @@ $(document).on("click",".confirmDelete",function(){
     });
 }); 
 }); */
+
 $(document).ready(function(){
+
+  $(document).on("click",".show-code",function(){
+    var couponId = $(this).data('id');
+    $(".modal-body #m-id").val( couponId );
+
+    var couponTitle = $(this).data('title');
+    $(".modal-body #m-title").val( couponTitle );
+    // As pointed out in comments, 
+    // it is unnecessary to have to manually call the modal.
+    // $('#addBookDialog').modal('show');
+  });
+  
 //update sections status
   //$(".updateCategoryStatus").click(function(){
       $(document).on("click",".updateCategoryStatus",function(){

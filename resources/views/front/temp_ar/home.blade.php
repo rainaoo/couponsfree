@@ -1,3 +1,11 @@
+<?php
+use App\Models\Banner;
+//use App\Models\Category;
+use App\Models\Deal;
+use App\Models\Store;
+use App\Models\Coupon;
+?>
+
 @extends('front.temp_ar.layout.site')
 @section('content')
 
@@ -7,171 +15,66 @@
 			<div class="container">
 				<div class="section deals-header-area ptb-30">
 					<div class="row row-tb-20">
-						<div class="col-xs-12 col-md-4 col-lg-3">
+						<div class="col-xs-12 col-md-4 col-lg-3 ">
 							<aside class="hidden-md-up">
 								<ul class="nav-coupon-category panel">
-									<li><a href="#"><i class="fa fa-cutlery"></i>الطعام و الشراب<span>40</span></a>
+									<?php
+									use App\Models\Category;
+									$getCategories=Category::getCategories();
+								   // echo "<pre>";print_r($getCategories);die;
+									 ?>
+									 @foreach($getCategories as $key => $category)
+									<li><a href="#"><i class="fa fa-cutlery"></i>{{$category['name_ar']}}<span>40</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-calendar"></i>أحداث <span>42</span></a>
+									@endforeach
+									<li><a href="#"><i class="fa fa-calendar"></i>Events<span>42</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-female"></i>جمال<span>48</span></a>
+									<li><a href="#"><i class="fa fa-female"></i>Beauty<span>48</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-bolt"></i>اللياقة البدنية <span>33</span></a>
+									<li><a href="#"><i class="fa fa-bolt"></i>Fitness<span>33</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-image"></i>الأثاث<span>50</span></a>
+									<li><a href="#"><i class="fa fa-image"></i>Furniture<span>50</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-umbrella"></i>الأزياء<span>33</span></a>
+									<li><a href="#"><i class="fa fa-umbrella"></i>Fashion<span>33</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-shopping-cart"></i>التسوق<span>37</span></a>
+									<li><a href="#"><i class="fa fa-shopping-cart"></i>Shopping<span>37</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-home"></i>المنزل والدرجات<span>30</span></a>
+									<li><a href="#"><i class="fa fa-home"></i>Home &amp; Graden<span>30</span></a>
 									</li>
-									<li><a href="#"><i class="fa fa-plane"></i>السفر<span>48</span></a>
+									<li><a href="#"><i class="fa fa-plane"></i>Travel<span>48</span></a>
 									</li>
 									<li class="all-cat">
-										<a class="font-14" href="#">عرض جميع الفئات</a>
+										<a class="font-14" href="#">All Categories</a>
 									</li>
 								</ul>
 							</aside>
 						</div>
+						<?php
+						   //use App\Models\Banner;
+						   $getBanners=Banner::getBanners();
+						  // echo "<pre>";print_r($getBanners);die;
+							?>
 						<div class="col-xs-12 col-md-8 col-lg-9">
 							<div class="header-deals-slider flexslider" id="header-deals-slider">
 								<ul class="slides">
+									@foreach($getBanners as $key => $banner)
 									<li>
 										<div class="deal-single panel item">
-										<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_01.jpg')}}">
-											<div class="label-discount top-10 left-10">-50%</div>
-											<ul class="deal-actions top-10 right-10">
-												<li class="like-deal">
-													<span>
-														<i class="fa fa-heart"></i>
-													</span>
-												</li>
-												<li class="share-btn">
-													<div class="share-tooltip fade">
-														<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-													</div>
-													<span><i class="fa fa-share-alt"></i></span>
-												</li>
-												<li>
-													<span>
-														<i class="fa fa-camera"></i>
-													</span>
-												</li>
-											</ul>
-											<div class="deal-about p-20 pos-a bottom-0 right-0">
-												<div class="rating mb-10">
-													<span class="rating-stars" data-rating="5">
-														<i class="fa fa-star-o star-active"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-													</span>
-													<span class="rating-reviews color-light">
-													( <span class="rating-count">241</span> تقييم )
-													</span>
+											<figure class="deal-thumbnail embed-responsive embed-responsive-16by9"
+											        data-bg-img="{{asset('public/backend/dist/img/banner_images/'.$banner['image'])}}">
+												<div class="label-discount top-10 right-10">{{$banner['discount']}}</div>
+											
+												<div class="deal-about p-20 pos-a bottom-0 left-0">
+													
+													<h3 class="deal-title mb-10 ">
+														<a href="" class="color-light color-h-lighter">{{$banner['title']}}</a>
+													</h3>
 												</div>
-												<h3 class="deal-title mb-10 ">
-													<a href="deal_single.html" class="color-light color-h-lighter">حامل الجوال الذكي 360 متعدد الاستخدام للمكتب والسيارة</a>
-												</h3>
-											</div>
-										</figure>
+											</figure>
 										</div>
 									</li>
-									<li>
-										<div class="deal-single panel item">
-										<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_02.jpg')}}">
-											<div class="label-discount top-10 left-10">-30%</div>
-											<ul class="deal-actions top-10 right-10">
-												<li class="like-deal">
-													<span>
-														<i class="fa fa-heart"></i>
-													</span>
-												</li>
-												<li class="share-btn">
-													<div class="share-tooltip fade">
-														<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-													</div>
-													<span><i class="fa fa-share-alt"></i></span>
-												</li>
-												<li>
-													<span>
-														<i class="fa fa-camera"></i>
-													</span>
-												</li>
-											</ul>
-											<div class="deal-about p-20 pos-a bottom-0 right-0">
-												<div class="rating mb-10">
-													<span class="rating-stars" data-rating="5">
-														<i class="fa fa-star-o star-active"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-													</span>
-													<span class="rating-reviews color-light">
-													( <span class="rating-count">132</span> تقييم )
-													</span>
-												</div>
-												<h3 class="deal-title mb-10 ">
-													<a href="deal_single.html" class="color-light color-h-lighter">مكبر الشاشة الجوال ثلاثي الأبعاد مع سماعة</a>
-												</h3>
-											</div>
-										</figure>
-										</div>
-									</li>
-									<li>
-										<div class="deal-single panel item">
-										<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_03.jpg')}}">
-											<div class="label-discount top-10 left-10">-30%</div>
-											<ul class="deal-actions top-10 right-10">
-												<li class="like-deal">
-													<span>
-														<i class="fa fa-heart"></i>
-													</span>
-												</li>
-												<li class="share-btn">
-													<div class="share-tooltip fade">
-														<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-														<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-													</div>
-													<span><i class="fa fa-share-alt"></i></span>
-												</li>
-												<li>
-													<span>
-														<i class="fa fa-camera"></i>
-													</span>
-												</li>
-											</ul>
-											<div class="deal-about p-20 pos-a bottom-0 right-0">
-												<div class="rating mb-10">
-													<span class="rating-stars" data-rating="5">
-														<i class="fa fa-star-o star-active"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-														<i class="fa fa-star-o"></i>
-													</span>
-													<span class="rating-reviews color-light">
-													( <span class="rating-count">160</span> تقييم )
-													</span>
-												</div>
-												<h3 class="deal-title mb-10 ">
-													<a href="deal_single.html" class="color-light color-h-lighter">شاحن أنكر السريع للسيارة يشحن أربعة اضعاف أسرع</a>
-												</h3>
-											</div>
-										</figure>
-										</div>
-									</li>
+									
+									@endforeach
 								</ul>
 							</div>
 						</div>
@@ -225,394 +128,57 @@
 						<h3 class="section-title font-18">أحدث العروض</h3>
 						<span class="btns collapsed" data-toggle="collapse" data-target="#demo"></span>
 					</header>
+					<?php
+					 $getDeals=Deal::getDeals();
+					// echo "<pre>";print_r($getDeals);die;
+						//$store=Deal::store();
+						$Deals=Deal::with(['store'=>function($query){
+								$query->select('id','name','image');
+							}])->orderBy('id','Desc')->where('status',1)->limit(3)->get();
+							//echo "<pre>";print_r($deals);die;
+							//$indexdeal=Deal::indexdeal();
+					?>
+				
 					<div class="row row-masnory row-tb-20">
+						@foreach($Deals as $key => $deal)
 						<div class="col-sm-6 col-lg-4">
 							<div class="deal-single panel">
-								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_01.jpg')}}">
-									<div class="label-discount right-20 top-15">-50%</div>
-									<ul class="deal-actions top-15 left-20">
-										<li class="like-deal">
-											<span>
-												<i class="fa fa-heart"></i>
-											</span>
-										</li>
-										<li class="share-btn">
-											<div class="share-tooltip fade">
-												<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-											</div>
-											<span><i class="fa fa-share-alt"></i></span>
-										</li>
-										<li>
-											<span>
-												<i class="fa fa-camera"></i>
-											</span>
-										</li>
-									</ul>
-									<div class="time-right bottom-15 left-20 font-md-14">
+								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9"
+								           data-bg-img="{{asset('public/backend/dist/img/deal_images/'.$deal['main_image'])}}">
+									<div class="label-discount right-20 top-15">{{$deal['discount']}} %</div>
+									
+									<div class="time-left bottom-15 right-20 font-md-14">
 										<span>
-											<i class="ico fa fa-clock-o ml-10"></i>
-											<span class="t-uppercase" data-countdown="2019/09/01 01:30:00"></span>
+											<i class="ico fa fa-clock-o mr-10"></i>
+											<span class="t-uppercase" >{{$deal['expires']}}</span>
 										</span>
 									</div>
 									<div class="deal-store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
+										
+										<img src="{{asset('public/backend/dist/img/store_images/'.$deal->store['image'])}}" width="60px" height="60px"alt="">
 									</div>
 								</figure>
-								<div class="bg-white pt-20 pr-20 pl-15">
-									<div class="pl-md-10">
-										<div class="rating mb-10">
-											<span class="rating-stars rate-allow" data-rating="5">
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-											</span>
-											<span class="rating-reviews">
-						                 	( <span class="rating-count">241</span> rates )
-											</span>
-										</div>
+								<div class="bg-white pt-20 pl-20 pr-15">
+									<div class="pr-md-10">
+										
 										<h3 class="deal-title mb-10">
-											<a href="#">حامل الجوال الذكي 360 متعدد الاستخدام للمكتب والسيارة</a>
+											<a href="{{ url('deal_single',$deal->id)}}">{{$deal['title_ar']}} </a>
 										</h3>
-										<ul class="deal-meta list-inline mb-10 color-mid">
-											<li><i class="ico fa fa-map-marker ml-10"></i>الولايات المتحدة</li>
-											<li><i class="ico fa fa-shopping-basket ml-10"></i>120 Bought</li>
-										</ul>
-										<p class="text-muted mb-20">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص...</p>
+										<!--<ul class="deal-meta list-inline mb-10 color-mid">
+											<li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
+											<li><i class="ico fa fa-shopping-basket mr-10"></i>10 Bought</li>
+										</ul>-->
+										<p class="text-muted mb-20">{{$deal['description_ar']}} </p>
 									</div>
 									<div class="deal-price pos-r mb-15">
-										<h3 class="price ptb-5 text-left"><span class="price-sale">$300.00</span>$150.00</h3>
+										<h3 class="price ptb-5 text-right"><span class="price-sale">$ {{$deal['price_old']}}</span>$ {{$deal['price_new']}}</h3>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-lg-4">
-							<div class="deal-single panel">
-								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_02.jpg')}}">
-									<div class="label-discount right-20 top-15">-30%</div>
-									<ul class="deal-actions top-15 left-20">
-										<li class="like-deal">
-											<span>
-												<i class="fa fa-heart"></i>
-											</span>
-										</li>
-										<li class="share-btn">
-											<div class="share-tooltip fade">
-												<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-											</div>
-											<span><i class="fa fa-share-alt"></i></span>
-										</li>
-										<li>
-											<span>
-												<i class="fa fa-camera"></i>
-											</span>
-										</li>
-									</ul>
-									<div class="time-right bottom-15 left-20 font-md-14">
-										<span>
-											<i class="ico fa fa-clock-o ml-10"></i>
-											<span class="t-uppercase" data-countdown="2020/10/10 12:25:10"></span>
-										</span>
-									</div>
-									<div class="deal-store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
-									</div>
-								</figure>
-								<div class="bg-white pt-20 pr-20 pl-15">
-									<div class="pl-md-10">
-										<div class="rating mb-10">
-											<span class="rating-stars rate-allow" data-rating="3">
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-											</span>
-											<span class="rating-reviews">
-							                  ( <span class="rating-count">132</span> rates )
-											</span>
-										</div>
-										<h3 class="deal-title mb-10">
-											<a href="#">مكبر الشاشة الجوال ثلاثي الأبعاد مع سماعة</a>
-										</h3>
-										<ul class="deal-meta list-inline mb-10 color-mid">
-											<li><i class="ico fa fa-map-marker ml-10"></i>المملكة المتحدة</li>
-											<li><i class="ico fa fa-shopping-basket ml-10"></i>42 Bought</li>
-										</ul>
-										<p class="text-muted mb-20">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص...</p>
-									</div>
-									<div class="deal-price pos-r mb-15">
-										<h3 class="price ptb-5 text-left"><span class="price-sale">$150.00</span>$100.00</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6 col-lg-4">
-							<div class="deal-single panel">
-								<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_03.jpg')}}">
-									<div class="label-discount right-20 top-15">-30%</div>
-									<ul class="deal-actions top-15 left-20">
-										<li class="like-deal">
-											<span>
-												<i class="fa fa-heart"></i>
-											</span>
-										</li>
-										<li class="share-btn">
-											<div class="share-tooltip fade">
-												<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-												<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-											</div>
-											<span><i class="fa fa-share-alt"></i></span>
-										</li>
-										<li>
-											<span>
-												<i class="fa fa-camera"></i>
-											</span>
-										</li>
-									</ul>
-									<div class="time-right bottom-15 left-20 font-md-14">
-										<span>
-											<i class="ico fa fa-clock-o ml-10"></i>
-											<span class="t-uppercase" data-countdown="2020/10/10 12:25:10"></span>
-										</span>
-									</div>
-									<div class="deal-store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
-									</div>
-								</figure>
-								<div class="bg-white pt-20 pr-20 pl-15">
-									<div class="pl-md-10">
-										<div class="rating mb-10">
-											<span class="rating-stars rate-allow" data-rating="4">
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-												<i class="fa fa-star-o"></i>
-											</span>
-											<span class="rating-reviews">
-							                    ( <span class="rating-count">160</span> rates )
-											</span>
-										</div>
-										<h3 class="deal-title mb-10">
-											<a href="#">شاحن أنكر السريع للسيارة يشحن أربعة اضعاف أسرع</a>
-										</h3>
-										<ul class="deal-meta list-inline mb-10 color-mid">
-											<li><i class="ico fa fa-map-marker ml-10"></i>أستراليا</li>
-											<li><i class="ico fa fa-shopping-basket ml-10"></i>75 Bought</li>
-										</ul>
-										<p class="text-muted mb-20">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص...</p>
-									</div>
-									<div class="deal-price pos-r mb-15">
-										<h3 class="price ptb-5 text-left"><span class="price-sale">$300.00</span>$150.00</h3>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div id="demo" class="collapse">
-							<div class="col-sm-6 col-lg-4">
-								<div class="deal-single panel">
-									<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_04.jpg')}}">
-										<div class="label-discount right-20 top-15">-15%</div>
-										<ul class="deal-actions top-15 left-20">
-											<li class="like-deal">
-												<span>
-													<i class="fa fa-heart"></i>
-												</span>
-											</li>
-											<li class="share-btn">
-												<div class="share-tooltip fade">
-													<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-												</div>
-												<span><i class="fa fa-share-alt"></i></span>
-											</li>
-											<li>
-												<span>
-												<i class="fa fa-camera"></i>
-											</span>
-											</li>
-										</ul>
-										<div class="time-right bottom-15 left-20 font-md-14">
-											<span>
-												<i class="ico fa fa-clock-o ml-10"></i>
-												<span class="t-uppercase" data-countdown="2018/01/02 10:35:23"></span>
-											</span>
-										</div>
-										<div class="deal-store-logo">
-											<img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-										</div>
-									</figure>
-									<div class="bg-white pt-20 pr-20 pl-15">
-										<div class="pl-md-10">
-											<div class="rating mb-10">
-												<span class="rating-stars rate-allow" data-rating="2">
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-												<span class="rating-reviews">
-													  ( <span class="rating-count">100</span> rates )
-												</span>
-											</div>
-											<h3 class="deal-title mb-10">
-												<a href="#">مكبر الشاشة الجوال ثلاثي الأبعاد مع سماعة</a>
-											</h3>
-											<ul class="deal-meta list-inline mb-10 color-mid">
-												<li><i class="ico fa fa-map-marker ml-10"></i>كندا</li>
-												<li><i class="ico fa fa-shopping-basket ml-10"></i>10 Bought</li>
-											</ul>
-											<p class="text-muted mb-20">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص...</p>
-										</div>
-										<div class="deal-price pos-r mb-15">
-											<h3 class="price ptb-5 text-left"><span class="price-sale">$380.00</span>$340.00</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-4">
-								<div class="deal-single panel">
-									<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_05.jpg')}}">
-										<div class="label-discount right-20 top-15">-60%</div>
-										<ul class="deal-actions top-15 left-20">
-											<li class="like-deal">
-												<span>
-												<i class="fa fa-heart"></i>
-											</span>
-											</li>
-											<li class="share-btn">
-												<div class="share-tooltip fade">
-													<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-												</div>
-												<span><i class="fa fa-share-alt"></i></span>
-											</li>
-											<li>
-												<span>
-													<i class="fa fa-camera"></i>
-												</span>
-											</li>
-										</ul>
-										<div class="time-right bottom-15 left-20 font-md-14">
-											<span>
-												<i class="ico fa fa-clock-o ml-10"></i>
-												<span class="t-uppercase" data-countdown="2021/12/03 03:15:00"></span>
-											</span>
-										</div>
-										<div class="deal-store-logo">
-											<img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-										</div>
-									</figure>
-									<div class="bg-white pt-20 pr-20 pl-15">
-										<div class="pl-md-10">
-											<div class="rating mb-10">
-												<span class="rating-stars rate-allow" data-rating="3">
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-												<span class="rating-reviews">
-													( <span class="rating-count">32</span> rates )
-												</span>
-											</div>
-											<h3 class="deal-title mb-10">
-												<a href="#">حامل الجوال الذكي 360 متعدد الاستخدام للمكتب والسيارة</a>
-											</h3>
-											<ul class="deal-meta list-inline mb-10 color-mid">
-												<li><i class="ico fa fa-map-marker ml-10"></i>الولايات المتحدة</li>
-												<li><i class="ico fa fa-shopping-basket ml-10"></i>65 Bought</li>
-											</ul>
-											<p class="text-muted mb-20">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص...</p>
-										</div>
-										<div class="deal-price pos-r mb-15">
-											<h3 class="price ptb-5 text-left"><span class="price-sale">$700.00</span>$576.00</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-4">
-								<div class="deal-single panel">
-									<figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/deals/deal_06.jpg')}}">
-										<div class="label-discount right-20 top-15">-60%</div>
-										<ul class="deal-actions top-15 left-20">
-											<li class="like-deal">
-												<span>
-													<i class="fa fa-heart"></i>
-												</span>
-											</li>
-											<li class="share-btn">
-												<div class="share-tooltip fade">
-													<a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-													<a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-												</div>
-												<span><i class="fa fa-share-alt"></i></span>
-											</li>
-											<li>
-												<span>
-													<i class="fa fa-camera"></i>
-												</span>
-											</li>
-										</ul>
-										<div class="time-right bottom-15 left-20 font-md-14">
-											<span>
-												<i class="ico fa fa-clock-o ml-10"></i>
-												<span class="t-uppercase" data-countdown="2019/10/10 12:00:00"></span>
-											</span>
-										</div>
-										<div class="deal-store-logo">
-											<img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-										</div>
-									</figure>
-									<div class="bg-white pt-20 pr-20 pl-15">
-										<div class="pl-md-10">
-											<div class="rating mb-10">
-												<span class="rating-stars rate-allow" data-rating="5">
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-													<i class="fa fa-star-o"></i>
-												</span>
-												<span class="rating-reviews">
-												 ( <span class="rating-count">29</span> rates )
-												</span>
-											</div>
-											<h3 class="deal-title mb-10">
-												<a href="#">شاحن أنكر السريع للسيارة يشحن أربعة اضعاف أسرع</a>
-											</h3>
-											<ul class="deal-meta list-inline mb-10 color-mid">
-												<li><i class="ico fa fa-map-marker ml-10"></i>المملكة المتحدة</li>
-												<li><i class="ico fa fa-shopping-basket ml-10"></i>134 Bought</li>
-											</ul>
-											<p class="text-muted mb-20">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص...</p>
-										</div>
-										<div class="deal-price pos-r mb-15">
-											<h3 class="price ptb-5 text-left"><span class="price-sale">$300.00</span>$250.00</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						@endforeach
 					
+						
 					</div>
 				</section>
 				<section class="section latest-coupons-area ptb-30">

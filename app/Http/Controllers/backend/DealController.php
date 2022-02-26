@@ -19,7 +19,7 @@ class DealController extends Controller
         },'store'=>function($query){
             $query->select('id','name','image');
         }])->get();
-       // dd($banners);die;
+      
         return view('admin.deals.deal')->with(compact('deals'));
     }
     public function deal_single(Deal $id){
@@ -94,7 +94,7 @@ class DealController extends Controller
      $stores=Store::where('status',1)->get();
      $stores=json_decode(json_encode($stores),true);
      //  echo "<pre>"; print_r($brands);die;
-     $deal=Deal::with('store')->get()->find($id);
+    // $deal=Deal::with('store')->get()->find($id);
    //  $store=$deal->store;
     // return $store->name;
         return view('admin.deals.add_edit_deal')->with(compact('title','categories',

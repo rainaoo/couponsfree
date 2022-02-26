@@ -1,7 +1,7 @@
 <section class="footer-top-area pt-70 pb-30 pos-r bg-blue">
     <div class="container">
         <div class="row row-tb-20">
-            <div class="col-sm-12 col-md-7">
+            <div class="col-sm-12 col-md-6">
                 <div class="row row-tb-20">
                     <div class="footer-col col-sm-6">
                         <div class="footer-about">
@@ -11,21 +11,21 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-4">
                 <div class="row row-tb-20">
                     <div class="footer-col col-sm-6">
                         <div class="footer-links">
                             <h2 class="color-lighter">Quick Links</h2>
                             <ul>
-                                <li><a href="deals_grid.html">Latest Deals</a>
+                                <li><a href="{{route('deals_grid')}}">Latest Deals</a>
                                 </li>
-                                <li><a href="coupons_grid.html">Newest Coupons</a>
+                                <li><a href="{{route('coupons_grid')}}">Newest Coupons</a>
                                 </li>
-                                <li><a href="404.html">Blogs</a>
+                                <li><a href="{{route('blogs')}}">Blogs</a>
                                 </li>
-                                <li><a href="contact_us_02.html">Contact Us</a>
+                                <li><a href="{{route('contact')}}">Contact Us</a>
                                 </li>
-                                <li><a href="faq.html">FAQs</a>
+                                <li><a href="{{route('faq')}}">FAQs</a>
                                 </li>
                             </ul>
                         </div>

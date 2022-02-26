@@ -51,12 +51,12 @@ Route::get('/deal_list',[Basecontroller::class,'deal_list'])->name('deal_list');
  /************* stores pages **************************************** */
  Route::get('/stores_search',[Basecontroller::class,'stores_search'])->name('stores_search');
  Route::get('/stores_categores',[Basecontroller::class,'stores_categores'])->name('stores_categores');
- Route::get('/stores_single/{id?}',[StoreController::class,'stores_single'])->name('stores_single');
+ Route::get('/stores_single/{store?}',[StoreController::class,'stores_single'])->name('stores_single');
  /************* contact page **************************************** */
  Route::get('/contact',[Basecontroller::class,'contact'])->name('contact');
  /************* blogs page **************************************** */
  Route::get('/blogs',[Basecontroller::class,'blogs'])->name('blogs');
- Route::get('/blog_single',[Basecontroller::class,'blog_single'])->name('blog_single');
+ Route::get('/blog_single/{blog?}',[BlogController::class,'blog_single'])->name('blog_single');
  /************* checkout pages **************************************** */
  Route::get('/checkout_method',[Basecontroller::class,'checkout_method'])->name('checkout_method');
  Route::get('/checkout_billing',[Basecontroller::class,'checkout_billing'])->name('checkout_billing');

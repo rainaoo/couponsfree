@@ -11,7 +11,7 @@ class Coupon extends Model
     protected $guarded=['id'];
 
     public static function getCoupons(){
-        //get banner
+        
         $getCoupons=Coupon::where('status',1)->get()->toArray();
        // dd($getCoupons);die;
        return $getCoupons;

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\blog;
+use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Store;
 use Session;
@@ -21,6 +21,16 @@ class BlogController extends Controller
        // dd($banners);die;
         return view('admin.blogs.blog')->with(compact('blogs'));
     }
+    public function blog_single(Blog $blog){
+        //dd($blog);
+        $blogs=Blog::with(['category'=>function($query){
+            $query->select('id','name');
+        },'store'=>function($query){
+            $query->select('id','name');
+        }])->where('id',$blog->id)->where('status',1)->get();
+      // dd($blogs);
+         return view('front.temp_en.blog_single')->with('blog',$blog,$blogs); 
+     }
 
     public function addEditBlog(Request $request,$id=null){
         if($id==""){
@@ -74,7 +84,7 @@ class BlogController extends Controller
             $blog->save();
 
             Session::flash('success_message', $message);
-            return redirect('blogs');
+            return redirect('blog');
 
         }
         $categories=Category::where('status',1)->get();

@@ -1,3 +1,18 @@
+<?php
+use App\Models\Banner;
+//use App\Models\Category;
+use App\Models\Deal;
+use App\Models\Store;
+use App\Models\Coupon;
+
+	//use App\Models\Coupon;
+    $getCoupons=Coupon::getCoupons();
+    // echo "<pre>";print_r($getCategories);die;
+        $coupons=Coupon::with(['store'=>function($query){
+            $query->select('id','name','image','description');
+        }])->orderBy('id','Desc')->where('status',1)->limit(5)->get();
+?>
+
 @extends('front.temp_en.layout.site')
 @section('content')
 
@@ -33,1121 +48,218 @@
                         </div>
                     </header>
                     <!-- End Page Control -->
-                    <div class="row row-masnory row-tb-20">
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="ribbon-wrapper is-hidden-xs-down">
-                                    <div class="ribbon">Featured</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_01.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>125 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">10% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                                <a href="#">10% off select XPS & Alienware laptops</a>
-                                            </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 01/01/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_01">Get Coupon Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
+                    
+                    <div class="row row-masnory row-tb-20"> 
+                        @foreach($coupons as $key => $coupon)
+                    
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="coupon-single panel t-center">
+                                    <!--<div class="ribbon-wrapper is-hidden-xs-down">
+                                        <div class="ribbon">Featured</div>
+                                    </div>-->
+                                    <a  class="id" name="id" id="id" style="color:blue!important">{{$coupon['id']}}</a>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="text-center p-20">
+                                                <img class="store-logo" id="image" src="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}" alt="">
                                             </div>
+                                            <!-- end media -->
                                         </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
+                                        <!-- end col -->
 
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_01">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                        <div class="col-xs-12">
+                                            <div class="panel-body">
+                                                <!--<ul class="deal-meta list-inline mb-10">
+                                                    <li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
+                                                    <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>125 Used</li>
+                                                </ul>-->
+                                                <h4 class="color-green mb-10 t-uppercase" id="dicount">{{$coupon['coupon_discount']}}%  OFF</h4>
+                                                <h5 class="deal-title mb-10">
+                                                    <a href="#" id="title">{{$coupon['title']}}</a>
+                                                </h5>
+                                                    <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On {{$coupon['expires']}}</p>
+                                                <div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
+                                                    <button class="show-code btn btn-sm btn-block" id="btncoupon" data-toggle="modal"
+                                                    data-id="{{$coupon->store['id']}}"  data-title="{{$coupon->store['title']}}" data-image="{{asset('public/backend/dist/img/store_images/'.$coupon->store['image'])}}"
+                                                    data-target="#coupon">Get Coupon Code</button>
+                                                    <div class="coupon-hide">{{$coupon['coupon_code']}}</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                                                    <button class="btn" type="submit">Sign Up</button>
-                                                    </span>
-                                                </div>
-                                            </form>
-                                        </div>
+                                        <!-- end col -->
                                     </div>
+                                    <!-- end row -->
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_02.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
+                        
+                        @endforeach
+					</div>
+					
+                    <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon">
+						<div class="modal-dialog">
+							<div class="modal-content panel">
+								<div class="modal-body">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+									</button>
+									<a   name="m-id" id="m-id" style="color:blue!important"></a>
+									<div class="row row-v-10">
+										<div class="col-md-10 col-md-offset-1">
+											<img id="store" src="{{asset('public/backend/dist/img/store_images/'.$coupon->store['image'])}}" alt="">
+											<h3 class="mb-20" id="m-title">{{$coupon['title']}}</h3>
+											<p class="color-mid">{{$coupon['description']}}</p>
+										</div>
+										
+										<div class="col-md-10 col-md-offset-1 copy-div " id="copy-div">
+											<h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
+											<input type="text" id="copy-text" class="coupon-code" value="{{$coupon['coupon_code']}}">
+											<button id="btncopy">
+											<i id="fa" class="fa fa-clone"></i>
+											</button>
+											</div>
+											<div class="col-md-10 col-md-offset-1">
+												<a href="#" class="btn btn-link">Visit Our Store</a>
+											</div>
+											<style>
+												.copy-div button{
+													padding:10px;
+													background:#5784f5;
+													color:#fff;
+													font-size:18px;
+													border:none;
+													outline:none;
+													border-radius:10px;
+													cursor:pointer;
+												}
+												
+												.copy-div button:active{
+													background: #809ce2;
+												}
+												.copy-div button:before{
+												content:"copied";
+												position: absolute;
+												top:-15px;
+												right:-12px;
+												background: #5c81dc;
+												padding:8px 10px;
+												border-radius:20px;
+												font-size:15px;
+												display:none;
+												
+												}
+												.copy-div button:after{
+												content:"";
+												position: absolute;
+												top:20px;
+												right:25px;
+												width:10px;
+												height:10px;
+												background: #5c81dc;
+												transform: rotate(45deg);
+												display:none;
+												
+												}
+												.copy-div .active{
+													<--background: rgb(194, 14, 14);-->
+												}
+												.copy-div .active~button:before,
+												.copy-div .active~button:after{
+													display:block;
+												}
 
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-muted"><i class="ico fa fa-map-marker mr-5"></i>California</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>13 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">15% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">15% off 2 select Amazon Fire cases</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 05/02/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_02">Show Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
+											</style>
+											<script type="text/javascript">
+													const copydiv=document.getElementById("copy-div");
+													const copytext=document.getElementById("copy-text");
+													const btncopy=document.getElementById("btncopy");
+													const facopy=document.getElementById("fa");
+													
+													btncopy.onclick=function(){
+														copytext.select();
+														document.execCommand("Copy");
+														copytext.classList.add("active");
+														//window.getSelection().removeAllRanges();
+														setTimeout(function(){
+															copytext.classList.remove("active");
+														},2500);
 
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_02">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_03.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
+														}
+														$(document).ready(function(){
 
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-muted"><i class="ico fa fa-tag mr-5"></i>Coupon</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>425 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">20% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">Flat 40% off hotel bookings in 10 cities</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 15/01/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_03">See Sale</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
+															$(document).on("click",".show-code",function(){
+															var couponId = $(this).data('id');
+															$(".modal-body #m-id").val( couponId );
 
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_03">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_04.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
+															var couponTitle = $(this).data('title');
+															$(".modal-body #m-title").val( couponTitle );
+															// As pointed out in comments, 
+															// it is unnecessary to have to manually call the modal.
+															// $('#addBookDialog').modal('show');
+															});
+														});
 
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>230 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">30% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">There is no place like home 25% off</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 02/03/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_04">Print Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
+														
+												
+											</script>
+											<div class="col-md-10 col-md-offset-1">
+												<div class="like-report mb-10">
+													<span>Share this coupon :</span>
+													<ul class="list-inline social-icons social-icons--colored mt-10">
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-facebook"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-twitter"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-google-plus"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-linkedin"></i></a>
+														</li>
+													</ul>
+												</div>
+											</div>
+									    </div>
+								   </div>
+								
+							    </div>
+						    </div>
+					    </div>
 
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_04">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="ribbon-wrapper is-hidden-xs-down">
-                                    <div class="ribbon">Featured</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_05.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-muted"><i class="ico fa fa-tag mr-5"></i>Coupon</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>86 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">10% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">10% off $399+ refurbished laptops</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 20/02/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_05">Show Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_05">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_06.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>24 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">25% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">There is no place like home 25% off</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 14/01/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_06">Show Coupon</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_06">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="ribbon-wrapper is-hidden-xs-down">
-                                    <div class="ribbon">Featured</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_07.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>125 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">10% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">10% off select XPS & Alienware laptops</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 01/01/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_07">Get Coupon Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_07">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_08.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-muted"><i class="ico fa fa-map-marker mr-5"></i>California</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>13 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">15% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">15% off 2 select Amazon Fire cases</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 05/02/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_08">Show Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_08">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_09.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-muted"><i class="ico fa fa-tag mr-5"></i>Coupon</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>425 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">20% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">Flat 40% off hotel bookings in 10 cities</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 15/01/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_09">See Sale</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_09">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_10.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>230 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">30% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">There is no place like home 25% off</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 02/03/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_10">Print Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_10">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="ribbon-wrapper is-hidden-xs-down">
-                                    <div class="ribbon">Featured</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_11.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-muted"><i class="ico fa fa-tag mr-5"></i>Coupon</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>86 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">10% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">10% off $399+ refurbished laptops</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 20/02/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_11">Show Code</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_11">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="coupon-single panel t-center">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="text-center p-20">
-                                            <img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_12.jpg')}}" alt="">
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-
-                                    <div class="col-xs-12">
-                                        <div class="panel-body">
-                                            <ul class="deal-meta list-inline mb-10">
-                                                <li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
-                                                <li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>24 Used</li>
-                                            </ul>
-                                            <h4 class="color-green mb-10 t-uppercase">25% OFF</h4>
-                                            <h5 class="deal-title mb-10">
-                                    <a href="#">There is no place like home 25% off</a>
-                                </h5>
-                                            <p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On 14/01/2018</p>
-                                            <div class="showcode">
-                                                <button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_12">Show Coupon</button>
-                                                <div class="coupon-hide">X455-17GT-OL58</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-                            </div>
-
-                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_12">
-                                <div class="modal-dialog">
-                                    <div class="modal-content panel">
-                                        <div class="modal-body">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <div class="row row-v-10">
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <img src="{{asset('public/front/assets/images/brands/store_logo.jpg')}}" alt="">
-                                                    <h3 class="mb-20">Save 30% off New Domains Names</h3>
-                                                    <p class="color-mid">Not applicable to ICANN fees, taxes, transfers,or gift cards. Cannot be used in conjunction with any other offer, sale, discount or promotion. After the initial purchase term.</p>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <a href="#" class="btn btn-link">Visit Our Store</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <h6 class="color-mid t-uppercase">Click below to get your coupon code</h6>
-                                                    <a href="#" target="_blank" class="coupon-code">X455-17GT-OL58</a>
-                                                </div>
-                                                <div class="col-md-10 col-md-offset-1">
-                                                    <div class="like-report mb-10">
-                                                        <span>Share this coupon :</span>
-                                                        <ul class="list-inline social-icons social-icons--colored mt-10">
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                                            </li>
-                                                            <li class="social-icons__item">
-                                                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer footer-info t-center ptb-40 prl-30">
-                                            <h4 class="mb-15">Subscribe to Mail</h4>
-                                            <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                                            <form method="post" action="#">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-white" placeholder="Your Email Address" required="required">
-                                                    <span class="input-group-btn">
-                <button class="btn" type="submit">Sign Up</button>
-            </span>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- Page Pagination -->
-                    <div class="page-pagination text-center mt-30 p-10 panel">
-                        <nav>
-                            <!-- Page Pagination -->
-                            <ul class="page-pagination">
-                                <li><a class="page-numbers previous" href="#">Previous</a>
-                                </li>
-                                <li><a href="#" class="page-numbers">1</a>
-                                </li>
-                                <li><span class="page-numbers current">2</span>
-                                </li>
-                                <li><a href="#" class="page-numbers">3</a>
-                                </li>
-                                <li><a href="#" class="page-numbers">4</a>
-                                </li>
-                                <li><span class="page-numbers dots">...</span>
-                                </li>
-                                <li><a href="#" class="page-numbers">20</a>
-                                </li>
-                                <li><a href="#" class="page-numbers next">Next</a>
-                                </li>
-                            </ul>
-                            <!-- End Page Pagination -->
-                        </nav>
-                    </div>
-                    <!-- End Page Pagination -->
-                </div>
+                        <!-- Page Pagination -->
+                  
+                        <div class="page-pagination text-center mt-30 p-10 panel">
+                            <nav>
+                                <!-- Page Pagination -->
+                                <ul class="page-pagination">
+                                    <li><a class="page-numbers previous" href="#">Previous</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">1</a>
+                                    </li>
+                                    <li><span class="page-numbers current">2</span>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">3</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">4</a>
+                                    </li>
+                                    <li><span class="page-numbers dots">...</span>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">20</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers next">Next</a>
+                                    </li>
+                                </ul>
+                                <!-- End Page Pagination -->
+                            </nav>
+                        </div>
+                        <!-- End Page Pagination -->
+                
                 <!-- End Coupons Area -->
-
+              
             </div>
         </div>
-
+    </div>
 
     </main>
 	<!-- –––––––––––––––[ END PAGE CONTENT ]––––––––––––––– -->

@@ -1,4 +1,10 @@
-    <!-- WRAPPER                                   -->
+<?php
+use App\Models\Category;
+use App\Models\Store;
+  ?>
+
+
+<!-- WRAPPER                                   -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <div id="pageWrapper" class="page-wrapper">
  
@@ -19,16 +25,11 @@
                 <div class="col-sm-12 col-md-8">
                     <ul class="nav-top nav-top-right list-inline t-xs-center t-md-left">
                         <li>
-                            <a href="{{route('home')}}"><i class="fa fa-flag-usa"></i>الإنجليزية<i class="fa fa-caret-down"></i></a>
+                            <a href="{{route('home-ar')}}"><i class="fa fa-flag-fra"></i>العربية<i class="fa fa-caret-down"></i></a>
                             <ul>
                                 <li><a href="{{route('home')}}"><i class="fa fa-flag-usa"></i>الإنجليزية</a>
                                 </li>
-                                <li><a href="#"><i class="fa fa-flag-fra"></i>الفرنسية</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-flag-ger"></i>الالمانية</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-flag-rus"></i>الروسية</a>
-                                </li>
+                                
                             </ul>
                         </li>
                         <li>
@@ -92,28 +93,22 @@
                                                 الاقسام 
                                                 </button>
                                                  <!--start category search ------------>
-                                                <ul class="dropdown-menu list-unstyled">
-                                                    <li class="dropdown-item " data-value="0"><span>All Categories</span></li>
-                                                         <ul class="list-unstyled pl-5">
-                                                            <li class="dropdown-item" data-value="3" >
-                                                                <span>Food & drink</span>
-                                                            </li>
-                                                            <li class="dropdown-item" data-value="10" >
-                                                                 <span>Event</span>
-                                                                <ul class="list-unstyled">
-                                                                    <li class="dropdown-item" data-value="11" >
-                                                                        <span>Fitnes</span>
-                                                                   </li>
-                                                                    <li class="dropdown-item" data-value="12" >
-                                                                       <span></span>
-                                                                   </li>
-                                                                   <li class="dropdown-item" data-value="13" >
-                                                                       <span></span>
-                                                                  </li>
-                                                               </ul>
-                                                            </li>
-                                                         </ul>
-                                                </ul>
+												 <ul class="dropdown-menu list-unstyled">
+													<li class="dropdown-item " data-value="0"><span>جميع الاقسام</span></li>
+													
+														 <ul class="list-unstyled pl-5">
+															<?php	
+															//use App\Models\Category;
+															$getCategories=Category::getCategories();
+															// echo "<pre>";print_r($getCategories);die;
+															?>
+																@foreach($getCategories as $key => $category)
+															<li class="dropdown-item" data-value="3" >
+																<span>{{$category['name_ar']}}</span>
+															</li>
+															@endforeach
+														 </ul>
+												</ul>
                                                  <!--endcategory search ------------>
                                             </div>
                                             <span class="input-group-btn">
@@ -155,32 +150,12 @@
 											<span class=""></span><a href="{{route('home-ar')}}" title="Home">الرئيسية</a>
 										</li>
 										<li class="item  has-sub dropdown-mega-menu" >
-											<a href="{{route('deal_grid_sidebar-ar')}}" title="Deals">الصفقات<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-											<div class="dropdown-menu mega-menu" style="">
-												<ul class="">
-													<li><a href="{{route('deal_single-ar')}}">الصفقة 1</a>
-													</li>
-													<li><a href="{{route('deal_single-ar')}}">الصفقة 2</a>
-													</li>
-													<li><a href="{{route('deals_grid-ar')}}">كل الصفقات</a>
-													</li>
-											</ul>
-											</div>
+											<a href="{{route('deals_grid-ar')}}" title="Deals">الصفقات</a>
+											
 										</li>
 										<li class="item has-sub dropdown-mega-menu" >
-											<a href="{{route('coupons_grid-ar')}}" title="Coupons">الكوبونات <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-												<div class="dropdown-menu mega-menu" >
-													<ul class="">
-										                 <span class="menu-title">Copouns Style</span>
-															<li><a href="{{route('coupons_grid-ar')}}">عرض شبكة </a>
-															</li>
-															<li><a href="{{route('coupons_grid_sidebar-ar')}}">شبكة مع قائمة جانبية</a>
-															</li>
-															<li><a href="{{route('coupons_list-ar')}}">عرض قائمة</a>
-															</li>
-															
-													</ul>
-												 </div>
+											<a href="{{route('coupons_grid-ar')}}" title="Coupons">الكوبونات </a>
+												
 										 </li>
 										<li class="item  has-sub dropdown-mega-menu" >
 											<a href="{{route('stores_search-ar')}}">المتاجر <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
@@ -190,8 +165,7 @@
 																	</li>
 																	<li><a href="{{route('stores_categores-ar')}}">اقسام المناجر</a>
 																	</li>
-																	<li><a href="{{route('stores_single-ar')}}">المنجر</a>
-																	</li>
+																	
 																</ul>
 												</div>				
 										</li>
@@ -227,13 +201,19 @@
 										<div class="box-content block_content">
 											<div id="verticalmenu" class="verticalmenu" role="navigation">
 												<ul class="menu level1  categorys">
+											<?php	
+												//use App\Models\Category;
+												$getCategories=Category::getCategories();
+											    // echo "<pre>";print_r($getCategories);die;
+												?>
+									                @foreach($getCategories as $key => $category)
 													<li class="item  parent">
-														<a href="#" title="لاكل و الشراب ">
-															<i class="fa fa-cutlery" style=""></i>الاكل و الشراب <span class="">40</span></a>
+														<a href="#" title="Food &amp; Drink">
+															<i class="fa fa-cutlery" style=""></i>{{$category['name_ar']}} <span class="">40</span></a>
 															<div class="dropdown-menu" style="width:222px">
 																<ul>
 																	<li class="item ">
-																	<a href="#" title="Macbook Pro">انتنتنمت</a></li>
+																	<a href="#" title="Macbook Pro">Macbook Pro</a></li>
 																	<li class="item  parent">
 																		<a href="#" title="Laptop Thinkpad">Laptop Thinkpad</a>
 																		<span class="show-sub fa-active-sub"></span>
@@ -252,9 +232,10 @@
 																</ul>
 															</div>
 													</li>
-													<li class="item  parent group">
+													 @endforeach
+												<!--	<li class="item  parent group">
 														<a href="#" title="Events">
-															<i class="fa fa-calendar" style=""></i>الاحداث <span class="">44</span></a>
+															<i class="fa fa-calendar" style=""></i>Events <span class="">44</span></a>
 															<div class="dropdown-menu" style="width: 922px; top: -73px;">
 																<ul>
 																	<li class="item group-list-category">
@@ -285,7 +266,7 @@
 													</li>
 													<li class="item  parent group">
 														<a href="#" title="Beauty">
-															<i class="fa fa-female" style=""></i>الجمال <span class="">44</span></a>
+															<i class="fa fa-female" style=""></i>Beauty <span class="">44</span></a>
 															<div class="dropdown-menu" style="width: 922px; top: -143px;">
 																<ul>
 																	<li class="item group-list-category-1">
@@ -322,8 +303,8 @@
 															</ul>
 														</div>
 													</li>
-													<li class="item  parent group"><a href="#" title="للياقة البدنية">
-													<i class="fa fa-bolt" style=""></i>اللياقة البدنية<span class="">44</span></a> 
+													<li class="item  parent group"><a href="#" title="Fitness">
+													<i class="fa fa-bolt" style=""></i>Fitness<span class="">44</span></a> 
 													<div class="dropdown-menu" style="width: 922px; top: -215px;">
 														<ul>
 															<li class="item group-list-category-2">
@@ -359,30 +340,30 @@
 														</ul>
 													</div>
 													</li>
-													<li class="item "><a href="#" title="الاثاث">
-														<i class="fa fa-image" style=""></i>الاثاث<span>33</span> </a>
+													<li class="item "><a href="#" title="Furniture">
+														<i class="fa fa-image" style=""></i>Furniture<span>33</span> </a>
 														</li>
-													<li class="item "><a href="#" title="الازياء ">
-															<i class="fa fa-umbrella" style=""></i>الازياء</a>
+													<li class="item "><a href="#" title="Smart Watches ">
+															<i class="fa fa-umbrella" style=""></i>Fashion</a>
 													</li>
 
-													<li class="item  toggleable" style="display: none;"><a href="#" title="التسوق">
-														<i class="fa fa-shopping-cart" style=""></i>التسوق<span>37</span></a>
+													<li class="item  toggleable" style="display: none;"><a href="#" title="Shopping">
+														<i class="fa fa-shopping-cart" style=""></i>Shopping<span>37</span></a>
 														<span class="menu-sub-title">Lorem ipsum dolor sit amet quam</span>
 													</li>
 														
-													<li class="item  toggleable" style="display: none;"><a href="#" title="لسيارات و الدراجات">
-														<i class="fa fa-home" style=""></i>السيارات و الدراجات<span>30</span></a>
+													<li class="item  toggleable" style="display: none;"><a href="#" title="Monitor &amp; Television">
+														<i class="fa fa-home" style=""></i>Home &amp; Graden<span>30</span></a>
 														<span class="menu-sub-title">Sony BRAVIA, SamSung, TV 4K ...</span>
 													</li>
 
 															
-													<li class="item  toggleable" style="display: none;"><a href="#" title="السفر">
-														<i class="fa fa-plane" style=""></i>السفر<span>48</span></a>
+													<li class="item  toggleable" style="display: none;"><a href="#" title="Monitor &amp; Television">
+														<i class="fa fa-plane" style=""></i>Travel<span>48</span></a>
 														<span class="menu-sub-title">Sony BRAVIA, SamSung, TV 4K ...</span>
 													</li>
-													<li class="more extra">عرض المزيد
-													</li>
+													<li class="more extra">Show More
+													</li>0-->
 												</ul>
 											</div>
 									   </div>
@@ -410,51 +391,12 @@
 															<span class=""></span><a href="{{route('home-ar')}}" title="Home">الرئيسية</a>
 														</li>
 														<li class="item  has-sub" >
-															<a href="{{route('deal_grid_sidebar-ar')}}" title="Deals">الصفقات <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-															<div class="dropdown-menu" style="width:270px">
-																<ul class="">
-																	<li><a href="{{route('deal_single-ar')}}">الصفقة 1</a>
-																	</li>
-																	<li><a href="{{route('deal_single-ar')}}"> الصفقة 2</a>
-																	</li>
-																	<li><a href="{{route('deals_grid-ar')}}">كل الصفقات</a>
-																	</li>
-															</ul>
-															</div>
+															<a href="{{route('deals_grid-ar')}}" title="Deals">الصفقات <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															
 														</li>
 														<li class="item menu-page group" >
 															<a href="{{route('coupons_grid-ar')}}" title="Coupons">الكوبونات <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
-																<div class="dropdown-menu" >
-																	<ul class=""><li class="item container group" >
-																		<div class="dropdown-menu" >
-																			<ul class="">
-																				<li class="item col-md-3 mw-20 html" >
-																					<span class="menu-title">شكل تصميم الكويونات</span>
-																					<div class="menu-content">
-																						<ul class="col">
-																							<li><a href="{{route('coupons_grid-ar')}}">عرض الشبكة</a>
-																							</li>
-																							<li><a href="{{route('coupons_grid_sidebar-ar')}}">شبطة مع قائمة جانبية</a>
-																							</li>
-																							<li><a href="{{route('coupons_list-ar')}}">عرض قائمة</a>
-																							</li>
-																							
-																						</ul>
-																					</div>
-																				</li>
-																				
-																				<li class="item col-md-3 mw-40 html" >
-																					<div class="menu-content">
-																						<div class="menu-banner-3 text-center">
-																							<a href="#"><img class="img-fluid" src="{{asset('front/assets/images/brands/store_logo.jpg')}}" alt="mega-menu-3.jpg" /></a>
-																						</div>
-																					</div>
-																				</li>
-																			</ul>
-																		</div>
-																	</li>
-																</ul>
-															</div>
+															
 														</li>
 														<li class="item  has-sub " >
 															<a href="{{route('stores_search-ar')}}">المتاجر <span class="indicator"><i class="fa fa-angle-down"></i></span></a>
@@ -464,8 +406,7 @@
 																					</li>
 																					<li><a href="{{route('stores_categores-ar')}}">اقسام المتاجر</a>
 																					</li>
-																					<li><a href="{{route('stores_single-ar')}}">المتجر </a>
-																					</li>
+																					
 																				</ul>
 																</div>				
 														</li>
