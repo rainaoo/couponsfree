@@ -188,7 +188,6 @@ use App\Models\Coupon;
 				<section class="section latest-coupons-area ptb-30">
 					<header class=" pos-r line">
 						<h3 class="section-title font-18">Latest Coupons</h3>
-						<a class="btn btn-o btn-xs pos-a right-10 pos-tb-center">View All</a>
 					</header>
 
 					<div class="latest-coupons-slider owl-slider" data-autoplay-hover-pause="true" data-loop="true" data-autoplay="true" data-smart-speed="1000" data-autoplay-timeout="10000" data-margin="30" data-nav-speed="false" data-items="1" data-xxs-items="1" data-xs-items="2" data-sm-items="2" data-md-items="3" data-lg-items="4">
@@ -398,7 +397,7 @@ use App\Models\Coupon;
 								<h6 class="store-name ptb-10">{{$store['name']}}</h6>
 							</a>
 						</div>
-					@endforeach
+					 @endforeach
 					</div>
 				</section>
 

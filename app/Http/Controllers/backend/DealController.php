@@ -25,6 +25,9 @@ class DealController extends Controller
     public function deal_single(Deal $id){
         return view('front.temp_en.deal_single')->with('deal',$id); 
     }
+    public function deal_single_ar(Deal $id){
+        return view('front.temp_ar.deal_single')->with('deal',$id); 
+    }
     public function addEditDeal(Request $request,$id=null){
         if($id==""){
             $title="Add deal";

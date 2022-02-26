@@ -32,6 +32,17 @@ class BlogController extends Controller
          return view('front.temp_en.blog_single')->with('blog',$blog,$blogs); 
      }
 
+     public function blog_single_ar(Blog $blog){
+        //dd($blog);
+        $blogs=Blog::with(['category'=>function($query){
+            $query->select('id','name');
+        },'store'=>function($query){
+            $query->select('id','name');
+        }])->where('id',$blog->id)->where('status',1)->get();
+      // dd($blogs);
+         return view('front.temp_ar.blog_single')->with('blog',$blog,$blogs); 
+     }
+
     public function addEditBlog(Request $request,$id=null){
         if($id==""){
             $title="Add blog";

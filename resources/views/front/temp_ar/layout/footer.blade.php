@@ -5,7 +5,7 @@
                 <div class="row row-tb-20">
                     <div class="footer-col col-sm-6">
                         <div class="footer-about">
-                            <img class="mb-40" src="{{asset('front/assets/images/logoco_dark.png')}}" width="250" alt="">
+                            <img class="mb-40" src="{{asset('public/front/assets/images/logoco_dark.png')}}" width="250" alt="">
                             <p class="color-light">خلافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله أكثر من 2000 عام في القدم. قام البروفيسور "ريتشارد ماك لينتوك" (Richard McClintock) وهو بروفيسور اللغة اللاتينية</p>
                         </div>
                     </div>
@@ -30,12 +30,9 @@
                         <div class="footer-links">
                             <h2 class="color-lighter">روابط مهمة</h2>
                             <ul>
-                                <li><a href="deals_grid.html">أحدث عروض</a></li>
-                                <li><a href="coupons_grid.html">أحدث الكوبونات</a></li>
-                                <li><a href="contact_us_02.html">اتصل بنا</a></li>
-                                <li><a href="404.html">خطأ 404</a></li>
-                                <li><a href="terms_conditions.html">سياسات الإستخدام</a></li>
-                                <li><a href="faq.html">أسئلة وأجوبة</a></li>
+                                <li><a href="{{route('deals_grid')}}">أحدث عروض</a></li>
+                                <li><a href="{{route('coupons_grid')}}">أحدث الكوبونات</a></li>                                <li><a href="{{route('contact')}}">اتصل بنا</a></li>
+                                <li><a href="{{route('faq')}}">أسئلة وأجوبة</a></li>
                             </ul>
                         </div>
                     </div>
@@ -43,24 +40,38 @@
                         <div class="footer-top-instagram instagram-widget">
                             <h2>تابعنا في انستقرام</h2>
                             <div class="row row-tb-5 row-rl-5">
+
+
                                 <div class="instagram-widget__item col-xs-4">
-                                    <img src="{{asset('front/assets/images/instagram/instagram_01.jpg')}}" alt="">
+                                    <img src="{{asset('public/front/assets/images/instagram/instagram_01.jpg')}}" alt="">
                                 </div>
+        
+        
                                 <div class="instagram-widget__item col-xs-4">
-                                    <img src="{{asset('front/assets/images/instagram/instagram_02.jpg')}}" alt="">
+                                    <img src="{{asset('public/front/assets/images/instagram/instagram_02.jpg')}}" alt="">
                                 </div>
+        
+        
                                 <div class="instagram-widget__item col-xs-4">
-                                    <img src="{{asset('front/assets/images/instagram/instagram_03.jpg')}}" alt="">
+                                    <img src="{{asset('public/front/assets/images/instagram/instagram_03.jpg')}}" alt="">
                                 </div>
+        
+        
                                 <div class="instagram-widget__item col-xs-4">
-                                    <img src="{{asset('front/assets/images/instagram/instagram_04.jpg')}}" alt="">
+                                    <img src="{{asset('public/front/assets/images/instagram/instagram_04.jpg')}}" alt="">
                                 </div>
+        
+        
                                 <div class="instagram-widget__item col-xs-4">
-                                    <img src="{{asset('front/assets/images/instagram/instagram_05.jpg')}}" alt="">
+                                    <img src="{{asset('public/front/assets/images/instagram/instagram_05.jpg')}}" alt="">
                                 </div>
+        
+        
                                 <div class="instagram-widget__item col-xs-4">
-                                    <img src="{{asset('front/assets/images/instagram/instagram_06.jpg')}}" alt="">
+                                    <img src="{{asset('public/front/assets/images/instagram/instagram_06.jpg')}}" alt="">
                                 </div>
+        
+        
                             </div>
                         </div>
                     </div>

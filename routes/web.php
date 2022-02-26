@@ -74,7 +74,7 @@ Route::get('/ar/result',[Rtlcontroller::class,'result'])->name('result-ar');
 Route::get('/ar/cart',[Rtlcontroller::class,'cart'])->name('cart-ar');
 Route::get('/ar/wishlist',[Rtlcontroller::class,'wishlist'])->name('wishlist-ar');
  /************* deals pages **************************************** */
-Route::get('/ar/deal_single',[Rtlcontroller::class,'deal_single'])->name('deal_single-ar');
+Route::get('/ar/deal_single/{id?}',[DealController::class,'deal_single_ar'])->name('deal_single-ar');
 Route::get('/ar/deals_grid',[Rtlcontroller::class,'deals_grid'])->name('deals_grid-ar');
 Route::get('/ar/deal_grid_sidebar',[Rtlcontroller::class,'deal_grid_sidebar'])->name('deal_grid_sidebar-ar');
 Route::get('/ar/deal_list',[Rtlcontroller::class,'deal_list'])->name('deal_list-ar');
@@ -85,12 +85,12 @@ Route::get('/ar/deal_list',[Rtlcontroller::class,'deal_list'])->name('deal_list-
  /************* stores pages **************************************** */
  Route::get('/ar/stores_search',[Rtlcontroller::class,'stores_search'])->name('stores_search-ar');
  Route::get('/ar/stores_categores',[Rtlcontroller::class,'stores_categores'])->name('stores_categores-ar');
- Route::get('/ar/stores_single',[Rtlcontroller::class,'stores_single'])->name('stores_single-ar');
+ Route::get('/ar/stores_single/{store?}',[StoreController::class,'stores_single_ar'])->name('stores_single-ar');
  /************* contact page **************************************** */
  Route::get('/ar/contact',[Rtlcontroller::class,'contact'])->name('contact-ar');
  /************* blogs page **************************************** */
  Route::get('/ar/blogs',[Rtlcontroller::class,'blogs'])->name('blogs-ar');
- Route::get('/ar/blog_single',[Rtlcontroller::class,'blog_single'])->name('blog_single-ar');
+ Route::get('/ar/blog_single/{blog?}',[BlogController::class,'blog_single_ar'])->name('blog_single-ar');
  /************* checkout pages **************************************** */
  Route::get('/ar/checkout_method',[Rtlcontroller::class,'checkout_method'])->name('checkout_method-ar');
  Route::get('/ar/checkout_billing',[Rtlcontroller::class,'checkout_billing'])->name('checkout_billing-ar');

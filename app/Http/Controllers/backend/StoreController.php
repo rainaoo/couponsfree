@@ -24,6 +24,14 @@ class StoreController extends Controller
      // dd($deals);
         return view('front.temp_en.stores_single')->with('store',$store,$deals); 
     }
+    public function stores_single_ar(Store $store){
+        // dd($store);
+         $deals=Deal::with(['store'=>function($query){
+             $query->select('id','name','image');
+         }])->orderBy('id','Desc')->where('store_id',$store->id)->where('status',1)->get();
+      // dd($deals);
+         return view('front.temp_ar.stores_single')->with('store',$store,$deals); 
+     }
     public function addEditStore($id=null,Request $request){
 
         if($id==""){

@@ -61,7 +61,7 @@ use App\Models\Store;
             <div class="row row-rl-0 row-tb-20 row-md-cell">
                 <div class="brand col-md-3 t-xs-center t-md-right valign-middle ml-auto mr-auto">
                     <a href="#" class="logo">
-                        <img src="{{asset('front/assets/images/logoco_light.png')}}" alt="" width="250">
+						<img src="{{asset('public/front/assets/images/logoco_light.png')}}" alt="" width="250">
                     </a>
                 </div>
                 <div class="header-search col-md-9">

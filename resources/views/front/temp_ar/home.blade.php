@@ -126,7 +126,7 @@ use App\Models\Coupon;
 				<section class="section latest-deals-area ptb-30">
 					<header class=" pos-r line">
 						<h3 class="section-title font-18">أحدث العروض</h3>
-						<span class="btns collapsed" data-toggle="collapse" data-target="#demo"></span>
+						
 					</header>
 					<?php
 					 $getDeals=Deal::getDeals();
@@ -147,7 +147,7 @@ use App\Models\Coupon;
 								           data-bg-img="{{asset('public/backend/dist/img/deal_images/'.$deal['main_image'])}}">
 									<div class="label-discount right-20 top-15">{{$deal['discount']}} %</div>
 									
-									<div class="time-left bottom-15 right-20 font-md-14">
+									<div class="time-right bottom-15 left-20 font-md-14">
 										<span>
 											<i class="ico fa fa-clock-o mr-10"></i>
 											<span class="t-uppercase" >{{$deal['expires']}}</span>
@@ -162,7 +162,7 @@ use App\Models\Coupon;
 									<div class="pr-md-10">
 										
 										<h3 class="deal-title mb-10">
-											<a href="{{ url('deal_single',$deal->id)}}">{{$deal['title_ar']}} </a>
+											<a href="{{ url('/ar/deal_single',$deal->id)}}">{{$deal['title_ar']}} </a>
 										</h3>
 										<!--<ul class="deal-meta list-inline mb-10 color-mid">
 											<li><i class="ico fa fa-map-marker mr-10"></i>Canada</li>
@@ -184,395 +184,265 @@ use App\Models\Coupon;
 				<section class="section latest-coupons-area ptb-30">
 					<header class=" pos-r line">
 						<h3 class="section-title font-18">أحدث الكوبونات</h3>
+					    <a class="btn btn-o btn-xs pos-a right-10 pos-tb-center">االمزيد</a>
 					</header>
 					<div class="latest-coupons-slider owl-slider" data-autoplay-hover-pause="true" data-loop="true" data-autoplay="true" data-smart-speed="1000" data-autoplay-timeout="10000" data-margin="30" data-nav-speed="false" data-items="1" data-xxs-items="1" data-xs-items="2" data-sm-items="2" data-md-items="3" data-lg-items="4">
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="ribbon-wrapper is-hidden-xs-down">
-									<div class="ribbon">مميز</div>
-								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_01.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
+						<?php
+						//use App\Models\Coupon;
+						$getCoupons=Coupon::getCoupons();
+						// echo "<pre>";print_r($getCategories);die;
+							$coupons=Coupon::with(['store'=>function($query){
+								$query->select('id','name','image','description');
+							}])->orderBy('id','Desc')->where('status',1)->limit(5)->get();
+					   ?>
+					   @foreach($coupons as $key => $coupon)
+					   <div class="coupon-item">
+						<div class="coupon-single panel t-center">
+							<!--<div class="ribbon-wrapper is-hidden-xs-down">
+								<div class="ribbon">Featured</div>
+							</div>-->
+							<a  class="id" name="id" id="id" style="color:blue!important">{{$coupon['id']}}</a>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="text-center p-20">
+										<img class="store-logo" id="image" src="{{asset('public/backend/dist/img/coupon_images/'.$coupon['main_image'])}}" alt="">
 									</div>
-									<!-- end col -->
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-green"><i class="ico lnr lnr-smile ml-5"></i>موثوق</li>
-												<li class="color-muted"><i class="ico lnr lnr-users ml-5"></i>125 مباع</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">10% خصم</h4>
-											<h5 class="deal-title mb-10">
-												<a href="#">قلم ستايلش, للشاشات التى تعمل باللمس</a>
-											</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock ml-10"></i>ينتهي في 01/01/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_01">عرض الكوبون</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
+									<!-- end media -->
+								</div>
+								<!-- end col -->
+
+								<div class="col-xs-12">
+									<div class="panel-body">
+										<!--<ul class="deal-meta list-inline mb-10">
+											<li class="color-green"><i class="ico lnr lnr-smile mr-5"></i>Verifed</li>
+											<li class="color-muted"><i class="ico lnr lnr-users mr-5"></i>125 Used</li>
+										</ul>-->
+										<h4 class="color-green mb-10 t-uppercase" id="dicount">{{$coupon['coupon_discount']}}%  OFF</h4>
+										<h5 class="deal-title mb-10">
+											<a href="#" id="title">{{$coupon['title_ar']}}</a>
+										</h5>
+											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock mr-10"></i>Expires On {{$coupon['expires']}}</p>
+										<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
+											<button class="show-code btn btn-sm btn-block" id="btncoupon" data-toggle="modal"
+											 data-id="{{$coupon->store['id']}}"  data-title="{{$coupon->store['title']}}" data-image="{{asset('public/backend/dist/img/store_images/'.$coupon->store['image'])}}"
+											   data-target="#coupon">عرض الكوبون</button>
+											<div class="coupon-hide">{{$coupon['coupon_code']}}</div>
 										</div>
 									</div>
-									<!-- end col -->
 								</div>
-								<!-- end row -->
+								<!-- end col -->
 							</div>
+							<!-- end row -->
 						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_02.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-muted"><i class="ico fa fa-map-marker ml-5"></i>كاليفورنايا</li>
-												<li class="color-muted"><i class="ico lnr lnr-users ml-5"></i>13 مباع</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">15% خصم</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">عدسة تصوير لجميع الجوالات - مايكرو</a>
-						  </h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock ml-10"></i>ينتهي في 05/02/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_02">عرض الكوبون</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_03.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-muted"><i class="ico fa fa-tag ml-5"></i>كوبون</li>
-												<li class="color-muted"><i class="ico lnr lnr-users ml-5"></i>425 مباع</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">20% خصم</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">عروض الاجهزة المنزلية الصغيرة في ايدي هوم</a>
-					     	</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock ml-10"></i>ينتهي في 15/01/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_03">عرض الكوبون</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_04.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-green"><i class="ico lnr lnr-smile ml-5"></i>موثوق</li>
-												<li class="color-muted"><i class="ico lnr lnr-users ml-5"></i>230 مباع</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">30% خصم</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">اقوى عروض هوم برونز للاثاث المنزلي</a>
-						  </h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock ml-10"></i>ينتهي في 02/03/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_04">عرض الكوبون</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="ribbon-wrapper is-hidden-xs-down">
-									<div class="ribbon">مميز</div>
-								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_05.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-muted"><i class="ico fa fa-tag ml-5"></i>كوبون</li>
-												<li class="color-muted"><i class="ico lnr lnr-users ml-5"></i>86 مباع</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">10% خصم</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">سامسونج جير اس3 فرونتير ساعة ذكية</a>
-					      	</h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock ml-10"></i>ينتهي في 20/02/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_05">عرض الكوبون</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
-						<div class="coupon-item">
-							<div class="coupon-single panel t-center">
-								<div class="row">
-									<div class="col-xs-12">
-										<div class="text-center p-20">
-											<img class="store-logo" src="{{asset('public/front/assets/images/coupons/coupon_06.jpg')}}" alt="">
-										</div>
-										<!-- end media -->
-									</div>
-									<!-- end col -->
-									<div class="col-xs-12">
-										<div class="panel-body">
-											<ul class="deal-meta list-inline mb-10">
-												<li class="color-green"><i class="ico lnr lnr-smile ml-5"></i>موثوق</li>
-												<li class="color-muted"><i class="ico lnr lnr-users ml-5"></i>24 مباع</li>
-											</ul>
-											<h4 class="color-green mb-10 t-uppercase">25% خصم</h4>
-											<h5 class="deal-title mb-10">
-							<a href="#">سماعة بلوتوث فويس من انجو , ذهبي</a>
-						   </h5>
-											<p class="mb-15 color-muted mb-20 font-12"><i class="lnr lnr-clock ml-10"></i>ينتهي في 14/01/2018</p>
-											<div class="showcode" data-toggle-class="coupon-showen" data-toggle-event="click">
-												<button class="show-code btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_06">عرض الكوبون</button>
-												<div class="coupon-hide">X455-17GT-OL58</div>
-											</div>
-										</div>
-									</div>
-									<!-- end col -->
-								</div>
-								<!-- end row -->
-							</div>
-						</div>
+					   </div>
+				      	@endforeach
 					</div>
+
+					<div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon">
+						<div class="modal-dialog">
+							<div class="modal-content panel">
+								<div class="modal-body">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+									</button>
+									<a   name="m-id" id="m-id" style="color:blue!important"></a>
+									<div class="row row-v-10">
+										<div class="col-md-10 col-md-offset-1">
+											<img id="store" src="{{asset('public/backend/dist/img/store_images/'.$coupon->store['image'])}}" alt="">
+											<h3 class="mb-20" id="m-title">{{$coupon['title']}}</h3>
+											<p class="color-mid">{{$coupon['description']}}</p>
+										</div>
+										
+										<div class="col-md-10 col-md-offset-1 copy-div " id="copy-div">
+											<h6 class="color-mid t-uppercase">اضغط بلاسفل للحصول على الكوبون</h6>
+											<input type="text" id="copy-text" class="coupon-code" value="{{$coupon['coupon_code']}}">
+											<button id="btncopy">
+											<i id="fa" class="fa fa-clone"></i>
+											</button>
+											</div>
+											<div class="col-md-10 col-md-offset-1">
+												<a href="#" class="btn btn-link">فم بزياره المتجر</a>
+											</div>
+											<style>
+												.copy-div button{
+													padding:10px;
+													background:#5784f5;
+													color:#fff;
+													font-size:18px;
+													border:none;
+													outline:none;
+													border-radius:10px;
+													cursor:pointer;
+												}
+												
+												.copy-div button:active{
+													background: #809ce2;
+												}
+												.copy-div button:before{
+												content:"copied";
+												position: absolute;
+												top:-15px;
+												right:-12px;
+												background: #5c81dc;
+												padding:8px 10px;
+												border-radius:20px;
+												font-size:15px;
+												display:none;
+												
+												}
+												.copy-div button:after{
+												content:"";
+												position: absolute;
+												top:20px;
+												right:25px;
+												width:10px;
+												height:10px;
+												background: #5c81dc;
+												transform: rotate(45deg);
+												display:none;
+												
+												}
+												.copy-div .active{
+													<--background: rgb(194, 14, 14);-->
+												}
+												.copy-div .active~button:before,
+												.copy-div .active~button:after{
+													display:block;
+												}
+
+											</style>
+											<script type="text/javascript">
+													const copydiv=document.getElementById("copy-div");
+													const copytext=document.getElementById("copy-text");
+													const btncopy=document.getElementById("btncopy");
+													const facopy=document.getElementById("fa");
+													
+													btncopy.onclick=function(){
+														copytext.select();
+														document.execCommand("Copy");
+														copytext.classList.add("active");
+														//window.getSelection().removeAllRanges();
+														setTimeout(function(){
+															copytext.classList.remove("active");
+														},2500);
+
+														}
+														$(document).ready(function(){
+
+															$(document).on("click",".show-code",function(){
+															var couponId = $(this).data('id');
+															$(".modal-body #m-id").val( couponId );
+
+															var couponTitle = $(this).data('title');
+															$(".modal-body #m-title").val( couponTitle );
+															// As pointed out in comments, 
+															// it is unnecessary to have to manually call the modal.
+															// $('#addBookDialog').modal('show');
+															});
+														});
+
+														
+												
+											</script>
+											<div class="col-md-10 col-md-offset-1">
+												<div class="like-report mb-10">
+													<span>Share this coupon :</span>
+													<ul class="list-inline social-icons social-icons--colored mt-10">
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-facebook"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-twitter"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-google-plus"></i></a>
+														</li>
+														<li class="social-icons__item">
+															<a href="#"><i class="fa fa-linkedin"></i></a>
+														</li>
+													</ul>
+												</div>
+											</div>
+									    </div>
+								   </div>
+								
+							    </div>
+						    </div>
+					    </div>
 				</section>
 				<section class="section stores-area stores-area-v1 ptb-30">
 					<header class=" pos-r line">
 						<h3 class="section-title font-18">متاجر شعبية</h3>
 					</header>
-					<div class="popular-stores-slider owl-slider" data-loop="true" data-autoplay="true" data-smart-speed="1000" data-autoplay-timeout="10000" data-margin="20" data-items="2" data-xxs-items="2" data-xs-items="2" data-sm-items="3" data-md-items="5" data-lg-items="6">
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_01.jpg')}}" alt="">
-									</div>
+					<?php
+					// use App\Models\Store;
+					 $getStores=Store::getstores();
+					// echo "<pre>";print_r($getStores);die;
+				   ?>
+					
+						<div class="popular-stores-slider owl-slider" data-loop="true" data-autoplay="true" data-smart-speed="1000" data-autoplay-timeout="10000" data-margin="20" data-items="2" data-xxs-items="2" data-xs-items="2" data-sm-items="3" data-md-items="5" data-lg-items="6">
+							@foreach($getStores as $key => $store)
+								<div class="store-item t-center">
+									<a href="{{ url('/ar/stores_single',$store['id'])}}" class="panel is-block">
+										<div class="embed-responsive embed-responsive-4by3">
+											<div class="store-logo">
+												<img src="{{asset('public/backend/dist/img/store_images/'.$store['image'])}}" alt="">
+											</div>
+										</div>
+										<h6 class="store-name ptb-10">{{$store['name']}}</h6>
+									</a>
 								</div>
-								<h6 class="store-name ptb-10">Amazon</h6>
-							</a>
+						    @endforeach
 						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_02.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Ashford</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_03.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">DELL</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_04.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Card Cash</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_05.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Finish Line</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_06.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">JC Penny</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_07.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Callaway Golf</h6>
-							</a>
-						</div>
-						<div class="store-item t-center">
-							<a href="store_single_01.html" class="panel is-block">
-								<div class="embed-responsive embed-responsive-4by3">
-									<div class="store-logo">
-										<img src="{{asset('public/front/assets/images/brands/brand_08.jpg')}}" alt="">
-									</div>
-								</div>
-								<h6 class="store-name ptb-10">Car Toys</h6>
-							</a>
-						</div>
-					</div>
+					
 				</section>
 				<section class="section latest-news-area blog-area blog-grid blog-3-col ptb-30">
 					<header class=" pos-r line">
 						<h3 class="section-title font-18">أحدث الأخبار</h3>
+						<a href="{{route('blogs')}}" class="btn btn-o btn-xs pos-a left-10 pos-tb-center">زياره المقالات</a>
+
 					</header>
 					<div class="row row-tb-20">
+						<?php
+							use App\Models\Blog;
+							$getBlog=Blog::getBlog();
+							$newPosts=Blog::newPosts();
+						// echo "<pre>";print_r($getCategories);die;
+					    ?>
+					     @foreach($newPosts as $key => $blog)
 						<!-- Blog Post -->
 						<div class="blog-post col-xs-12 col-sm-6 col-md-4">
 							<article class="entry panel">
-								<figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/front/assets/images/blog/post_01.jpg')}}">
-									<div class="entry-date">
+								<figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="{{asset('public/backend/dist/img/blog_images/'.$blog['main_image'])}}">
+									<!--<div class="entry-date">
 										<h4>13</h4>
-										<h6>يناير</h6>
-									</div>
+										<h6>JUN</h6>
+									</div>-->
 								</figure>
 								<div class="entry-wrapper pt-20 pb-10 prl-20">
 									<header class="entry-header">
 										<h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
-											<a href="blog_single_standard.html">بطارية احتياطية للهواتف الذكية من انكر بقدرة 5200 ملي امبير، اسود</a>
+											<a href="blog_single_standard.html">{{$blog['title_ar']}}</a>
 										</h4>
 										<div class="entry-meta mb-10">
 											<ul class="tag-info list-inline">
-												<li><i class="icon fa fa-user"></i> من طرف : احمد ابو زيد</li>
-												<li><i class="icon fa fa-comments"></i>14 تعليق </li>
+												<li><i class="icon fa fa-user"></i> By : John Doe</li>
+												<li><i class="icon fa fa-comments"></i>14 Comments </li>
 											</ul>
 										</div>
 									</header>
 									<div class="entry-content">
-										<p class="entry-summary">ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة ...</p>
+										<p class="entry-summary">{{$blog['description_ar']}}</p>
 									</div>
-									<footer class="entry-footer text-left">
-										<a href="blog_single_standard.html" class="more-link btn btn-link">متابعة القراءة <i class="icon fa fa-long-arrow-left"></i></a>
+									<footer class="entry-footer text-right">
+										<a href="{{url('/ar/blog_single',$blog['id'])}}" class="more-link btn btn-link">متابعة القراءه<i class="icon fa fa-long-arrow-right"></i></a>
 									</footer>
 								</div>
 							</article>
 						</div>
 						<!-- End Blog Post -->
-						<!-- Blog Post -->
-						<div class="blog-post col-xs-12 col-sm-6 col-md-4">
-							<article class="entry panel">
-								<figure class="entry-media embed-responsive embed-responsive-16by9">
-									<iframe src="https://player.vimeo.com/video/28786762?portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-									<div class="entry-date">
-										<h4>13</h4>
-										<h6>يناير</h6>
-									</div>
-								</figure>
-								<div class="entry-wrapper pt-20 pb-10 prl-20">
-									<header class="entry-header">
-										<h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
-											<a href="blog_single_vimeo.html">حقيبة واسيدو كومباكت سيستم للكاميرات من كيس لوجيك</a>
-										</h4>
-										<div class="entry-meta mb-10">
-											<ul class="tag-info list-inline">
-												<li><i class="icon fa fa-user"></i> من طرف : احمد ابو زيد</li>
-												<li><i class="icon fa fa-comments"></i> 14 تعليقات </li>
-											</ul>
-										</div>
-									</header>
-									<div class="entry-content">
-										<p class="entry-summary">ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة ...</p>
-									</div>
-									<footer class="entry-footer text-left">
-										<a href="blog_single_youtube.html" class="more-link btn btn-link">متابعة القراءة <i class="icon fa fa-long-arrow-left"></i></a>
-									</footer>
-								</div>
-							</article>
-						</div>
-						<!-- End Blog Post -->
-						<!-- Blog Post -->
-						<div class="blog-post col-xs-12 col-sm-6 col-md-4">
-							<article class="entry panel">
-								<figure class="entry-media embed-responsive embed-responsive-16by9">
-									<iframe src="https://www.youtube.com/embed/mcixldqDIEQ?v=mcixldqDIEQ" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-									<div class="entry-date">
-										<h4>13</h4>
-										<h6>يناير</h6>
-									</div>
-								</figure>
-								<div class="entry-wrapper pt-20 pb-10 prl-20">
-									<header class="entry-header">
-										<h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
-						<a href="blog_single_youtube.html">شاحن سيارة أنكر بور درايف 2 متوافق مع آيفون , آيباد</a>
-					            </h4>
-										<div class="entry-meta mb-10">
-											<ul class="tag-info list-inline">
-												<li><i class="icon fa fa-user"></i> من طرف : احمد ابو زيد</li>
-												<li><i class="icon fa fa-comments"></i> 14 تعليقات </li>
-											</ul>
-										</div>
-									</header>
-									<div class="entry-content">
-										<p class="entry-summary">ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة ...</p>
-									</div>
-									<footer class="entry-footer text-left">
-										<a href="blog_single_youtube.html" class="more-link btn btn-link">متابعة القراءة <i class="icon fa fa-long-arrow-left"></i></a>
-									</footer>
-								</div>
-							</article>
-						</div>
-						<!-- End Blog Post -->
+                        @endforeach
+					
+
 					</div>
 				</section>
 				<section class="section subscribe-area ptb-40 t-center">
